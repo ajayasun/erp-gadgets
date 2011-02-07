@@ -3,11 +3,7 @@
   <ModulePrefs title="My Accounts"/>
   <Content type="html">
     <![CDATA[
-      <a href="http://www.yahoo.com">1. Customer 1</a><br>
-      <a href="http://www.yahoo.com">2. Customer 2</a><br>
-      <a href="http://www.yahoo.com">3. Customer 3</a><br>
-      <a href="http://www.yahoo.com">4. Customer 4</a><br>
-      <a href="http://www.yahoo.com">5. Customer 5</a><br>
+      Hello, world!
     ]]>
   </Content>
 </Module>​
