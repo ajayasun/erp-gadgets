@@ -1,5 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="My Accounts" /> 
+  <ModulePrefs title="My Accounts" height="100">
+  <Require feature="dynamic-height"/>
+  </ModulePrefs> 
   <Content type="html">
     <![CDATA[
       <a href="http://www.yahoo.com">1. Customer 1</a><br>
