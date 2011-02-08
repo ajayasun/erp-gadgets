@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Module>
-	<ModulePrefs title="My Accounts" height="100">
-	</ModulePrefs>
-	<Content type="html">
-    <![CDATA[
-  <div id="content_div"></div>
+    <ModulePrefs
+            title="My Accounts"
+            author="Vivek Srinivasan"
+            author_email="vivek.athrey@gmail.com" height="100">
+        <Require feature="views" />
+        <Require feature="dynamic-height" />
+    </ModulePrefs>
+    <Content type="html"><![CDATA[<div id="content_div"></div>
   <script type="text/javascript">
 
   // This example fetches data from a CSV file containing contact information. In the CSV file, 
@@ -48,7 +51,5 @@
     document.getElementById('content_div').innerHTML = html;
   }
   gadgets.util.registerOnLoadHandler(getContacts);
- </script>
-    ]]>
-	</Content>
+ </script>]]></Content>
 </Module>
