@@ -9,7 +9,7 @@
 		<OAuth>
 		  <Service name="google">
 		    <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
-		    <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=https://www.google.com/m8/feeds" method="GET" /> 
+		    <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=http://www.google.com/m8/feeds" method="GET" /> 
 		    <Authorization url="https://www.google.com/accounts/OAuthAuthorizeToken?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" /> 
 		  </Service>
 		</OAuth>        
@@ -23,7 +23,7 @@
    } 
    function initSiebelContactsGadget()
    {
-    google.load("gdata", "2.x");	
+    google.load("gdata", "3.s");	
     google.setOnLoadCallback(initFunc);	
     contactsService =	    new google.gdata.contacts.ContactsService('SiebelApp');
     contactsService.useOAuth("google");
