@@ -7,49 +7,74 @@
         <Require feature="views" />
         <Require feature="dynamic-height" />
     </ModulePrefs>
-    <Content type="html"><![CDATA[<div id="content_div"></div>
+    <Content type="html"><![CDATA[
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
   <script type="text/javascript">
+   google.load("gdata", "1.s");	
+   google.setOnLoadCallback(initFunc);	
+   
+   function initFunc(){
+   alert('Library loaded');
+   }  
+   
+	function getData() {
+	  var params = {};
+	  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+	  var url = "http://code.google.com/securedataconnector/docs/tutorials/contacts.csv";
+	  gadgets.io.makeRequest(url, function(response){log(response);}, params);
+	}
 
-  // This example fetches data from a CSV file containing contact information. In the CSV file, 
-  // each record consists of a name, email address, and phone number.
-  function getContacts() {
-    var params = {};  
-    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  
-    var url = "http://gadget-doc-examples.googlecode.com/svn/trunk/opensocial-gadgets/Contacts.csv";
-    gadgets.io.makeRequest(url, response, params);
-  };
-  // Callback function to process the response
-  function response(obj) {               
-    var responseText = obj.text;  
-    // Set CSS for div.
-    var html = "<div style='padding: 5px;background-color: #FFFFBF;font-family:Arial, Helvetica;" 
-    + "text-align:left;font-size:90%'>"; 
-
-    // Use the split function to extract substrings separated by comma 
-    // delimiters.
-    var contacts = responseText.split(",");
-    // Process array of extracted substrings.
-    for (var i = 0; i < contacts.length ; i++) {
-      // Append substrings to html.
-      html += contacts[i]; 
-      html += " ";
-
-      // Each record consists of 3 components: name, email, and
-      // phone number. The gadget displays each record on a single
-      // line:
-      //
-      // Mickey Mouse mickey@disneyland.com 1-800-MYMOUSE
-      //
-      // Therefore, insert a line break after each (name,email,phone)
-      // triplet (i.e., whenever (i+1) is a multiple of 3).
-      if((i+1)%3 ==0) { 
-        html += "<br>";
-      }
-    }
-    html += "</div>";
-    // Output html in div.
-    document.getElementById('content_div').innerHTML = html;
-  }
-  gadgets.util.registerOnLoadHandler(getContacts);
- </script>]]></Content>
+	  // Callback function to process the response
+	function log(response) {               
+	    var responseText = obj.text;  
+	// Set CSS for div.
+	/*
+	 * Create a contact entry
+	 */ 
+	
+	// Create the contacts service object
+	var contactsService =
+	    new google.gdata.contacts.ContactsService('GoogleInc-jsguide-1.0');
+	
+	// The feed URI that is used to create a contact entry
+	var feedUri = 'http://www.google.com/m8/feeds/contacts/default/full';
+	
+	// Create an instance of ContactEntry
+	var entry = new google.gdata.contacts.ContactEntry();
+	
+	// Set the name of the contact
+	entry.setTitle(google.gdata.Text.create('Vivek Srinivasan'));
+	
+	// Set the content of the contact
+	entry.setContent(google.gdata.Text.create('Test'));
+	
+	// Create an email instance
+	var email = new google.gdata.Email();
+	email.setAddress('JS-Client@domain.com');
+	email.setPrimary(true);
+	// Designate this email as the "home" email
+	email.setRel(google.gdata.Email.REL_HOME);
+	
+	// Add the email instance
+	entry.setEmailAddresses([email]);
+	
+	// The callback method that will be called after a successful insertion from insertEntry()
+	var callback = function(result) {
+	  PRINT('contact entry created!');
+	}
+	
+	// Error handler will be invoked if there is an error from insertEntry()
+	var handleError = function(error) {
+	  PRINT(error);
+	}
+	
+	// Submit the request using the contacts service object
+	contactsService.insertEntry(feedUri, entry, callback, 
+	    handleError, google.gdata.contacts.ContactEntry);
+	    
+	}
+   gadgets.util.registerOnLoadHandler(getData);
+   
+ </script>]]>
+ </Content>
 </Module>
