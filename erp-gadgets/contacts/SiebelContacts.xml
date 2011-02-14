@@ -18,6 +18,7 @@
    }  
    
 	function getData() {
+	 alert('Get Data Fired');
 	  var params = {};
 	  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
 	  var url = "http://code.google.com/securedataconnector/docs/tutorials/contacts.csv";
@@ -25,7 +26,8 @@
 	}
 
 	  // Callback function to process the response
-	function log(response) {               
+	function log(response) {        
+	alert('Response Call Back');       
 	    var responseText = obj.text;  
 	// Set CSS for div.
 	/*
@@ -71,6 +73,8 @@
 	// Submit the request using the contacts service object
 	contactsService.insertEntry(feedUri, entry, callback, 
 	    handleError, google.gdata.contacts.ContactEntry);
+	   
+	   alert('Contct Service Invoked');
 	    
 	}
    gadgets.util.registerOnLoadHandler(getData);
