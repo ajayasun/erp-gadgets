@@ -63,11 +63,13 @@
 	// The callback method that will be called after a successful insertion from insertEntry()
 	var callback = function(result) {
 	  PRINT('contact entry created!');
+	  alert('Contact Created');
 	}
 	
 	// Error handler will be invoked if there is an error from insertEntry()
 	var handleError = function(error) {
 	  PRINT(error);
+	   alert('Contact Creation Failed'); 
 	}
 	
 	// Submit the request using the contacts service object
