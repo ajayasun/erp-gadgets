@@ -6,18 +6,31 @@
             author_email="vivek.athrey@gmail.com" height="100">
         <Require feature="views" />
         <Require feature="dynamic-height" />
+		<OAuth>
+		  <Service name="google">
+		    <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
+		    <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=http://www.google.com/m8/feeds/contacts" method="GET" /> 
+		    <Authorization url="https://www.google.com/accounts/OAuthAuthorizeToken?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" /> 
+		  </Service>
+		</OAuth>        
     </ModulePrefs>
     <Content type="html"><![CDATA[
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
   <script type="text/javascript">
-   google.load("gdata", "1.s");	
-   google.setOnLoadCallback(initFunc);	
-   
-   
-   
+   var contactsService = null;
    function initFunc(){
-   alert('Library loaded');
+    alert('Library loaded');
+   } 
+   function initSiebelContactsGadget()
+   {
+    google.load("gdata", "2");	
+    google.setOnLoadCallback(initFunc);	
+    contactsService =	    new google.gdata.contacts.ContactsService('SiebelApp');
+    contactsService.useOAuth("google");
+    syncContactsData();
    }
+   
+
    
    function logMeIn()
    {
@@ -26,7 +39,7 @@
    }
      
    
-	function getData() {
+	function syncContactsData() {
 	 alert('Get Data Fired');
 	  var params = {};
 	  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
@@ -43,11 +56,7 @@
 	 * Create a contact entry
 	 */ 
 	
-	logMeIn();
-	// Create the contacts service object
-	var contactsService =
-	    new google.gdata.contacts.ContactsService('SiebelApp');
-	
+
 	alert('Response Call Back 2');  
 	
 	
@@ -95,7 +104,7 @@
 	   alert('Contct Service Invoked');
 	    
 	}
-   gadgets.util.registerOnLoadHandler(getData);
+   gadgets.util.registerOnLoadHandler(initSiebelContactsGadget);
    
  </script>]]>
  </Content>
