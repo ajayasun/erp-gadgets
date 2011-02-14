@@ -27,6 +27,7 @@
     google.setOnLoadCallback(initFunc);	
     contactsService =	    new google.gdata.contacts.ContactsService('SiebelApp');
     contactsService.useOAuth("google");
+    alert('Service Authorization');
     syncContactsData();
    }
    
