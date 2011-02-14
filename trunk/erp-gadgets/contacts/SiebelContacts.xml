@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
     <ModulePrefs
-            title="My Accounts"
+            title="Siebel Contacts"
             author="Vivek Srinivasan"
             author_email="vivek.athrey@gmail.com" height="100">
         <Require feature="views" />
@@ -13,9 +13,18 @@
    google.load("gdata", "1.s");	
    google.setOnLoadCallback(initFunc);	
    
+   
+   
    function initFunc(){
    alert('Library loaded');
-   }  
+   }
+   
+   function logMeIn()
+   {
+    var scope = 'https://www.google.com/m8/feeds';
+    var token = google.accounts.user.login(scope);
+   }
+     
    
 	function getData() {
 	 alert('Get Data Fired');
@@ -34,11 +43,15 @@
 	 * Create a contact entry
 	 */ 
 	
+	logMeIn();
 	// Create the contacts service object
 	var contactsService =
-	    new google.gdata.contacts.ContactsService('GoogleInc-jsguide-1.0');
+	    new google.gdata.contacts.ContactsService('SiebelApp');
 	
-	alert('Response Call Back 2');   	
+	alert('Response Call Back 2');  
+	
+	
+	 	
 	// The feed URI that is used to create a contact entry
 	var feedUri = 'http://www.google.com/m8/feeds/contacts/default/full';
 	
