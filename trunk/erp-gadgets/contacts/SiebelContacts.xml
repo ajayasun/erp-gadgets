@@ -38,6 +38,7 @@
 	var contactsService =
 	    new google.gdata.contacts.ContactsService('GoogleInc-jsguide-1.0');
 	
+	alert('Response Call Back 2');   	
 	// The feed URI that is used to create a contact entry
 	var feedUri = 'http://www.google.com/m8/feeds/contacts/default/full';
 	
