@@ -60,6 +60,8 @@
 	// Add the email instance
 	entry.setEmailAddresses([email]);
 	
+		alert('Setting Email');  
+	
 	// The callback method that will be called after a successful insertion from insertEntry()
 	var callback = function(result) {
 	  PRINT('contact entry created!');
