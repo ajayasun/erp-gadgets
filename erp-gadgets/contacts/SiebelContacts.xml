@@ -23,15 +23,15 @@
    } 
    function initSiebelContactsGadget()
    {
-    google.load("gdata", "3.s");	
+    google.load("gdata", "2.x");	
     google.setOnLoadCallback(initFunc);	
     contactsService =	    new google.gdata.contacts.ContactsService('SiebelApp');
-    contactsService.useOAuth("google");
+    //contactsService.useOAuth("google");
+    logMeIn();
     alert('Service Authorization');
     syncContactsData();
    }
-   
-
+  
    
    function logMeIn()
    {
