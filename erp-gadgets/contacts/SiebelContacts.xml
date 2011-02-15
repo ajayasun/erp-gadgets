@@ -21,7 +21,7 @@
 		
 		function setupContactsService() {
 		  alert('Library Loaded');
-		  contactsService = new google.gdata.contacts.ContactsService("VividEdge-SiebelContactApp-1.0");
+		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
 		  contactsService.useOAuth("google");
 		  alert('Library Loaded 2');
 		}
