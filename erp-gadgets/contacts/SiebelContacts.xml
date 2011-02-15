@@ -16,6 +16,7 @@
     </ModulePrefs>
     <Content type="html"><![CDATA[
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script src="http://gadget-doc-examples.googlecode.com/svn/trunk/opensocial-gadgets/popup.js"></script>
   <script type="text/javascript">
    var contactsService = null;
    function initFunc(){
@@ -39,7 +40,42 @@
    }
      
    
-	function syncContactsData() {
+  function syncContactsData() {
+	
+	jQuery('#errors').hide();
+	 
+	 var callback = function(response) {
+	   if (response.oauthApprovalUrl) {
+	     // You can set the sign in link directly:
+	     // jQuery('#personalize').get(0).href = response.oauthApprovalUrl
+	     
+	     // OR use the popup.js handler
+	     var popup = shindig.oauth.popup({
+	       destination: response.oauthApprovalUrl,
+	       windowOptions: 'height=600,width=800',
+	       onOpen: function() {
+	         showOnly('waiting');
+	       },
+	       onClose: function() {
+	         showOnly('loading');
+	         syncContactsData();
+	       }
+	     });
+	     jQuery('#personalize').get(0).onclick = popup.createOpenerOnClick();
+	     jQuery('#approvalLink').get(0).onclick = popup.createApprovedOnClick();
+	     
+	     showOnly('approval');
+	   } else if (response.feed) {
+	     showResults(response);
+	     showOnly('main');
+	   } else {
+	     jQuery('#errors').html('Something went wrong').fadeIn();
+	     showOnly('errors');
+	   }
+	 };
+  
+	
+	
 	 alert('Get Data Fired');
 	  var params = {};
 	  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
