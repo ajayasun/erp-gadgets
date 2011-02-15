@@ -4,8 +4,8 @@
             title="Siebel Contacts"
             author="Vivek Srinivasan"
             author_email="vivek.athrey@gmail.com" height="100">
-        <Require feature="views" />
         <Require feature="dynamic-height" />
+         <Require feature="opensocial-0.8" />
 		<OAuth>
 		  <Service name="google">
 		    <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
