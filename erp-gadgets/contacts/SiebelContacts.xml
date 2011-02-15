@@ -17,9 +17,67 @@
     <Content type="html"><![CDATA[
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
   <script src="http://gadget-doc-examples.googlecode.com/svn/trunk/opensocial-gadgets/popup.js"></script>
+  <style>
+  #main {
+    margin: 0px;
+    padding: 0px;
+    font-size: small;
+  }
+  </style>
+
+  <div id="main" style="display: none">
+  </div>
+
+  <div id="approval" style="display: none">
+    <img src="http://gadget-doc-examples.googlecode.com/svn/trunk/images/new.gif">
+    <a href="#" id="personalize">Personalize this gadget</a>
+  </div>
+
+  <div id="waiting" style="display: none">
+    Please click
+    <a href="#" id="approvaldone">I've approved access</a>
+    once you've approved access to your data.
+  </div>
   <script type="text/javascript">
-		var contactsService;
-		
+			
+	var contactsService;
+
+    function showOnly(toshow) {
+      var sections = [ 'main', 'approval', 'waiting' ];
+      for (var i=0; i < sections.length; ++i) {
+        var s = sections[i];
+        var el = document.getElementById(s);
+        if (s === toshow) {
+          el.style.display = "block";
+        } else {
+          el.style.display = "none";
+        }
+      }
+    }
+      
+    // Process returned JSON feed to display data.
+    function showResults(result) {
+      showOnly('main');
+
+      var titleElement = document.createElement('div');
+      var nameNode = document.createTextNode(result.feed.title.$t);
+      titleElement.appendChild(nameNode);
+      document.getElementById("main").appendChild(titleElement);
+      document.getElementById("main").appendChild(document.createElement("br"));
+
+      list = result.feed.entry;
+
+      for(var i = 0; i < list.length; i++) {
+        entry = list[i];
+        var divElement = document.createElement('div');
+        divElement.setAttribute('class', 'name');
+        var valueNode = document.createTextNode(entry.gd$email[0].address);
+        divElement.appendChild(nameNode);
+        divElement.appendChild(valueNode);
+        document.getElementById("main").appendChild(divElement);
+      }
+    }
+    		
 		function setupContactsService() {
 		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
 		  contactsService.useOAuth("google");
@@ -44,26 +102,29 @@
 				      destination: response.oauthApprovalUrl,
 				      windowOptions: 'height=600,width=800',
 				      onOpen: function() {
-				       alert('waiting');
+				       showOnly('waiting');
 				      },
 				      onClose: function() {
-				        alert('loading');
+				        showOnly('loading');
 				        getMySiebelContacts();
 				      }
 				    });
-				    jQuery('#personalize').get(0).onclick = popup.createOpenerOnClick();
-				    jQuery('#approvalLink').get(0).onclick = popup.createApprovedOnClick();
-				    
-				    showOnly('approval'); 
+		          var personalize = document.getElementById('personalize');
+		          personalize.onclick = popup.createOpenerOnClick();
+		          var approvaldone = document.getElementById('approvaldone');
+		          approvaldone.onclick = popup.createApprovedOnClick();
+				  showOnly('approval'); 
 			    
 				} else if (response.feed) {
 				  showResults(response);
 				  showOnly('main');
 				  alert('Response.feed');
 				} else {
-				  jQuery('#errors').html('Something went wrong').fadeIn();
+		          var main = document.getElementById('main');
+		          var err = document.createTextNode('OAuth error: ' +
+		          response.oauthError + ': ' + response.oauthErrorText);
+		          main.appendChild(err);
 				  showOnly('errors');
-				    alert('Error');
 				}
 			};		
 		  contactsService.getContactFeed('http://www.google.com/m8/feeds/default/full', callback, callback);
