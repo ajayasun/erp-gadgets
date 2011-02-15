@@ -36,9 +36,11 @@
 		}
 
 		function getMySiebelContacts() {
+		
+		  alert('GetMySiebelContacts');
 			var callback = function(response) {
 			  if (response.oauthApprovalUrl) {
-			  
+			   alert('OAAuthenticatio');
 				var popup = shindig.oauth.popup({
 				      destination: response.oauthApprovalUrl,
 				      windowOptions: 'height=600,width=800',
