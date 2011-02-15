@@ -23,7 +23,9 @@
 		
 		function initSiebelContactsGadget() {
 		  google.load("gdata", "2.x");
+		  alert('Google Library Loaded');
 		  setupContactsService();
+		  alert('Contact Service Setup');
 		  logMeIn();
 		  getMyContacts();
 		}
