@@ -29,7 +29,7 @@
 		function initSiebelContactsGadget() {
 		  google.load("gdata","2.x");
 		  google.setOnLoadCallback(setupContactsService);
-		  getMySiebelContacts();	
+		  //getMySiebelContacts();	
 		}
 
 		function getMySiebelContacts() {
