@@ -6,6 +6,7 @@
             author_email="vivek.athrey@gmail.com" height="100">
         <Require feature="dynamic-height" />
     <Require feature="opensocial-0.8" />
+    <Require feature="views" />
     <Require feature="locked-domain"/>
 		<OAuth>
 		  <Service name="google">
@@ -15,7 +16,7 @@
 		  </Service>
 		</OAuth>        
     </ModulePrefs>
-    <Content type="html"><![CDATA[
+    <Content type="html" view="canvas"><![CDATA[
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
   <script src="http://erp-gadgets.googlecode.com/svn/trunk/erp-gadgets/contacts/popup.js"></script>
   <script src="http://erp-gadgets.googlecode.com/svn/trunk/erp-gadgets/contacts/SiebelSDC.js"></script>
