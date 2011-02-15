@@ -24,12 +24,12 @@
 		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
 		  contactsService.useOAuth("google");
 		  alert('Library Loaded. Service instantiated');
+		  getMySiebelContacts();
 		}
 		
 		function initSiebelContactsGadget() {
 		  google.load("gdata","2.x");
 		  google.setOnLoadCallback(setupContactsService);
-		  //getMySiebelContacts();	
 		}
 
 		function getMySiebelContacts() {
