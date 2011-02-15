@@ -1,5 +1,5 @@
 <script type="text/javascript">
-function getData() {
+function getSiebelDataSDC() {
 	  var params = {};
 	  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
 	  var url = "http://code.google.com/securedataconnector/docs/tutorials/contacts.csv";
