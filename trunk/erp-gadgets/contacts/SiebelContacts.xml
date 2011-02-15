@@ -64,7 +64,7 @@
 				    alert('Error');
 				}
 			};		
-		  contactsService.getContactFeed(contactsFeedUri, callback, callback);
+		  contactsService.getContactFeed('http://www.google.com/m8/feeds/default/full', callback, callback);
 		}
    gadgets.util.registerOnLoadHandler(initSiebelContactsGadget);
    
