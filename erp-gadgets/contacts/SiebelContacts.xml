@@ -24,7 +24,7 @@
    } 
    function initSiebelContactsGadget()
    {
-    google.load("gdata", "2.x");	
+    google.load('gdata', '1.x', {packages: ['contacts']});
     google.setOnLoadCallback(initFunc);	
     contactsService =	    new google.gdata.contacts.ContactsService('SiebelApp');
     contactsService.useOAuth("google");
