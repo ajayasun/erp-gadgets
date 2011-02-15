@@ -20,9 +20,12 @@
 		var contactsService;
 		
 		function setupContactsService() {
-		  contactsService = new google.gdata.contacts.ContactsService('exampleCo-exampleApp-1.0');
+		  alert('Library Loaded');
+		  
+		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
 		  contactsService.useOAuth("google");
-		  getMySiebelContacts();		  
+		  getMySiebelContacts();	
+		   alert('Library Loaded 2');  
 		}
 		
 		
