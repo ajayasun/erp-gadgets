@@ -21,17 +21,15 @@
 		
 		function setupContactsService() {
 		  alert('Library Loaded');
-		  
 		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
 		  contactsService.useOAuth("google");
-		  getMySiebelContacts();	
-		   alert('Library Loaded 2');  
 		}
-		
 		
 		function initSiebelContactsGadget() {
 		  google.load("gdata","2.x");
 		  google.setOnLoadCallback(setupContactsService);
+		  getMySiebelContacts();	
+		  alert('Library Loaded 2'); 	    
 		}
 
 		function getMySiebelContacts() {
