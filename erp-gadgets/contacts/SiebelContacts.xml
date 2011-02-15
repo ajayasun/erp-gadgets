@@ -6,6 +6,13 @@
             author_email="vivek.athrey@gmail.com" height="100">
         <Require feature="views" />
         <Require feature="dynamic-height" />
+		<OAuth>
+		  <Service name="google">
+		    <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
+		    <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=http://www.google.com/m8/feeds/" method="GET" /> 
+		    <Authorization url="https://www.google.com/accounts/OAuthAuthorizeToken?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" /> 
+		  </Service>
+		</OAuth>        
     </ModulePrefs>
     <Content type="html"><![CDATA[
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -14,45 +21,46 @@
 		
 		function setupContactsService() {
 		  contactsService = new google.gdata.contacts.ContactsService('exampleCo-exampleApp-1.0');
+		  contactsService.useOAuth("google");
+		  getMySiebelContacts();		  
 		}
 		
-		function logMeIn() {
-		  var scope = 'https://www.google.com/m8/feeds';
-		  var token = google.accounts.user.login(scope);
-		}
 		
 		function initSiebelContactsGadget() {
-		  google.load("gdata", "2.x");
-		  alert('Google Library Loaded');
-		  setupContactsService();
-		  alert('Contact Service Setup');
-		  logMeIn();
-		  getMyContacts();
+		  google.load("gdata","2.x");
+		  google.setOnLoadCallback(setupContactsService);
 		}
 
-		function getMyContacts() {
-		  var contactsFeedUri = 'https://www.google.com/m8/feeds/contacts/default/full';
-		  var query = new google.gdata.contacts.ContactQuery(contactsFeedUri);
-		  
-		  // Set the maximum of the result set to be 5
-		  query.setMaxResults(5);
-		  
-		  contactsService.getContactFeed(query, handleContactsFeed, handleError);
+		function getMySiebelContacts() {
+			var callback = function(response) {
+			  if (response.oauthApprovalUrl) {
+			  
+				var popup = shindig.oauth.popup({
+				      destination: response.oauthApprovalUrl,
+				      windowOptions: 'height=600,width=800',
+				      onOpen: function() {
+				        showOnly('waiting');
+				      },
+				      onClose: function() {
+				        showOnly('loading');
+				        getMySiebelContacts();
+				      }
+				    });
+				    jQuery('#personalize').get(0).onclick = popup.createOpenerOnClick();
+				    jQuery('#approvalLink').get(0).onclick = popup.createApprovedOnClick();
+				    
+				    showOnly('approval'); 
+			    
+				} else if (response.feed) {
+				  showResults(response);
+				  showOnly('main');
+				} else {
+				  jQuery('#errors').html('Something went wrong').fadeIn();
+				  showOnly('errors');
+				}
+			};		
+		  contactsService.getContactFeed(contactsFeedUri, callback, callback);
 		}
-		
-		var handleContactsFeed = function(result) {
-		  var entries = result.feed.entry;
-		
-		  for (var i = 0; i < entries.length; i++) {
-		    var contactEntry = entries[i];
-		    var emailAddresses = contactEntry.getEmailAddresses();
-		    
-		    for (var j = 0; j < emailAddresses.length; j++) {
-		      var emailAddress = emailAddresses[j].getAddress();
-		      alert('email = ' + emailAddress);
-		    }    
-		  }
-		}		
    gadgets.util.registerOnLoadHandler(initSiebelContactsGadget);
    
  </script>]]>
