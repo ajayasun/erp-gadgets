@@ -44,10 +44,10 @@
 				      destination: response.oauthApprovalUrl,
 				      windowOptions: 'height=600,width=800',
 				      onOpen: function() {
-				       showOnly('waiting');
+				       alert('waiting');
 				      },
 				      onClose: function() {
-				        showOnly('loading');
+				        alert('loading');
 				        getMySiebelContacts();
 				      }
 				    });
