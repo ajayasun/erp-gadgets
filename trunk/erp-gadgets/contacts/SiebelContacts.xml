@@ -17,7 +17,8 @@
     </ModulePrefs>
     <Content type="html"><![CDATA[
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-  <script src="http://gadget-doc-examples.googlecode.com/svn/trunk/opensocial-gadgets/popup.js"></script>
+  <script src="http://erp-gadgets.googlecode.com/svn/trunk/erp-gadgets/contacts/popup.js"></script>
+  <script src="http://erp-gadgets.googlecode.com/svn/trunk/erp-gadgets/contacts/SiebelSDC.js"></script>
   <style>
   #main {
     margin: 0px;
@@ -83,7 +84,8 @@
 		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
 		  contactsService.useOAuth("google");
 		  alert('Library Loaded. Service instantiated');
-		  getMySiebelContacts();
+		  //getMySiebelContacts();
+		  getSiebelDataSDC();
 		}
 		
 		function initSiebelContactsGadget() {
