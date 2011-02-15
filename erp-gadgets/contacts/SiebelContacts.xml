@@ -42,25 +42,25 @@
 				      destination: response.oauthApprovalUrl,
 				      windowOptions: 'height=600,width=800',
 				      onOpen: function() {
-				        showOnly('waiting');
+				        //showOnly('waiting');
 				      },
 				      onClose: function() {
-				        showOnly('loading');
+				        //showOnly('loading');
 				        getMySiebelContacts();
 				      }
 				    });
 				    jQuery('#personalize').get(0).onclick = popup.createOpenerOnClick();
 				    jQuery('#approvalLink').get(0).onclick = popup.createApprovedOnClick();
 				    
-				    showOnly('approval'); 
+				    //showOnly('approval'); 
 			    
 				} else if (response.feed) {
-				  showResults(response);
-				  showOnly('main');
+				  //showResults(response);
+				  //showOnly('main');
 				  alert('Response.feed');
 				} else {
 				  jQuery('#errors').html('Something went wrong').fadeIn();
-				  showOnly('errors');
+				  //showOnly('errors');
 				    alert('Error');
 				}
 			};		
