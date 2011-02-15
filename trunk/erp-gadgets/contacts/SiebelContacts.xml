@@ -84,8 +84,8 @@
 		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
 		  contactsService.useOAuth("google");
 		  alert('Library Loaded. Service instantiated');
-		  //getMySiebelContacts();
-		  getSiebelDataSDC();
+		  getMySiebelContacts();
+		  //getSiebelDataSDC();
 		}
 		
 		function initSiebelContactsGadget() {
