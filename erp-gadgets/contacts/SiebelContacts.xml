@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
     <ModulePrefs
-            title="Siebel Contacts"
+            title="Siebel Activities"
             author="Vivek Srinivasan"
             author_email="vivek.athrey@gmail.com" height="100">
         <Require feature="dynamic-height" />
@@ -17,6 +17,9 @@
 		</OAuth>        
     </ModulePrefs>
     <Content type="html"><![CDATA[
+    <a href=http://yahoo.com>Call Anderson</a><br>
+    <a href=http://yahoo.com>Email Amy</a><br>
+    <a href=http://yahoo.com>Email Inbound from ISSS</a><br>
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
   <script src="http://erp-gadgets.googlecode.com/svn/trunk/erp-gadgets/contacts/popup.js"></script>
   <script src="http://erp-gadgets.googlecode.com/svn/trunk/erp-gadgets/contacts/SiebelSDC.js"></script>
@@ -82,11 +85,11 @@
     }
     		
 		function setupContactsService() {
-		  //contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
-		  //contactsService.useOAuth("google");
+		  contactsService = new google.gdata.contacts.ContactsService('VividEdge-SiebelContactApp-1.0');
+		  contactsService.useOAuth("google");
 		  alert('Library Loaded. Service instantiated');
-		  //getMySiebelContacts();
-		  getSiebelDataSDC();
+		  getMySiebelContacts();
+		  //getSiebelDataSDC();
 		}
 		
 		function initSiebelContactsGadget() {
@@ -137,7 +140,7 @@
 		query.setMaxResults(50);
 		contactsService.getContactFeed(feedUri, callback, callback);
 		}
-   gadgets.util.registerOnLoadHandler(initSiebelContactsGadget);
+   //gadgets.util.registerOnLoadHandler(initSiebelContactsGadget);
    
  </script>]]>
  </Content>
