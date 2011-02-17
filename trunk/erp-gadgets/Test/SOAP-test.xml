@@ -27,7 +27,7 @@ req.open("GET", "http://www.google.com/webhp", false);  // The last parameter de
 req.send();
 
 if (req.status == 200) {
-  gadget.debug.trace("Google Webpage Loaded");
+  alert("Google Webpage Loaded");
 }
 }
 
