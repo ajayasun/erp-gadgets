@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Module>
-    <ModulePrefs
-            title="Siebel Activities"
-            author="Vivek Srinivasan"
-            author_email="vivek.athrey@gmail.com" height="100"
-            category="Finance">
-        <Require feature="dynamic-height" />
-    <Require feature="opensocial-0.8" />
-    <Require feature="views" />
-    <Require feature="locked-domain"/>
-    </ModulePrefs>    
-<Content type="html">
-<![CDATA[
-    <a href="javascript:getData()">Get Private Data</a>
+<Module> 
+  <ModulePrefs title="Sample Ansys Enterprise Gadget" author="Richard_Todd" category="rtodd" 
+   thumbnail="http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/64px-Heckert_GNU_white.svg.png" />
+  <Content type="html"> 
+    <![CDATA[ 
+    <a href="javascript:getData()">Get Private Data From File</a>
     <script type="text/javascript">
 function getData() {
   var params = {};
   params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
   params['AUTHORIZATION'] = 'SIGNED';
-  params['OAUTH_ADD_EMAIL'] = 'true'
-  params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true'
-  var url = "http://ebsp.ansys.com";
+params['OAUTH_ADD_EMAIL'] = 'true';
+params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
+var url = "http://192.168.75.135/file.csv";
   gadgets.io.makeRequest(url, function(response){log(response);}, params);
 }
 function log(m) {
