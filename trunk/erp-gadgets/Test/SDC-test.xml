@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Module> 
-  <ModulePrefs title="Sample Enterprise Gadget" author="Your_Name" category="Finance"/>
+<Module>
+    <ModulePrefs
+            title="Siebel Activities"
+            author="Vivek Srinivasan"
+            author_email="vivek.athrey@gmail.com" height="100"
+            category="Finance">
+        <Require feature="dynamic-height" />
+    <Require feature="opensocial-0.8" />
+    <Require feature="views" />
+    <Require feature="locked-domain"/>
   <Content type="html">
 <![CDATA[
     <a href="javascript:getData()">Get Private Data</a>
