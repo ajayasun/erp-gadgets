@@ -1,0 +1,45 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module> 
+    <ModulePrefs
+            title="SOAP Call using XMLHTTP Object"
+            author="Vivek Srinivasan"
+            author_email="vivek.athrey@gmail.com" height="100">
+        <Require feature="dynamic-height" />
+    <Require feature="opensocial-0.8" />
+    <Require feature="views" />
+    <Require feature="locked-domain"/>
+		<OAuth>
+		  <Service name="google">
+		    <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
+		    <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=http://www.google.com/m8/feeds/" method="GET" /> 
+		    <Authorization url="https://www.google.com/accounts/OAuthAuthorizeToken?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" /> 
+		  </Service>
+		</OAuth>        
+    </ModulePrefs>
+  <Content type="html"> 
+    <![CDATA[ 
+    <a href="javascript:sendRequest()">Get XML Data From File</a>
+    <script type="text/javascript">
+function sendRequest() {
+  var req = new XMLHttpRequest();
+  req.open("GET", "http://www.google.com/search?hl=en&q=benjamin+schirmer", true);
+  req.onreadystatechange = function() {
+      if (req.readyState == 4) {
+        if (req.status == 200) {
+          printResultCount( req.responseText );
+        }
+      }
+    };
+  req.send();
+}
+
+function printResultCount(data) {
+  var str = data.match(/of about <b>(.+?)<\/b> for <b>(.+?)<\/b>/i);
+  alert( str[1]+" results found" );
+}
+</script>
+    ]]>
+  </Content>
+</Module>
+
