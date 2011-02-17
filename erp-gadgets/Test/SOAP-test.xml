@@ -22,16 +22,13 @@
     <a href="javascript:sendRequest()">Get XML Data From File</a>
     <script type="text/javascript">
 function sendRequest() {
-  var req = new XMLHttpRequest();
-  req.open("GET", "http://www.google.com/search?hl=en&q=benjamin+schirmer", true);
-  req.onreadystatechange = function() {
-      if (req.readyState == 4) {
-        if (req.status == 200) {
-          printResultCount( req.responseText );
-        }
-      }
-    };
-  req.send();
+ var req = new XMLHttpRequest();
+req.open("GET", "http://www.google.com/webhp", false);  // The last parameter determines whether the request is asynchronous.
+req.send();
+
+if (req.status == 200) {
+  gadget.debug.trace("Google Webpage Loaded");
+}
 }
 
 function printResultCount(data) {
