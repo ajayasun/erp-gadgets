@@ -8,7 +8,7 @@
 function getData() {
   var params = {};
   params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
-  var url = "http://code.google.com/securedataconnector/docs/tutorials/contacts.csv";
+  var url = "http://google.com";
   gadgets.io.makeRequest(url, function(response){log(response);}, params);
 }
 function log(m) {
