@@ -9,7 +9,8 @@
     <Require feature="opensocial-0.8" />
     <Require feature="views" />
     <Require feature="locked-domain"/>
-  <Content type="html">
+    </ModulePrefs>    
+<Content type="html">
 <![CDATA[
     <a href="javascript:getData()">Get Private Data</a>
     <script type="text/javascript">
