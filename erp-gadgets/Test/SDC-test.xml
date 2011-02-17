@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module> 
-  <ModulePrefs title="Sample Ansys Enterprise Gadget" author="Richard_Todd" category="rtodd" 
+  <ModulePrefs title="My Siebel Activities" author="Vivek Srinivasan" category="sales" 
    thumbnail="http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/64px-Heckert_GNU_white.svg.png" />
   <Content type="html"> 
     <![CDATA[ 
@@ -12,7 +12,7 @@ function getData() {
   params['AUTHORIZATION'] = 'SIGNED';
 params['OAUTH_ADD_EMAIL'] = 'true';
 params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
-var url = "http://192.168.75.135/file.csv";
+var url = "http://pghintranet:8000/index.htm"";
   gadgets.io.makeRequest(url, function(response){log(response);}, params);
 }
 function log(m) {
