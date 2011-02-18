@@ -26,10 +26,9 @@
 			alert(data);
 			data = data + '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">';
 			data = data + '<soap:Body>';
-			data = data + '<IdentityCard xmlns="http://webservice.jaron.cn/">';
-			data = data + '<IdentityCardID>330226</IdentityCardID>';
-			data = data + '<LicenceKey>111</LicenceKey>';
-			data = data + '</IdentityCard>';
+			data = data + '<GetWeather xmlns="http://litwinconsulting.com/webservices/">';
+			data = data + '<City>string</City>';
+			data = data + '</GetWeather>';
 			data = data + '</soap:Body>';
 			data = data + '</soap:Envelope>';
 			var params = {};
@@ -37,9 +36,9 @@
 			alert(data);
 			params[gadgets.io.RequestParameters.CONTENT_TYPE]=gadgets.io.ContentType.DOM;
 			params[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
-			params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction":"http://webservice.jaron.cn/IdentityCard"};
+			params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction":"http://litwinconsulting.com/webservices/GetWeather"};
 			params[gadgets.io.RequestParameters.POST_DATA]=data;
-			var URL="http://webservice.jaron.cn/default.asmx?op=IdentityCard";
+			var URL="http://www.deeptraining.com/webservices/weather.asmx?op=GetWeather";
 			gadgets.io.makeRequest(URL, response, params);
 			alert('Invoked SOAP');
 		}
