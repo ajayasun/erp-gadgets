@@ -6,7 +6,9 @@
 <![CDATA[
 	<script type="text/javascript">
 	function test(){
-	var data;data = '<?xml version="1.0" encoding="utf-8"?>';
+	var data;
+	data = '<?xml version="1.0" encoding="utf-8"?>';
+	alert(data);
 	data = data + '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">';
 	data = data + '<soap:Body>';
 	data = data + '<IdentityCard xmlns="http://webservice.jaron.cn/">';
