@@ -40,7 +40,7 @@
 			params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction":"http://webservice.jaron.cn/IdentityCard"};
 			params[gadgets.io.RequestParameters.POST_DATA]=data;
 			var URL="http://webservice.jaron.cn/default.asmx?op=IdentityCard";
-			//gadgets.io.makeRequest(URL, response, params);
+			gadgets.io.makeRequest(URL, response, params);
 			alert('Invoked SOAP');
 		}
 	
