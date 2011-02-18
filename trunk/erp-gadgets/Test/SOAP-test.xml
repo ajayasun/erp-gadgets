@@ -1,37 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-<ModulePrefs title="post" height="100" >
-</ModulePrefs>
-<Content type="html">
+   <ModulePrefs
+            title="Service SOAP Test"
+            author="Vivek Srinivasan"
+            author_email="vivek.athrey@gmail.com" height="100">
+        <Require feature="dynamic-height" />
+    <Require feature="opensocial-0.8" />
+    <Require feature="views" />
+    <Require feature="locked-domain"/>
+		<OAuth>
+		  <Service name="google">
+		    <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
+		    <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=http://www.google.com/m8/feeds/" method="GET" /> 
+		    <Authorization url="https://www.google.com/accounts/OAuthAuthorizeToken?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" /> 
+		  </Service>
+		</OAuth>        
+    </ModulePrefs>
+ <Content type="html"> 
 <![CDATA[
+  <a href="javascript:test()">Make SOAP Call</a>
 	<script type="text/javascript">
-	function test(){
-	var data;
-	data = '<?xml version="1.0" encoding="utf-8"?>';
-	alert(data);
-	data = data + '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">';
-	data = data + '<soap:Body>';
-	data = data + '<IdentityCard xmlns="http://webservice.jaron.cn/">';
-	data = data + '<IdentityCardID>330226</IdentityCardID>';
-	data = data + '<LicenceKey>111</LicenceKey>';
-	data = data + '</IdentityCard>';
-	data = data + '</soap:Body>';
-	data = data + '</soap:Envelope>';
-	var params = {};
-	//data=gadgets.io.encodeValues(data);
-	alert(data);
-	params[gadgets.io.RequestParameters.CONTENT_TYPE]=gadgets.io.ContentType.DO­M;
-	params[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
-	params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction":"http://webservice.jaron.cn/IdentityCard"};
-	params[gadgets.io.RequestParameters.POST_DATA]=data;
-	var URL="http://webservice.jaron.cn/default.asmx?op=IdentityCard";
-	gadgets.io.makeRequest(URL, response, params);}
+		function test(){
+		var data;
+			data = '<?xml version="1.0" encoding="utf-8"?>';
+			alert(data);
+			data = data + '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">';
+			data = data + '<soap:Body>';
+			data = data + '<IdentityCard xmlns="http://webservice.jaron.cn/">';
+			data = data + '<IdentityCardID>330226</IdentityCardID>';
+			data = data + '<LicenceKey>111</LicenceKey>';
+			data = data + '</IdentityCard>';
+			data = data + '</soap:Body>';
+			data = data + '</soap:Envelope>';
+			var params = {};
+			//data=gadgets.io.encodeValues(data);
+			alert(data);
+			params[gadgets.io.RequestParameters.CONTENT_TYPE]=gadgets.io.ContentType.DO­M;
+			params[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
+			params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction":"http://webservice.jaron.cn/IdentityCard"};
+			params[gadgets.io.RequestParameters.POST_DATA]=data;
+			var URL="http://webservice.jaron.cn/default.asmx?op=IdentityCard";
+			gadgets.io.makeRequest(URL, response, params);
+		}
 	
-	function response(obj){
-	alert("errors"+obj.errors);
-	alert("data"+obj.data);
-	alert("text "+obj.text);
-	alert("oauthErrorText "+obj.oauthErrorText); }    
-	</script><input type=button value="test" onclick="test()"/>
+		function response(obj){
+		alert("errors"+obj.errors);
+		alert("data"+obj.data);
+		alert("text "+obj.text);
+		alert("oauthErrorText "+obj.oauthErrorText); 
+		}    
+	</script>
+	
 ]]>
-</Content></Module>
+</Content>
+</Module>
