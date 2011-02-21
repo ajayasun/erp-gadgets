@@ -37,7 +37,7 @@
 			params[gadgets.io.RequestParameters.CONTENT_TYPE]=gadgets.io.ContentType.DOM;
 			params[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
 			params[gadgets.io.RequestParameters.HOST]='www.deeptraining.com';
-			params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction": "http://litwinconsulting.com/webservices/"};
+			//params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction": "http://litwinconsulting.com/webservices/"};
 			params[gadgets.io.RequestParameters.POST_DATA]=data;
 			var URL="http://www.deeptraining.com/webservices/weather.asmx";
 			gadgets.io.makeRequest(URL, response, params);
