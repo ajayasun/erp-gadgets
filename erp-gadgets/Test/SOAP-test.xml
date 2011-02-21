@@ -34,7 +34,8 @@
 			var params = {};
 			//data=gadgets.io.encodeValues(data);
 			alert(data);
-			params[gadgets.io.RequestParameters.CONTENT_TYPE]=gadgets.io.ContentType.DOM;
+			params[gadgets.io.RequestParameters.CONTENT_TYPE]='text/xml';
+			//gadgets.io.ContentType.DOM;
 			params[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
 			//params[gadgets.io.RequestParameters.HOST]='www.deeptraining.com';
 			//params[gadgets.io.RequestParameters.HEADERS]={"SOAPAction": "http://litwinconsulting.com/webservices/"};
