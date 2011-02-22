@@ -1,26 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <Module>
+
    <ModulePrefs
+
             title="Service SOAP Test"
+
             author="Venkatesan"
+
+
             author_email="vivek.athrey@gmail.com" height="100">
+
         <Require feature="dynamic-height" />
+
     <Require feature="opensocial-0.8" />
+
     <Require feature="views" />
+
     <Require feature="locked-domain"/>
+
 <OAuth>
+
   <Service name="google">
+
     <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
+
     <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=http://www.google.com/m8/feeds/" method="GET" /> 
+
     <Authorization url="https://www.google.com/accounts/OAuthAuthorizeToken?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" /> 
+
   </Service>
+
 </OAuth>        
+
     </ModulePrefs>
+
  <Content type="html"> 
+
 <![CDATA[
+
   <a href="javascript:test()">Make SOAP Call</a>
 <div id="content_div"></div>
-- Show quoted text -
+<script type="text/javascript">
+
+function test(){
+
+var data;
+
+data = '<?xml version="1.0" encoding="utf-8"?>';
+
+alert(data);
+
+data = data + '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">';
+
+data = data + '<soap:Body>';
+
+data = data + '<GetWeather xmlns="http://litwinconsulting.com/webservices/">';
+
+data = data + '<City>Mckinney</City>';
+
+data = data + '</GetWeather>';
+
+data = data + '</soap:Body>';
+
+data = data + '</soap:Envelope>';
+
+var params = {};
+
+//data=gadgets.io.encodeValues(data);
+
+alert(data);
+
+//params[gadgets.io.RequestParameters.CONTENT_TYPE]='text/xml';
+
+//gadgets.io.ContentType.DOM;
+
+params[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
+
+//params[gadgets.io.RequestParameters.HOST]='www.deeptraining.com';
+
+params[gadgets.io.RequestParameters.HEADERS]={"Content-Type": "text/xml"};
+
+params[gadgets.io.RequestParameters.POST_DATA]=data;
+
+var URL="http://www.deeptraining.com/webservices/weather.asmx";
+
+gadgets.io.makeRequest(URL, response, params);
+
+alert('Invoked SOAP');
+
+}
+
+function response(obj){
+
+alert("errors"+obj.errors);
+
+alert("data"+obj.data);
+
 var html = "<div style='padding: 5px;background-color: #ccf;font-family:Arial, Helvetica;" 
           + "text-align:left;font-size:90%'>";   
         // Set style for title.
@@ -52,10 +128,18 @@ var html = "<div style='padding: 5px;background-color: #ccf;font-family:Arial, H
       // Close up div
       html += "</div>";
       document.getElementById('content_div').innerHTML = obj.text;
+
+
 alert("text "+obj.text);
+
 alert("oauthErrorText "+obj.oauthErrorText); 
+
 }    
+
 </script>
+
 ]]>
+
 </Content>
+
 </Module>
