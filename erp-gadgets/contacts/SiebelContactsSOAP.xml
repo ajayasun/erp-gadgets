@@ -24,7 +24,7 @@
 		var data;
 		data = '<?xml version="1.0" encoding="utf-8"?>';
 		alert(data);
-		data = data + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://siebel.com/webservices" xmlns:asi="http://siebel.com/asi/">';
+		data = data + '<soapenv:Envelope xmlns	:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://siebel.com/webservices" xmlns:asi="http://siebel.com/asi/">';
 		data = data + '<soapenv:Header>';
 		data = data + '<web:PasswordText>sadmin</web:PasswordText>';
 		data = data + '<web:UsernameToken>sadmin</web:UsernameToken>';
@@ -61,16 +61,3 @@
 </Content>
 </Module>
 
-
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> ""
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "   <soapenv:Header>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "      <web:PasswordText>sadmin</web:PasswordText>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "      <web:UsernameToken>sadmin</web:UsernameToken>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "      <web:SessionType></web:SessionType>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "   </soapenv:Header>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "   <soapenv:Body>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "      <asi:SiebelContactQueryById_Input>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "         <asi:PrimaryRowId>1-FU-2239</asi:PrimaryRowId>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "      </asi:SiebelContactQueryById_Input>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "   </soapenv:Body>[\n]"
-Tue Feb 22 15:09:47 CST 2011:DEBUG:>> "</soapenv:Envelope>"
