@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
    <ModulePrefs
-            title="Service SOAP Test"
-            author="Venkatesan"
+            title="Siebel Contacts via SOAP"
+            author="Vivek Srinivasan"
             author_email="vivek.athrey@gmail.com" height="100">
         <Require feature="dynamic-height" />
     <Require feature="opensocial-0.8" />
@@ -18,12 +18,11 @@
     </ModulePrefs>
  <Content type="html"> 
 <![CDATA[
-	<a href="javascript:test()">Make SOAP Call</a>
+	<a href="javascript:test()">Refresh</a>
 	<script type="text/javascript">
 		function test(){
 		var data;
 		data = '<?xml version="1.0" encoding="utf-8"?>';
-		alert(data);
 		data = data + '<soapenv:Envelope xmlns	:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://siebel.com/webservices" xmlns:asi="http://siebel.com/asi/">';
 		data = data + '<soapenv:Header>';
 		data = data + '<web:PasswordText>sadmin</web:PasswordText>';
@@ -40,13 +39,16 @@
 		var params = {};
 		//data=gadgets.io.encodeValues(data);
 		alert(data);
-		//params[gadgets.io.RequestParameters.CONTENT_TYPE]='text/xml';
-		//gadgets.io.ContentType.DOM;
+		//params[gadgets.io.RequestParameters.CONTENT_TYPE]=gadgets.io.ContentType.DOM; //'text/xml';
+		//gadgets.io.ContentType.DOM;	
 		params[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
 		//params[gadgets.io.RequestParameters.HOST]='www.deeptraining.com';
-		params[gadgets.io.RequestParameters.HEADERS]={"Content-Type": "text/xml"};
+		params[gadgets.io.RequestParameters.HEADERS]={
+		                   "Content-Type": "text/xml",
+		                   "SOAPAction": "document/http://siebel.com/asi/:SiebelContactQueryById"
+		                   };
 		params[gadgets.io.RequestParameters.POST_DATA]=data;
-		var URL="http://milorcint1/eai_enu/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;WSSOAP=1";
+		var URL="http://milorcint1/eai_enu/start.swe?SWEExtSource=WebService&SWEExtCmd=Execute&WSSOAP=1";
 		gadgets.io.makeRequest(URL, response, params);
 		alert('Invoked SOAP');
 		}
