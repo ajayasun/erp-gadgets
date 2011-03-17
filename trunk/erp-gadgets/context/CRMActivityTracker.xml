@@ -32,6 +32,7 @@
 	<Content type="html"  view="card">
 	<![CDATA[<!DOCTYPE html>
 	<script>
+	var ok = alert("Hi");
 	function ansys_siebel_app_TrackitAgain(){var J='',R='" for "gwt:onLoadErrorFn"',T='" for "gwt:onPropertyErrorFn"',kb='">',yb='"><\/script>',Z='&',wb='.cache.js',vb='.cache.js$',O='/',pb='032E6F028B96A1F9B3A2FD84ED6B787F',ob='2.1',qb='51DD72E3E7DD380A3137AF156784E13E',ub=':',jb='<link rel="stylesheet" href="',xb='<script src="',V='=',rb='A9AC10E1033EAB303F7B97F05BC1C7ED',Q='Bad handler "',sb='F462A646E1DF1AD62999E7B274D841FF',tb='F7985DD410F77CB63D3C743554D5F9FE',Y='_',L='ansys.siebel.app.TrackitAgain',X='country',M='external.gwtOnLoad failed: ',fb='gecko',gb='gecko1_8',K='gwt.hybrid',ib='gwt/standard/standard.css',P='gwt:onLoadErrorFn',S='gwt:onPropertyErrorFn',U='gwt:property',eb='ie6',db='ie8',W='lang',mb='moduleStartup',cb='msie',nb='onModuleLoadStart',_='opera',bb='safari',lb='startup',hb='unknown',N='url',$='user.agent',ab='webkit';var h=window,i=document,j=h.external,k,l,m=J,n={},o=[],p=[],q=[],r=0,s,t,u=h.__gwtStatsEvent?function(a){return h.__gwtStatsEvent(a)}:null;if(!h.__gwt_stylesLoaded){h.__gwt_stylesLoaded={}}if(!h.__gwt_scriptsLoaded){h.__gwt_scriptsLoaded={}}function v(){try{return j&&(j.gwtOnLoad&&h.location.search.indexOf(K)==-1)}catch(a){return false}}
 function w(){if(l){if(v()){try{j.gwtOnLoad(h,L,r)}catch(a){h.alert(M+a)}}else if(k){k(s,L,m,r)}}}
 function x(){m=h.gadgets.util.getUrlParameters()[N];m=m.substring(0,m.lastIndexOf(O)+1)}
