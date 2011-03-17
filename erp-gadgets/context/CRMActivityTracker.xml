@@ -42,7 +42,7 @@
         var listItem;
         var extractedText;
         
-        Alert("hi");
+        var ok = alert("hi");
 
         <!-- Iterate through the array and display output for each match. -->
         for (var match in matches) {
