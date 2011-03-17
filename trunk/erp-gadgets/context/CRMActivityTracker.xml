@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-  <ModulePrefs title="CRM Activity Tracker"
+  <ModulePrefs title="Hello World"
     description="Matches and echoes 'Hello World' string in emails"
     height="20"
-    author="Vivek Srinivasan"
-    author_email="vivek.srinivasan@ansys.com"
+    author="Sarah M and Walter Q"
+    author_email="..."
     author_location="Mountain View, CA">
 
     <!-- Declare feature dependencies. -->
@@ -24,7 +24,7 @@
      in the manifest, but is still expected to be present. -->
     <Require feature="google.contentmatch">
       <Param name="extractors">
-        google.com:CRMEmailSender
+        google.com:HelloWorld
       </Param>
     </Require>
 
@@ -35,13 +35,15 @@
   <Content type="html" view="card">
     <![CDATA[
       <!-- Start with Single Sign-On -->
+      <script type="text/javascript" src="http://example.com/gadgets/sso.js"></script>
       <script type="text/javascript">
+
         <!-- Fetch the array of content matches. -->
         matches = google.contentmatch.getContentMatches();
         var matchList = document.createElement('UL');
         var listItem;
         var extractedText;
-        alert("Hi"); 
+
         <!-- Iterate through the array and display output for each match. -->
         for (var match in matches) {
           for (var key in matches[match]) {
