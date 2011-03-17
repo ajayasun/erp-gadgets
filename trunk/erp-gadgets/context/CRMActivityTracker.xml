@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-  <ModulePrefs title="Hello World 1"
+  <ModulePrefs title="Hello"
     description="Matches and echoes 'Hello World' string in emails"
     height="20"
     author="Sarah M and Walter Q"
