@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-  <ModulePrefs title="Hello"
-    description="Matches and echoes 'Hello World' string in emails"
+  <ModulePrefs title="CRM Activity Tracker"
+    description="Track your activity in Siebel"
     height="20"
-    author="Sarah M and Walter Q"
+    author="Vivek Srinivasan"
     author_email="..."
-    author_location="Mountain View, CA">
+    author_location="Dallas, TX">
 
     <!-- Declare feature dependencies. -->
 
