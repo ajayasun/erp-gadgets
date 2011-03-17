@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-  <ModulePrefs title="Hello World"
-    description="Matches and echoes 'Hello World' string in emails"
+  <ModulePrefs title="CRM Activity Tracker
+    description="Do you want to track this email as activity in Siebel"
     height="20"
-    author="Sarah M and Walter Q"
+    author="Vivek Srinivasan"
     author_email="..."
-    author_location="Mountain View, CA">
+    author_location="Dallas, TX">
 
     <!-- Declare feature dependencies. -->
 
@@ -24,7 +24,7 @@
      in the manifest, but is still expected to be present. -->
     <Require feature="google.contentmatch">
       <Param name="extractors">
-        google.com:HelloWorld
+        google.com:RecipientToEmailExtractor
       </Param>
     </Require>
 
@@ -46,8 +46,9 @@
 
         <!-- Iterate through the array and display output for each match. -->
         for (var match in matches) {
+         alert("Hi");
           for (var key in matches[match]) {
-            listItem = document.createElement('LI');
+                   listItem = document.createElement('LI');
             extractedText = document.createTextNode(key + ": " + matches[match][key]);
             listItem.appendChild(extractedText);
             matchList.appendChild(listItem);
