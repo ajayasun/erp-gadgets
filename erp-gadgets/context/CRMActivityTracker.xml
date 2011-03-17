@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
   <ModulePrefs title="CRM Activity Tracker"
-    description="Track your activity in Siebel"
+    description="Track your activity into Siebel"
     height="20"
     author="Sarah M and Walter Q"
     author_email="..."
@@ -41,6 +41,8 @@
         var matchList = document.createElement('UL');
         var listItem;
         var extractedText;
+        
+        Alert("hi");
 
         <!-- Iterate through the array and display output for each match. -->
         for (var match in matches) {
