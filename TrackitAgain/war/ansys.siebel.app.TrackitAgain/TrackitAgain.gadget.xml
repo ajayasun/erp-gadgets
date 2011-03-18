@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?><Module><ModulePrefs author="vivek" author_email="vivek.athrey@gmail.com" description="Track your Email as Siebel CRM Activity" height="20" title="Trackcel"><Require feature="google.contentmatch"> 
+        <Param name="extractors"> 
+                google.com:RecipientToEmailExtractor 
+        </Param> 
+</Require></ModulePrefs><Content type="html"><![CDATA[<!DOCTYPE html><script>function ansys_siebel_app_TrackitAgain(){
+  var $wnd_0 = window, $doc_0 = document, external_0 = $wnd_0.external, gwtOnLoad, bodyDone, base = '', metaProps = {}, values = [], providers = [], answers = [], softPermutationId = 0, onLoadErrorFunc, propertyErrorFunc, $stats = $wnd_0.__gwtStatsEvent?function(a){
+    return $wnd_0.__gwtStatsEvent(a);
+  }
+  :null;
+  if (!$wnd_0.__gwt_stylesLoaded) {
+    $wnd_0.__gwt_stylesLoaded = {};
+  }
+  if (!$wnd_0.__gwt_scriptsLoaded) {
+    $wnd_0.__gwt_scriptsLoaded = {};
+  }
+  function isHostedMode(){
+    try {
+      return external_0 && (external_0.gwtOnLoad && $wnd_0.location.search.indexOf('gwt.hybrid') == -1);
+    }
+     catch (e) {
+      return false;
+    }
+  }
+
+  function maybeStartModule(){
+    if (bodyDone) {
+      if (isHostedMode()) {
+        try {
+          external_0.gwtOnLoad($wnd_0, 'ansys.siebel.app.TrackitAgain', softPermutationId);
+        }
+         catch (e) {
+          $wnd_0.alert('external.gwtOnLoad failed: ' + e);
+        }
+      }
+       else if (gwtOnLoad) {
+        gwtOnLoad(onLoadErrorFunc, 'ansys.siebel.app.TrackitAgain', base, softPermutationId);
+      }
+    }
+  }
+
+  function computeScriptBase(){
+    base = $wnd_0.gadgets.util.getUrlParameters()['url'];
+    base = base.substring(0, base.lastIndexOf('/') + 1);
+  }
+
+  function processMetas(){
+    var meta;
+    var prefs = new $wnd_0.gadgets.Prefs;
+    if (meta = prefs.getString('gwt:onLoadErrorFn')) {
+      try {
+        onLoadErrorFunc = eval(meta);
+      }
+       catch (e) {
+        alert('Bad handler "' + content_0 + '" for "gwt:onLoadErrorFn"');
+      }
+    }
+    if (meta = prefs.getString('gwt:onPropertyErrorFn')) {
+      try {
+        propertyErrorFunc = eval(meta);
+      }
+       catch (e) {
+        alert('Bad handler "' + content_0 + '" for "gwt:onPropertyErrorFn"');
+      }
+    }
+    if (meta = prefs.getArray('gwt:property')) {
+      for (var i = 0; i < meta.length; i++) {
+        var content_0 = meta[i];
+        if (content_0) {
+          var value, eq = content_0.indexOf('=');
+          if (eq >= 0) {
+            name = content_0.substring(0, eq);
+            value = content_0.substring(eq + 1);
+          }
+           else {
+            name = content_0;
+            value = '';
+          }
+          metaProps[name] = value;
+        }
+      }
+    }
+  }
+
+  function setLocale(){
+    var args = $wnd_0.location.search;
+    var lang = extractFromQueryStr(args, 'lang');
+    if (lang != null) {
+      country = extractFromQueryStr(args, 'country');
+      if (country != null) {
+        $wnd_0.__gwt_Locale = lang + '_' + country;
+      }
+       else {
+        $wnd_0.__gwt_Locale = lang;
+      }
+    }
+  }
+
+  function extractFromQueryStr(args, argName){
+    var start = args.indexOf(argName + '=');
+    if (start < 0) {
+      return undefined;
+    }
+    var value = args.substring(start);
+    var valueBegin = value.indexOf('=') + 1;
+    var valueEnd = value.indexOf('&');
+    if (valueEnd == -1) {
+      valueEnd = value.length;
+    }
+    return value.substring(valueBegin, valueEnd);
+  }
+
+  function unflattenKeylistIntoAnswers(propValArray, value){
+    var answer = answers;
+    for (var i = 0, n = propValArray.length - 1; i < n; ++i) {
+      answer = answer[propValArray[i]] || (answer[propValArray[i]] = []);
+    }
+    answer[propValArray[n]] = value;
+  }
+
+  function computePropValue(propName){
+    var value = providers[propName](), allowedValuesMap = values[propName];
+    if (value in allowedValuesMap) {
+      return value;
+    }
+    var allowedValuesList = [];
+    for (var k in allowedValuesMap) {
+      allowedValuesList[allowedValuesMap[k]] = k;
+    }
+    if (propertyErrorFunc) {
+      propertyErrorFunc(propName, allowedValuesList, value);
+    }
+    throw null;
+  }
+
+  providers['user.agent'] = function(){
+    var ua = navigator.userAgent.toLowerCase();
+    var makeVersion = function(result){
+      return parseInt(result[1]) * 1000 + parseInt(result[2]);
+    }
+    ;
+    if (ua.indexOf('opera') != -1) {
+      return 'opera';
+    }
+     else if (ua.indexOf('webkit') != -1) {
+      return 'safari';
+    }
+     else if (ua.indexOf('msie') != -1) {
+      if (document.documentMode >= 8) {
+        return 'ie8';
+      }
+       else {
+        var result_0 = /msie ([0-9]+)\.([0-9]+)/.exec(ua);
+        if (result_0 && result_0.length == 3) {
+          var v = makeVersion(result_0);
+          if (v >= 6000) {
+            return 'ie6';
+          }
+        }
+      }
+    }
+     else if (ua.indexOf('gecko') != -1) {
+      return 'gecko1_8';
+    }
+    return 'unknown';
+  }
+  ;
+  values['user.agent'] = {gecko1_8:0, ie6:1, ie8:2, opera:3, safari:4};
+  ansys_siebel_app_TrackitAgain.onScriptLoad = function(gwtOnLoadFunc){
+    ansys_siebel_app_TrackitAgain = null;
+    gwtOnLoad = gwtOnLoadFunc;
+    maybeStartModule();
+  }
+  ;
+  computeScriptBase();
+  processMetas();
+  setLocale();
+  $wnd_0.gadgets.util.registerOnLoadHandler(function(){
+    if (!bodyDone) {
+      bodyDone = true;
+      if (!__gwt_stylesLoaded['gwt/standard/standard.css']) {
+        __gwt_stylesLoaded['gwt/standard/standard.css'] = true;
+        document.write('<link rel="stylesheet" href="' + gadgets.io.getProxyUrl(base + 'gwt/standard/standard.css') + '">');
+      }
+      maybeStartModule();
+    }
+  }
+  );
+  if (isHostedMode()) {
+    $wnd_0.$wnd = $wnd_0;
+    $wnd_0.$doc = $doc_0;
+    $wnd_0.$moduleName = 'ansys.siebel.app.TrackitAgain';
+    $wnd_0.$moduleBase = base;
+    $wnd_0.__gwt_getProperty = computePropValue;
+    $wnd_0.__gwt_initHandlers = ansys_siebel_app_TrackitAgain.__gwt_initHandlers;
+    $wnd_0.__gwt_module_id = 0;
+    $wnd_0.fireOnModuleLoadStart = function(className){
+      $stats && $stats({moduleName:$moduleName, subSystem:'startup', evtGroup:'moduleStartup', millis:(new Date).getTime(), type:'onModuleLoadStart', className:className});
+    }
+    ;
+    $wnd_0.onunload = function(){
+      external_0.gwtOnLoad($wnd_0, null, '2.1');
+    }
+    ;
+  }
+   else {
+    var strongName;
+    try {
+      unflattenKeylistIntoAnswers(['gecko1_8'], '06042350BC6B776DBA84B9A06E369B59');
+      unflattenKeylistIntoAnswers(['ie6'], '7437ECA38414A1AC2D280B87B37066C7');
+      unflattenKeylistIntoAnswers(['opera'], 'B5F003F897819D20957071E73756E5F6');
+      unflattenKeylistIntoAnswers(['safari'], 'FC14B03CC5842EACF3FA7BAD405DE622');
+      strongName = answers[computePropValue('user.agent')];
+      var idx = strongName.indexOf(':');
+      if (idx != -1) {
+        softPermutationId = Number(strongName.substring(idx + 1));
+        strongName = strongName.substring(0, idx);
+      }
+    }
+     catch (e) {
+      return;
+    }
+    var fullName = base + strongName;
+    if (fullName.search('.cache.js$') < 0) {
+      fullName = fullName.concat('.cache.js');
+    }
+    var loadFrom = $wnd_0.gadgets.io.getProxyUrl(fullName, {refreshInterval:31536000});
+    $doc_0.write('<script src="' + loadFrom + '"><\/script>');
+  }
+}
+
+ansys_siebel_app_TrackitAgain.__gwt_initHandlers = function(resize, beforeunload, unload){
+  var $wnd_0 = window, oldOnResize = $wnd_0.onresize, oldOnBeforeUnload = $wnd_0.onbeforeunload, oldOnUnload = $wnd_0.onunload;
+  $wnd_0.onresize = function(evt){
+    try {
+      resize();
+    }
+     finally {
+      oldOnResize && oldOnResize(evt);
+    }
+  }
+  ;
+  $wnd_0.onbeforeunload = function(evt){
+    var ret, oldRet;
+    try {
+      ret = beforeunload();
+    }
+     finally {
+      oldRet = oldOnBeforeUnload && oldOnBeforeUnload(evt);
+    }
+    if (ret != null) {
+      return ret;
+    }
+    if (oldRet != null) {
+      return oldRet;
+    }
+  }
+  ;
+  $wnd_0.onunload = function(evt){
+    try {
+      unload();
+    }
+     finally {
+      oldOnUnload && oldOnUnload(evt);
+    }
+  }
+  ;
+}
+;
+ansys_siebel_app_TrackitAgain();
+</script>
+<div id="__gwt_gadget_content_div"></div>]]></Content></Module>
