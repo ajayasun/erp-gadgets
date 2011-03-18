@@ -1,8 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><Module><ModulePrefs author="vivek" author_email="vivek.athrey@gmail.com" description="Track your Email as Siebel CRM Activity" height="20" title="Trackcel"><Require feature="google.contentmatch"> 
-        <Param name="extractors"> 
-                google.com:RecipientToEmailExtractor 
-        </Param> 
-</Require></ModulePrefs><Content type="html" view="card"><![CDATA[<!DOCTYPE html><script>function ansys_siebel_app_TrackitAgain(){
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs
+            title="Trackcel"
+            author="vivek"
+            author_email="vivek.athrey@gmail.com"
+            description="Track your Email as Siebel CRM Activity">
+        <Require feature="dynamic-height" />
+	    <Require feature="google.contentmatch">
+	      <Param name="recipient_to_email">
+	        google.com:RecipientToEmailExtractor
+	      </Param>
+	    </Require>
+    </ModulePrefs>
+    <Content type="html" view="card"><![CDATA[<!DOCTYPE html><script>function ansys_siebel_app_TrackitAgain(){
   var $wnd_0 = window, $doc_0 = document, external_0 = $wnd_0.external, gwtOnLoad, bodyDone, base = '', metaProps = {}, values = [], providers = [], answers = [], softPermutationId = 0, onLoadErrorFunc, propertyErrorFunc, $stats = $wnd_0.__gwtStatsEvent?function(a){
     return $wnd_0.__gwtStatsEvent(a);
   }
@@ -205,10 +215,10 @@
    else {
     var strongName;
     try {
-      unflattenKeylistIntoAnswers(['opera'], '65D802CBBC2D9A33EC940806D34BD447');
-      unflattenKeylistIntoAnswers(['gecko1_8'], '86B7EF26727503A70D4132ECB061A594');
-      unflattenKeylistIntoAnswers(['ie6'], 'ACFAA877212FE8C1E2ECA679D32EEFDC');
-      unflattenKeylistIntoAnswers(['safari'], 'BB5E67DB05EEC149794E296E2442DD32');
+      unflattenKeylistIntoAnswers(['opera'], 'B63495ACA68F838E61DE6B6FB586C372');
+      unflattenKeylistIntoAnswers(['ie6'], 'C3D5B1A67E561152C3CB29C25CC56DBB');
+      unflattenKeylistIntoAnswers(['gecko1_8'], 'F032DEC0229C4ABD7877673327B4281E');
+      unflattenKeylistIntoAnswers(['safari'], 'FF3AC0334DF022A4EDD45AC3663916B5');
       strongName = answers[computePropValue('user.agent')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {
@@ -268,4 +278,5 @@ ansys_siebel_app_TrackitAgain.__gwt_initHandlers = function(resize, beforeunload
 ;
 ansys_siebel_app_TrackitAgain();
 </script>
-<div id="__gwt_gadget_content_div"></div>]]></Content></Module>
+<div id="__gwt_gadget_content_div"></div>]]></Content>
+</Module>
