@@ -2,7 +2,7 @@
         <Param name="extractors"> 
                 google.com:RecipientToEmailExtractor 
         </Param> 
-</Require></ModulePrefs><Content type="html" view=""><![CDATA[<!DOCTYPE html><script>function ansys_siebel_app_TrackitAgain(){
+</Require></ModulePrefs><Content type="html" view="card"><![CDATA[<!DOCTYPE html><script>function ansys_siebel_app_TrackitAgain(){
   var $wnd_0 = window, $doc_0 = document, external_0 = $wnd_0.external, gwtOnLoad, bodyDone, base = '', metaProps = {}, values = [], providers = [], answers = [], softPermutationId = 0, onLoadErrorFunc, propertyErrorFunc, $stats = $wnd_0.__gwtStatsEvent?function(a){
     return $wnd_0.__gwtStatsEvent(a);
   }
