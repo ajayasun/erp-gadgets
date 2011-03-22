@@ -2,6 +2,7 @@
 <Module>
 	<ModulePrefs author="vivek" author_email="vivek.athrey@gmail.com"
 		description="Siebel Activity Tracker" title="Trackcelerate!" height="20">
+		<Require feature="dynamic-height"/>
 		<Require feature="google.contentmatch">
 			<Param name="extractors">
 				google.com:RecipientToEmailExtractor 
