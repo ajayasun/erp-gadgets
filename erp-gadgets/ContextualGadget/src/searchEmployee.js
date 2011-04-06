@@ -21,6 +21,9 @@ try
 	{
 		//alert("Please enter a valid search criteria. Wild card search such as this is not permitted.");
 		debug("Please enter a valid search criteria. Wild card search such as this is not permitted.","");
+		document.getElementById('Employeeloading').innerHTML = '';
+		document.getElementById('Employeeloading').style.display = 'none';
+		document.getElementById('Employeeloading').style.visibility = 'invisible';
 	}
 	else
 	{
@@ -81,6 +84,12 @@ try
 
 			var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
 			invokeSiebeWebservice(soapMsg,SOAPAction,'employeeResponse');
+		}
+		else
+		{
+			document.getElementById('Employeeloading').innerHTML = '';
+			document.getElementById('Employeeloading').style.display = 'none';
+			document.getElementById('Employeeloading').style.visibility = 'invisible';
 		}
 	}
 	
