@@ -149,8 +149,13 @@ try
 		if(lstName[j].childNodes.length>0)
 		{
 			var cell2 = row.insertCell(1);
-			var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
-			cell2.appendChild(lastName);
+			var span = document.createElement('span');
+			span.style.fontface = "Garamond";
+			span.appendChild(document.createTextNode(lstName[j].childNodes[0].nodeValue));
+			//elem.appendChild(span);
+
+			//var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
+			cell2.appendChild(span);
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
 			element2.name = "empLastName";
