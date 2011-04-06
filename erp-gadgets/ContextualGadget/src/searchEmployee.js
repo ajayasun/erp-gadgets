@@ -149,7 +149,7 @@ try
 		if(lstName[j].childNodes.length>0)
 		{
 			var cell2 = row.insertCell(1);
-			var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
+			var lastName = document.createTextNode("<font face="'Garamond'">"+lstName[j].childNodes[0].nodeValue+"</font>");
 			cell2.appendChild(lastName);
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
@@ -162,7 +162,7 @@ try
 		if(fstName[j].childNodes.length>0)
 		{
 			var cell3 = row.insertCell(2);
-			var firstName = document.createTextNode(fstName[j].childNodes[0].nodeValue);
+			var firstName = document.createTextNode("<font face="'Garamond'">"+fstName[j].childNodes[0].nodeValue+"</font>");
 			cell3.appendChild(firstName);
 			var element3 = document.createElement("input");
 			element3.type = "hidden";
@@ -175,7 +175,7 @@ try
 		if(emailAddrss[j].childNodes.length>0)
 		{ 
 			var cell4 = row.insertCell(3);
-			var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
+			var email = document.createTextNode("<font face="'Garamond'">"+emailAddrss[j].childNodes[0].nodeValue+"</font>");
 			cell4.appendChild(email);
 			var element4 = document.createElement("input");
 			element4.type = "hidden";
