@@ -165,7 +165,7 @@ try
 			m--;
 		}
 		document.CRMActivity.reset();
-		document.getElementById('content_div').innerHTML = 'Activity created successfully ..';
+		document.getElementById('content_div').innerHTML = 'Activity Saved.';
 		document.getElementById('activityLoading').style.display = 'inline';
 		document.getElementById('activityLoading').style.visibility = 'visible';
 	}
