@@ -21,6 +21,9 @@ try
 	{
 	//alert("Please enter a valid search criteria. Wild card search such as this is not permitted.");
 	debug("Please enter a valid search criteria. Wild card search such as this is not permitted.", "");
+	document.getElementById('contactloading').innerHTML = '';
+	document.getElementById('contactloading').style.display = 'none';
+	document.getElementById('contactloading').style.visibility = 'invisible';
 	}
 	else
 	{
@@ -70,6 +73,12 @@ try
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/asi/:ANSContactQueryByExampleASI';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'contactResponse');
+			}
+		else
+			{
+			document.getElementById('contactloading').innerHTML = '';
+			document.getElementById('contactloading').style.display = 'none';
+			document.getElementById('contactloading').style.visibility = 'invisible';
 			}
 		}
 		
