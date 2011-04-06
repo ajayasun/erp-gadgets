@@ -25,11 +25,11 @@
 		data = data + '<ans:Action operation="insert">';
 		data = data + '<ans:Id>999999</ans:Id>';
 		data = data + '<ans:Class>Generic</ans:Class>';
-		data = data + '<ans:Type>'+document.CRMActivity.type.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Type>';
+		data = data + '<ans:Type>'+document.CRMActivity.type.value+'</ans:Type>';
 			
 		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
-		data = data + '<ans:Priority>'+document.CRMActivity.priority.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Priority>';
-		data = data + '<ans:ANSActivityDetails>'+document.CRMActivity.details.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:ANSActivityDetails>';
+		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
+		data = data + '<ans:ANSActivityDetails>'+document.CRMActivity.details.value+'</ans:ANSActivityDetails>';
 		data = data + '<ans:ListOfAction_Contact>';
 		var flag="false";
 		var closeTag ="false";
