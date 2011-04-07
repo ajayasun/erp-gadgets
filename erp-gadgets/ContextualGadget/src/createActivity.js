@@ -26,7 +26,7 @@
 		data = data + '<ans:Id>999999</ans:Id>';
 		data = data + '<ans:Class>Generic</ans:Class>';
 		data = data + '<ans:Type>'+document.CRMActivity.type.value+'</ans:Type>';
-			
+		data = data + '<ans:PrimaryOwnedBy>'+document.CRMActivity.owner.value+'</ans:PrimaryOwnedBy>'	
 		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
 		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
 		data = data + '<ans:ANSActivityDetails>'+document.CRMActivity.details.value+'</ans:ANSActivityDetails>';
