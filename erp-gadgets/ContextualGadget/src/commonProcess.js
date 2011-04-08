@@ -54,6 +54,29 @@ function deleteRow(tableID)
     }
 	debug("Inside deleteRow method End","");
 }
+function deleteAllRow(tableID) 
+{
+	debug("Inside deleteAllRow method Begin","");
+    try 
+	{
+		debug("Inside deleteAllRow method Table Name",tableID);
+		var table = document.getElementById(tableID);
+        var rowCount = table.rows.length;
+		debug("Inside deleteAllRow method Table Length",rowCount);
+        for(var i=0; i<rowCount; i++) 
+		{
+			var row = table.rows[i];
+            var chkbox = row.cells[0].childNodes[0];
+            table.deleteRow(i);
+            rowCount--;
+            i--;
+		}
+    }catch(e) 
+	{
+		debug("Inside deleteAllRow method Exception",e);
+    }
+	debug("Inside deleteAllRow method End","");
+}
 function assignClass()
 {
 	debug("Inside assignClass method Begin","");
