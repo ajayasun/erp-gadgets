@@ -111,7 +111,7 @@ debug("Inside searchEmployeeResult method Employee Response authErrorText",searc
 
 	
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
-	
+deleteRow("employeeAvailable");
 var table = document.getElementById("employeeAvailable");
 var text=searchEmployeeResultObjText;
 if (window.DOMParser)
