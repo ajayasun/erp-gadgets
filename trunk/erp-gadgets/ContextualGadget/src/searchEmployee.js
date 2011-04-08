@@ -36,7 +36,7 @@ try
 			soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
 			soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
-			soapMsg = soapMsg + '<soapenv:Header><web:soapuser>sadmin</web:soapuser><web:soapuser>sadmin</web:soapuser><web:SessionType>stateless</web:SessionType></soapenv:Header>';
+			soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>sadmin</web:PasswordText><web:UsernameToken>sadmin</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
 			soapMsg = soapMsg + '   <soapenv:Body>';
 			soapMsg = soapMsg + '      <cus:QueryEmployee>';
 			soapMsg = soapMsg + '         <SiebelMessageIn>';
