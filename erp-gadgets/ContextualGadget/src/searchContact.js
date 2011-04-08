@@ -99,7 +99,7 @@ debug("Inside searchContactResult method Response Text",searchContactResultObj.t
 debug("Inside searchContactResult method Response authErrorText",searchContactResultObj.oauthErrorText);
 
 var searchContactResultObjText = searchContactResultObj.text;
-	
+deleteAllRow("contactAvailable");
 var table = document.getElementById("contactAvailable");
 var text=searchContactResultObjText;
 	
