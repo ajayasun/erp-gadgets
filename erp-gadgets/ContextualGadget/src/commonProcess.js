@@ -63,5 +63,10 @@ function assignClass(classValue)
 		debug("Inside assignClass method inside if classValue",classValue);
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+" : <input type='text' name='classSelected' size='18'></font></strong>";
 		}
+	else
+		{
+		debug("Inside assignClass method inside else classValue",classValue);
+		document.getElementById('classValue').innerHTML = "";
+		}
 	debug("Inside assignClass method End","");
 }
