@@ -54,3 +54,14 @@ function deleteRow(tableID)
     }
 	debug("Inside deleteRow method End","");
 }
+function assignClass(classValue)
+{
+	debug("Inside assignClass method Begin","");
+	debug("Inside assignClass method classValue",classValue);
+	if(classValue!='Generic')
+		{
+		debug("Inside assignClass method inside if classValue",classValue);
+		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+" : <input type='text' name='classSelected' size='18'></font></strong>";
+		}
+	debug("Inside assignClass method End","");
+}
