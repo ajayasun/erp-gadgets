@@ -54,9 +54,11 @@ function deleteRow(tableID)
     }
 	debug("Inside deleteRow method End","");
 }
-function assignClass(classValue)
+function assignClass()
 {
 	debug("Inside assignClass method Begin","");
+	var selIdx = document.CRMActivity.classval.selectedIndex;
+	var classValue = document.CRMActivity.classval.options[selIdx].text;
 	debug("Inside assignClass method classValue",classValue);
 	if(classValue!='Generic')
 		{
