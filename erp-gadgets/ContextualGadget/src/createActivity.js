@@ -82,7 +82,7 @@
 		debug("Inside createActivity method Employee length",empList.length);
 		for(var i=0; i<empList.length;i++)
 		{
-			if(empList[i].name='empId')
+			if(empList[i].name=='empId')
 				{
 			/*if(document.getElementById('employeeSelected').getElementsByTagName('input')[i].checked)
 			{*/
