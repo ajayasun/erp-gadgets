@@ -82,6 +82,8 @@
 		debug("Inside createActivity method Employee length",empList.length);
 		for(var i=0; i<empList.length;i++)
 		{
+			if(empList[i].name='empId')
+				{
 			/*if(document.getElementById('employeeSelected').getElementsByTagName('input')[i].checked)
 			{*/
 				debug("Inside createActivity method Ansys Employee Login ",document.getElementById('employeeSelected').getElementsByTagName('input')[i].value);
@@ -90,6 +92,7 @@
 				data = data + '<ans:EmployeeLogin>AJAYASUN</ans:EmployeeLogin>';
 				data = data + '</ans:Action_Employee>';  
 			//}
+				}
 
 		}
 		data = data + '</ans:ListOfAction_Employee>';
