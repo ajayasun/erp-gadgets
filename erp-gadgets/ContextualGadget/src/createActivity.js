@@ -87,7 +87,7 @@
 				debug("Inside createActivity method Ansys Employee Login ",document.getElementById('employeeSelected').getElementsByTagName('input')[i].value);
 				//alert("Selected Emp Id value :"+document.getElementById('employeeAvailable').getElementsByTagName('input')[i].value);
 				data = data + '<ans:Action_Employee>';	
-				data = data + '<ans:EmployeeLogin>'+document.getElementById('employeeSelected').getElementsByTagName('input')[i].value+'</ans:EmployeeLogin>';
+				data = data + '<ans:EmployeeLogin>AJAYASUN</ans:EmployeeLogin>';
 				data = data + '</ans:Action_Employee>';  
 			//}
 
