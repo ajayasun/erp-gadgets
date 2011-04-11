@@ -156,7 +156,7 @@ try
 
 			//var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
 			//cell2.appendChild(span);
-			alert("node value :"+lstName[j].childNodes[0].nodeValue);
+			//alert("node value :"+lstName[j].childNodes[0].nodeValue);
 			cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
@@ -170,7 +170,8 @@ try
 		{
 			var cell3 = row.insertCell(2);
 			var firstName = document.createTextNode(fstName[j].childNodes[0].nodeValue);
-			cell3.appendChild(firstName);
+			cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
+			//cell3.appendChild(firstName);
 			var element3 = document.createElement("input");
 			element3.type = "hidden";
 			element3.name = "empFirstName";
@@ -183,7 +184,8 @@ try
 		{ 
 			var cell4 = row.insertCell(3);
 			var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
-			cell4.appendChild(email);
+			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
+			//.appendChild(email);
 			var element4 = document.createElement("input");
 			element4.type = "hidden";
 			element4.name = "empEmailAddr";
