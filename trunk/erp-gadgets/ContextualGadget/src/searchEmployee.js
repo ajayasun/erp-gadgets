@@ -155,7 +155,8 @@ try
 			//elem.appendChild(span);
 
 			//var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
-			cell2.appendChild(span);
+			//cell2.appendChild(span);
+			cell2.innerHTML="<strong><font face='Garamond'>"+document.createTextNode(lstName[j].childNodes[0].nodeValue)+"</font></strong>";
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
 			element2.name = "empLastName";
