@@ -31,7 +31,7 @@
 		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
 		/*data = data + '<ans:Planned>'+document.CRMActivity.startDate.value.replace(/-/g,'/')+'</ans:Planned>';
         data = data + '<ans:PlannedCompletion>'+document.CRMActivity.endDate.value.replace(/-/g,'/')+'</ans:PlannedCompletion>';
-        /*if(document.CRMActivity.classval.value=="Opportunity")
+        if(document.CRMActivity.classval.value=="Opportunity")
         	data = data + '<ans:OpportunityId>'+document.CRMActivity.classSelected.value+'</ans:OpportunityId>'; 
         else if(document.CRMActivity.classval.value=="Service Request")
         	data = data + '<ans:SRNumber>'+document.CRMActivity.classSelected.value+'</ans:SRNumber>';*/ 
