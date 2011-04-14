@@ -136,9 +136,10 @@ try
 			if(contactId[j].childNodes.length>0)
 			{
 			element1.value = contactId[j].childNodes[0].nodeValue;
+			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
 			}
 			cell1.appendChild(element1);
-			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
+			
 			k++;
 		
 		var lstName=xmlDoc.getElementsByTagName('LastName');
