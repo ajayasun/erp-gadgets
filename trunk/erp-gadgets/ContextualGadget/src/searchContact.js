@@ -117,10 +117,11 @@ else // Internet Explorer
 try
 {
 	var contact = xmlDoc.getElementsByTagName('Contact');
-	var k=0;
+	
 	debug("Inside searchContactResult method contact length",contact.length);
 	for(j=0;j<contact.length;j++)
 	{
+		var k=0;
 		var rowCount = table.rows.length;
 		debug("Inside searchContactResult method Table Row length",rowCount);
 		var row = table.insertRow(rowCount);
