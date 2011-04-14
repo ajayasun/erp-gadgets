@@ -117,6 +117,7 @@ else // Internet Explorer
 try
 {
 	var contact = xmlDoc.getElementsByTagName('Contact');
+	var k=0;
 	debug("Inside searchContactResult method contact length",contact.length);
 	for(j=0;j<contact.length;j++)
 	{
@@ -128,19 +129,20 @@ try
 		debug("Inside searchContactResult method Child Node Length value",contactId[j].childNodes.length);
 		if(contactId[j].childNodes.length>0)
 		{
-			var cell1 = row.insertCell(0);
+			var cell1 = row.insertCell(k);
 			var element1 = document.createElement("input");
 			element1.type = "checkbox";
 			element1.name = "ANSContactNumber";
 			element1.value = contactId[j].childNodes[0].nodeValue;
 			cell1.appendChild(element1);
 			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
+			k++;
 		}
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		debug("Inside searchContactResult method LastName Node Length value",lstName[j].childNodes.length);
 		if(lstName[j].childNodes.length>0)
 		{
-			var cell2 = row.insertCell(1);
+			var cell2 = row.insertCell(k);
 			var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
 			cell2.appendChild(lastName);
 			cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
@@ -150,12 +152,13 @@ try
 			element2.value = lstName[j].childNodes[0].nodeValue;
 			cell2.appendChild(element2);
 			debug("Inside searchContactResult method LastName",lstName[j].childNodes[0].nodeValue);
+			k++;
 		}
 		var fstName=xmlDoc.getElementsByTagName('FirstName');
 		debug("Inside searchContactResult method FirstName Node Length value",fstName[j].childNodes.length);
 		if(fstName[j].childNodes.length>0)
 		{
-			var cell3 = row.insertCell(2);
+			var cell3 = row.insertCell(k);
 			var firstName = document.createTextNode(fstName[j].childNodes[0].nodeValue);
 			//cell3.appendChild(firstName);
 			cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
@@ -165,12 +168,13 @@ try
 			element3.value = fstName[j].childNodes[0].nodeValue;
 			cell3.appendChild(element3);
 			debug("Inside searchContactResult method FirstName",fstName[j].childNodes[0].nodeValue);
+			k++;
 		}	
 		var emailAddrss=xmlDoc.getElementsByTagName('EmailAddress');
 		debug("Inside searchContactResult method emailAddrss Node Length value",emailAddrss[j].childNodes.length);
 		if(emailAddrss[j].childNodes.length>0)
 		{ 
-			var cell4 = row.insertCell(3);
+			var cell4 = row.insertCell(k);
 			var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
 			//cell4.appendChild(email);
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
@@ -180,6 +184,7 @@ try
 			element4.value = emailAddrss[j].childNodes[0].nodeValue;
 			cell4.appendChild(element4);
 			debug("Inside searchContactResult method EmailAddress",emailAddrss[j].childNodes[0].nodeValue);
+			k++;
 		}
 	}
 }
