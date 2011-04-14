@@ -115,11 +115,8 @@ function addRemoveContact(srcTable,dscTable)
 				var cell1 = row.insertCell(0);
 				var element1 = document.createElement("input");
 				element1.type = "checkbox";
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value==null)
-					{
 				element1.name = "ANSContactNumber";
 				element1.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-					}
 				cell1.appendChild(element1);
 			
 				//	alert("Selected Contact Id value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
