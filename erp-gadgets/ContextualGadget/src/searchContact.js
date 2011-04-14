@@ -128,17 +128,19 @@ try
 		var contactId=xmlDoc.getElementsByTagName('ANSContactNumber');
 		debug("Inside searchContactResult method J value",j);
 		debug("Inside searchContactResult method Child Node Length value",contactId[j].childNodes.length);
-		if(contactId[j].childNodes.length>0)
-		{
+		
 			var cell1 = row.insertCell(k);
 			var element1 = document.createElement("input");
 			element1.type = "checkbox";
 			element1.name = "ANSContactNumber";
+			if(contactId[j].childNodes.length>0)
+			{
 			element1.value = contactId[j].childNodes[0].nodeValue;
+			}
 			cell1.appendChild(element1);
 			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
 			k++;
-		}
+		
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		debug("Inside searchContactResult method LastName Node Length value",lstName[j].childNodes.length);
 		if(lstName[j].childNodes.length>0)
