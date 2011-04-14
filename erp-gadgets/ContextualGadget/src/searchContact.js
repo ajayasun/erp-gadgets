@@ -137,7 +137,7 @@ try
 			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
 		}
 		var lstName=xmlDoc.getElementsByTagName('LastName');
-		debug("Inside searchContactResult method LastName Node Length value",LastName[j].childNodes.length);
+		debug("Inside searchContactResult method LastName Node Length value",lstName[j].childNodes.length);
 		if(lstName[j].childNodes.length>0)
 		{
 			var cell2 = row.insertCell(1);
@@ -152,7 +152,7 @@ try
 			debug("Inside searchContactResult method LastName",lstName[j].childNodes[0].nodeValue);
 		}
 		var fstName=xmlDoc.getElementsByTagName('FirstName');
-		debug("Inside searchContactResult method FirstName Node Length value",FirstName[j].childNodes.length);
+		debug("Inside searchContactResult method FirstName Node Length value",fstName[j].childNodes.length);
 		if(fstName[j].childNodes.length>0)
 		{
 			var cell3 = row.insertCell(2);
