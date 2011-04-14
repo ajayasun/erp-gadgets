@@ -121,8 +121,11 @@ try
 	for(j=0;j<contact.length;j++)
 	{
 		var rowCount = table.rows.length;
+		debug("Inside searchContactResult method Table Row length",rowCount);
 		var row = table.insertRow(rowCount);
 		var contactId=xmlDoc.getElementsByTagName('ANSContactNumber');
+		debug("Inside searchContactResult method J value",j);
+		debug("Inside searchContactResult method Child Node Length value",contactId[j].childNodes.length);
 		if(contactId[j].childNodes.length>0)
 		{
 			var cell1 = row.insertCell(0);
