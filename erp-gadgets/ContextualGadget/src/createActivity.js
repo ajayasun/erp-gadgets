@@ -49,6 +49,7 @@
 			{
 				/*if(document.getElementById('contactSelected').getElementsByTagName('input')[i].checked)
 				{*/
+				//if(contactList[i].value)
 					data = data + '<ans:Action_Contact>';
 					flag ="true";
 					
@@ -181,7 +182,14 @@ try
 	else
 	{
 	debug("Inside createActivityResult method Activity Failure");
-	document.getElementById('content_div').innerHTML = 'Activity created Failure : '+obj.oauthErrorText;
+	if(obj.text==null)
+		{
+	document.getElementById('content_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
+		}
+	else
+		{
+		document.getElementById('content_div').innerHTML = 'Activity created Failure : '+obj.text;
+		}
 	}
 }
 catch (e)
