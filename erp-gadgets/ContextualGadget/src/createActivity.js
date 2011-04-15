@@ -181,7 +181,7 @@ try
 	else
 	{
 	debug("Inside createActivityResult method Activity Failure");
-	document.getElementById('content_div').innerHTML = 'Activity created Failure : '+obj.text;
+	document.getElementById('content_div').innerHTML = 'Activity created Failure : '+obj.oauthErrorText;
 	}
 }
 catch (e)
