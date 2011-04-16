@@ -47,9 +47,9 @@ function addRemoveEmployee(srcTable,dscTable)
 				cell2.width="11%";
 				lastName="<font face='Garamond'>";
 				lastName=lastName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<12)
+				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<17)
 				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<16;ltname++)
+					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<17;ltname++)
 					{
 						lastName=lastName+"&nbsp;";
 					}
@@ -74,9 +74,9 @@ function addRemoveEmployee(srcTable,dscTable)
 				var firstName;
 				firstName="<font face='Garamond'>";
 				firstName=firstName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<12)
+				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<17)
 				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<16;ltname++)
+					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<17;ltname++)
 					{
 						firstName=firstName+"&nbsp;";
 					}
