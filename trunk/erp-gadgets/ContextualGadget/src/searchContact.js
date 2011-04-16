@@ -144,50 +144,68 @@ try
 		
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		debug("Inside searchContactResult method LastName Node Length value",lstName[j].childNodes.length);
-		if(lstName[j].childNodes.length>0)
-		{
+		
 			var cell2 = row.insertCell(k);
 			var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
 			cell2.appendChild(lastName);
+			if(lstName[j].childNodes.length>0)
+			{
 			cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
+			debug("Inside searchContactResult method LastName",lstName[j].childNodes[0].nodeValue);
+			}
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
 			element2.name = "contactLastName";
+			if(lstName[j].childNodes.length>0)
+			{
 			element2.value = lstName[j].childNodes[0].nodeValue;
+			}
 			cell2.appendChild(element2);
-			debug("Inside searchContactResult method LastName",lstName[j].childNodes[0].nodeValue);
+			
 			k++;
-		}
+		//}
 		var fstName=xmlDoc.getElementsByTagName('FirstName');
 		debug("Inside searchContactResult method FirstName Node Length value",fstName[j].childNodes.length);
-		if(fstName[j].childNodes.length>0)
-		{
+		
 			var cell3 = row.insertCell(k);
-			var firstName = document.createTextNode(fstName[j].childNodes[0].nodeValue);
+			//var firstName = document.createTextNode(fstName[j].childNodes[0].nodeValue);
 			//cell3.appendChild(firstName);
+			if(fstName[j].childNodes.length>0)
+			{
 			cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
+			debug("Inside searchContactResult method FirstName",fstName[j].childNodes[0].nodeValue);
+			}
 			var element3 = document.createElement("input");
 			element3.type = "hidden";
 			element3.name = "contactFirstName";
+			if(fstName[j].childNodes.length>0)
+			{
 			element3.value = fstName[j].childNodes[0].nodeValue;
+			}
 			cell3.appendChild(element3);
-			debug("Inside searchContactResult method FirstName",fstName[j].childNodes[0].nodeValue);
+			
 			k++;
-		}	
+		//}	
 		var emailAddrss=xmlDoc.getElementsByTagName('EmailAddress');
 		debug("Inside searchContactResult method emailAddrss Node Length value",emailAddrss[j].childNodes.length);
-		if(emailAddrss[j].childNodes.length>0)
-		{ 
+		
 			var cell4 = row.insertCell(k);
-			var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
+			//var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
 			//cell4.appendChild(email);
+			if(emailAddrss[j].childNodes.length>0)
+			{ 
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
+			debug("Inside searchContactResult method EmailAddress",emailAddrss[j].childNodes[0].nodeValue);
+			}
 			var element4 = document.createElement("input");
 			element4.type = "hidden";
 			element4.name = "contactEmailAddr";
+			if(emailAddrss[j].childNodes.length>0)
+			{ 
 			element4.value = emailAddrss[j].childNodes[0].nodeValue;
+			}
 			cell4.appendChild(element4);
-			debug("Inside searchContactResult method EmailAddress",emailAddrss[j].childNodes[0].nodeValue);
+			
 			k++;
 		}
 	}
