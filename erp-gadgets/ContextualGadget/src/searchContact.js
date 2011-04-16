@@ -230,3 +230,4 @@ document.getElementById('contactloading').innerHTML = '';
 document.getElementById('contactloading').style.display = 'none';
 document.getElementById('contactloading').style.visibility = 'invisible';
 debug("Inside searchContactResult method End","");
+}
