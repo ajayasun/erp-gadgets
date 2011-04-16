@@ -135,65 +135,97 @@ try
 
 		var row = table.insertRow(rowCount);
 		var empId=xmlDoc.getElementsByTagName('LoginName');
-		if(empId[j].childNodes.length>0)
-		{
+		
 			var cell1 = row.insertCell(0);
+			cell1.width="3%";
 			var element1 = document.createElement("input");
 			element1.type = "checkbox";
 			element1.name = "empId";
+			if(empId[j].childNodes.length>0)
+			{
 			element1.value = empId[j].childNodes[0].nodeValue;
-			cell1.appendChild(element1);
 			debug("Inside searchEmployeeResult method Employee Login name", empId[j].childNodes[0].nodeValue);
-		}
+			}
+			cell1.appendChild(element1);
+			
+		
 		var lstName=xmlDoc.getElementsByTagName('LastName');
-		if(lstName[j].childNodes.length>0)
-		{
+		var lastName;
 			var cell2 = row.insertCell(1);
-			var span = document.createElement('span');
-			span.style.fontface = "Garamond";
-			span.appendChild(document.createTextNode(lstName[j].childNodes[0].nodeValue));
-			//elem.appendChild(span);
-
-			//var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
-			//cell2.appendChild(span);
-			//alert("node value :"+lstName[j].childNodes[0].nodeValue);
-			cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
+			cell2.width="11%";
+			if(lstName[j].childNodes.length>0)
+			{
+				lastName="<font face='Garamond'>";
+				lastName=lastName+lstName[j].childNodes[0].nodeValue;
+				if(lstName[j].childNodes[0].nodeValue.length<12)
+				{
+					for(var ltname=lstName[j].childNodes[0].nodeValue.length;ltname<18;ltname++)
+					{
+						lastName=lastName+"&nbsp;";
+					}
+				}
+				lastName=lastName+"</font>";
+				cell2.innerHTML=lastName;
+			}
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
 			element2.name = "empLastName";
+			if(lstName[j].childNodes.length>0)
+			{
 			element2.value = lstName[j].childNodes[0].nodeValue;
-			cell2.appendChild(element2);
 			debug("Inside searchEmployeeResult method Employee Last name", lstName[j].childNodes[0].nodeValue);
-		}
-		var fstName=xmlDoc.getElementsByTagName('FirstName');
-		if(fstName[j].childNodes.length>0)
-		{
+			}
+			cell2.appendChild(element2);
+				
+			var fstName=xmlDoc.getElementsByTagName('FirstName');
+		
 			var cell3 = row.insertCell(2);
-			var firstName = document.createTextNode(fstName[j].childNodes[0].nodeValue);
-			cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
-			//cell3.appendChild(firstName);
+			cell3.width="11%";
+			var firstName;
+			if(fstName[j].childNodes.length>0)
+			{
+				firstName="<font face='Garamond'>";
+				firstName=firstName+fstName[j].childNodes[0].nodeValue;
+				if(fstName[j].childNodes[0].nodeValue.length<12)
+				{
+					for(var ltname=fstName[j].childNodes[0].nodeValue.length;ltname<18;ltname++)
+					{
+						firstName=firstName+"&nbsp;";
+					}
+				}
+				firstName=firstName+"</font>";
+				cell3.innerHTML=firstName;
+			}
+			
 			var element3 = document.createElement("input");
 			element3.type = "hidden";
 			element3.name = "empFirstName";
+			if(fstName[j].childNodes.length>0)
+			{
 			element3.value = fstName[j].childNodes[0].nodeValue;
-			cell3.appendChild(element3);
 			debug("Inside searchEmployeeResult method Employee First name", fstName[j].childNodes[0].nodeValue);
-		}
-		var emailAddrss=xmlDoc.getElementsByTagName('EMailAddr');
-		if(emailAddrss[j].childNodes.length>0)
-		{ 
+			}
+			cell3.appendChild(element3);
+			var emailAddrss=xmlDoc.getElementsByTagName('EMailAddr');
+		
 			var cell4 = row.insertCell(3);
+			cell4.width="20%";
 			var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
+			if(emailAddrss[j].childNodes.length>0)
+			{ 
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
+			}
 			//.appendChild(email);
 			var element4 = document.createElement("input");
 			element4.type = "hidden";
 			element4.name = "empEmailAddr";
+			if(emailAddrss[j].childNodes.length>0)
+			{ 
 			element4.value = emailAddrss[j].childNodes[0].nodeValue;
-			cell4.appendChild(element4);
 			debug("Inside searchEmployeeResult method Employee Email Address", emailAddrss[j].childNodes[0].nodeValue);
-		}
-	 }
+			}
+			cell4.appendChild(element4);
+	}
 }
 catch (e)
 {
