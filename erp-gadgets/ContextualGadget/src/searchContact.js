@@ -129,85 +129,97 @@ try
 		debug("Inside searchContactResult method J value",j);
 		debug("Inside searchContactResult method Child Node Length value",contactId[j].childNodes.length);
 		
-			var cell1 = row.insertCell(k);
-			var element1 = document.createElement("input");
-			element1.type = "checkbox";
-			element1.name = "ANSContactNumber";
-			if(contactId[j].childNodes.length>0)
-			{
+		var cell1 = row.insertCell(k);
+		cell1.width="3%";
+		var element1 = document.createElement("input");
+		element1.type = "checkbox";
+		element1.name = "ANSContactNumber";
+		if(contactId[j].childNodes.length>0)
+		{
 			element1.value = contactId[j].childNodes[0].nodeValue;
 			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
-			}
-			cell1.appendChild(element1);
-			
-			k++;
+		}
+		cell1.appendChild(element1);
+		k++;
 		
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		debug("Inside searchContactResult method LastName Node Length value",lstName[j].childNodes.length);
-		
-			var cell2 = row.insertCell(k);
-			var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
-			//cell2.appendChild(lastName);
-			if(lstName[j].childNodes.length>0)
+		var lastName;
+		var cell2 = row.insertCell(k);
+		cell2.width="11%";
+		if(lstName[j].childNodes.length>0)
+		{
+			lastName="<font face='Garamond'>";
+			lastName=lastName+lstName[j].childNodes[0].nodeValue;
+			if(lstName[j].childNodes[0].nodeValue.length<12)
 			{
-			cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
+				for(var ltname=lstName[j].childNodes[0].nodeValue.length;ltname<18;ltname++)
+				{
+					lastName=lastName+"&nbsp;";
+				}
+			}
+			lastName=lastName+"</font>";
+			cell2.innerHTML=lastName;
 			debug("Inside searchContactResult method LastName",lstName[j].childNodes[0].nodeValue);
-			}
-			var element2 = document.createElement("input");
-			element2.type = "hidden";
-			element2.name = "contactLastName";
-			if(lstName[j].childNodes.length>0)
-			{
+		}
+		var element2 = document.createElement("input");
+		element2.type = "hidden";
+		element2.name = "contactLastName";
+		if(lstName[j].childNodes.length>0)
+		{
 			element2.value = lstName[j].childNodes[0].nodeValue;
-			}
-			cell2.appendChild(element2);
-			
-			k++;
-		//}
+		}
+		cell2.appendChild(element2);
+		k++;
+		
 		var fstName=xmlDoc.getElementsByTagName('FirstName');
 		debug("Inside searchContactResult method FirstName Node Length value",fstName[j].childNodes.length);
-		
-			var cell3 = row.insertCell(k);
-			//var firstName = document.createTextNode(fstName[j].childNodes[0].nodeValue);
-			//cell3.appendChild(firstName);
-			if(fstName[j].childNodes.length>0)
+		var firstName;
+		var cell3 = row.insertCell(k);
+		cell3.width="11%";
+		if(fstName[j].childNodes.length>0)
+		{
+			firstName="<font face='Garamond'>";
+			firstName=firstName+fstName[j].childNodes[0].nodeValue;
+			if(fstName[j].childNodes[0].nodeValue.length<12)
 			{
-			cell3.innerHTML="<font face='Garamond' style='width:20px;'>"+fstName[j].childNodes[0].nodeValue+"</font>";
+				for(var ltname=fstName[j].childNodes[0].nodeValue.length;ltname<18;ltname++)
+				{
+					firstName=firstName+"&nbsp;";
+				}
+			}
+			firstName=firstName+"</font>";
+			cell3.innerHTML=firstName;
 			debug("Inside searchContactResult method FirstName",fstName[j].childNodes[0].nodeValue);
-			}
-			var element3 = document.createElement("input");
-			element3.type = "hidden";
-			element3.name = "contactFirstName";
-			if(fstName[j].childNodes.length>0)
-			{
+		}
+		var element3 = document.createElement("input");
+		element3.type = "hidden";
+		element3.name = "contactFirstName";
+		if(fstName[j].childNodes.length>0)
+		{
 			element3.value = fstName[j].childNodes[0].nodeValue;
-			}
-			cell3.appendChild(element3);
-			
-			k++;
-		//}	
+		}
+		cell3.appendChild(element3);
+		k++;
 		var emailAddrss=xmlDoc.getElementsByTagName('EmailAddress');
 		debug("Inside searchContactResult method emailAddrss Node Length value",emailAddrss[j].childNodes.length);
 		
-			var cell4 = row.insertCell(k);
-			//var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
-			//cell4.appendChild(email);
-			if(emailAddrss[j].childNodes.length>0)
-			{ 
+		var cell4 = row.insertCell(k);
+		cell4.width="20%";
+		if(emailAddrss[j].childNodes.length>0)
+		{ 
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
 			debug("Inside searchContactResult method EmailAddress",emailAddrss[j].childNodes[0].nodeValue);
-			}
-			var element4 = document.createElement("input");
-			element4.type = "hidden";
-			element4.name = "contactEmailAddr";
-			if(emailAddrss[j].childNodes.length>0)
-			{ 
+		}
+		var element4 = document.createElement("input");
+		element4.type = "hidden";
+		element4.name = "contactEmailAddr";
+		if(emailAddrss[j].childNodes.length>0)
+		{ 
 			element4.value = emailAddrss[j].childNodes[0].nodeValue;
-			}
-			cell4.appendChild(element4);
-			
-			k++;
-		//}
+		}
+		cell4.appendChild(element4);
+		k++;
 	}
 }
 catch (e)
@@ -218,4 +230,3 @@ document.getElementById('contactloading').innerHTML = '';
 document.getElementById('contactloading').style.display = 'none';
 document.getElementById('contactloading').style.visibility = 'invisible';
 debug("Inside searchContactResult method End","");
-}    
