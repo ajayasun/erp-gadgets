@@ -184,6 +184,7 @@ try
 	debug("Inside createActivityResult method Activity Failure");
 	if(obj.text==null)
 		{
+	debug("Inside createActivityResult method Activity Failure with empty text");
 	document.getElementById('content_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
 	else
