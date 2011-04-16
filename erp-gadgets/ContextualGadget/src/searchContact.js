@@ -172,7 +172,7 @@ try
 			//cell3.appendChild(firstName);
 			if(fstName[j].childNodes.length>0)
 			{
-			cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
+			cell3.innerHTML="<font face='Garamond' style='width:20px;'>"+fstName[j].childNodes[0].nodeValue+"</font>";
 			debug("Inside searchContactResult method FirstName",fstName[j].childNodes[0].nodeValue);
 			}
 			var element3 = document.createElement("input");
