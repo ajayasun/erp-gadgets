@@ -49,7 +49,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				lastName=lastName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<17)
 				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<17;ltname++)
+					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<18;ltname++)
 					{
 						lastName=lastName+"&nbsp;";
 					}
@@ -76,7 +76,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				firstName=firstName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<17)
 				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<17;ltname++)
+					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<18;ltname++)
 					{
 						firstName=firstName+"&nbsp;";
 					}
