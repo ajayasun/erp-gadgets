@@ -94,9 +94,21 @@ function addRemoveEmployee(srcTable,dscTable)
 				debug("Inside addRemoveEmployee method Email Address ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell4 = row.insertCell(3);
 				cell4.width="20%";
-				var email = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
+				//var email = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				//cell4.appendChild(email);
-				cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				var email;
+				email="<font face='Garamond'>";
+				email=email+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
+				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<25)
+				{
+					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<28;ltname++)
+					{
+						email=email+"&nbsp;";
+					}
+				}
+				email=email+"</font>";
+				cell4.innerHTML=email;
+				//cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				var element4 = document.createElement("input");
 				element4.type = "hidden";
 				element4.name = "empEmailAddr";
