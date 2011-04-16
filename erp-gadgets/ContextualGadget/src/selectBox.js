@@ -76,7 +76,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				firstName=firstName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<12)
 				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<16;ltname++)
+					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<18;ltname++)
 					{
 						firstName=firstName+"&nbsp;";
 					}
