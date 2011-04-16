@@ -147,7 +147,7 @@ try
 		
 			var cell2 = row.insertCell(k);
 			var lastName = document.createTextNode(lstName[j].childNodes[0].nodeValue);
-			cell2.appendChild(lastName);
+			//cell2.appendChild(lastName);
 			if(lstName[j].childNodes.length>0)
 			{
 			cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
