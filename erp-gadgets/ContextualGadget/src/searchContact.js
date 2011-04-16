@@ -207,7 +207,7 @@ try
 			cell4.appendChild(element4);
 			
 			k++;
-		}
+		//}
 	}
 }
 catch (e)
