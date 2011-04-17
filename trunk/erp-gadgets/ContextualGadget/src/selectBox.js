@@ -21,14 +21,14 @@ function addRemoveEmployee(srcTable,dscTable)
 				var rowCount = tableSelected.rows.length;
 				var row = tableSelected.insertRow(rowCount);
 				flag ="true";
-				var cell1 = row.insertCell(0);
-				cell1.width="3%";
+				var cell1 = document.createElement("td");
+				cell1.width="10%";
 				var element1 = document.createElement("input");
 				element1.type = "checkbox";
 				element1.name = "empId";
 				element1.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell1.appendChild(element1);
-			
+				row.appendChild(cell1);
 				//	alert("Selected Contact Id value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
 				debug("Inside addRemoveEmployee method EMp Id number ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				}
@@ -42,78 +42,48 @@ function addRemoveEmployee(srcTable,dscTable)
 			
 				//alert("Selected First Name value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
 				debug("Inside addRemoveEmployee method EMPLOYEE last Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				var cell2 = row.insertCell(1);
-				var lastName;
-				cell2.width="11%";
-				lastName="<font face='Garamond'>";
-				lastName=lastName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<12)
-				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<17;ltname++)
-					{
-						lastName=lastName+"&nbsp;";
-					}
-				}
-				lastName=lastName+"</font>";
-				//var lastName = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				//cell2.appendChild(lastName);
-				cell2.innerHTML=lastName;
-				//cell2.appendChild(lastName);
-				//cell2.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				var cell2 = document.createElement("td");
+				cell2.style.width="22%";
+				cell2.className="wrapText";
+				cell2.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				row.appendChild(cell2);
 				var element2 = document.createElement("input");
 				element2.type = "hidden";
 				element2.name = "empLastName";
 				element2.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell2.appendChild(element2);
+				row.appendChild(cell2);
 			}
 			else if(contactList[i].name=="empFirstName" && flag=="true")
 			{
 				debug("Inside addRemoveEmployee method Employee First Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				var cell3 = row.insertCell(2);
-				cell3.width="11%";
-				var firstName;
-				firstName="<font face='Garamond'>";
-				firstName=firstName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<12)
-				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<18;ltname++)
-					{
-						firstName=firstName+"&nbsp;";
-					}
-				}
-				firstName=firstName+"</font>";
-				cell3.innerHTML=firstName;
+				var cell3 = document.createElement("td");
+				cell3.style.width="24%";
+				cell3.className="wrapText";
+
+				cell3.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				row.appendChild(cell3);
 				var element3 = document.createElement("input");
 				element3.type = "hidden";
 				element3.name = "empFirstName";
 				element3.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell3.appendChild(element3);
+				row.appendChild(cell3);
 			}
 			else if(contactList[i].name=="empEmailAddr" && flag=="true")
 			{
 				debug("Inside addRemoveEmployee method Email Address ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				var cell4 = row.insertCell(3);
-				cell4.width="20%";
-				//var email = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				//cell4.appendChild(email);
-				var email;
-				email="<font face='Garamond'>";
-				email=email+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<25)
-				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<28;ltname++)
-					{
-						email=email+"&nbsp;";
-					}
-				}
-				email=email+"</font>";
-				cell4.innerHTML=email;
-				//cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				var cell4 = document.createElement("td");
+				cell4.style.width="42%";
+				cell4.className="wrapText";
+				cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				row.appendChild(cell4);
 				var element4 = document.createElement("input");
 				element4.type = "hidden";
 				element4.name = "empEmailAddr";
 				element4.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell4.appendChild(element4);
+				row.appendChild(cell4);
 			}
 		}
 
@@ -149,14 +119,14 @@ function addRemoveContact(srcTable,dscTable)
 				var rowCount = tableSelected.rows.length;
 				var row = tableSelected.insertRow(rowCount);
 				flag ="true";
-				var cell1 = row.insertCell(0);
-				cell1.width="3%";
+				var cell1 = document.createElement("td");
+				cell1.width="10%";
 				var element1 = document.createElement("input");
 				element1.type = "checkbox";
 				element1.name = "ANSContactNumber";
 				element1.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell1.appendChild(element1);
-			
+				row.appendChild(cell1);
 				//	alert("Selected Contact Id value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
 				debug("Inside addRemoveContact method AnsysContactNumber  ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				}
@@ -171,64 +141,50 @@ function addRemoveContact(srcTable,dscTable)
 				//alert("Selected First Name value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
 				debug("Inside addRemoveContact method last Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var lastName;
-				var cell2 = row.insertCell(1);
-				cell2.width="11%";
-				lastName="<font face='Garamond'>";
-				lastName=lastName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<12)
-				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<17;ltname++)
-					{
-						lastName=lastName+"&nbsp;";
-					}
-				}
-				lastName=lastName+"</font>";
+				var cell2 = document.createElement("td");
+				cell2.style.width="22%";
+				cell2.className="wrapText";
 				//var lastName = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				//cell2.appendChild(lastName);
-				cell2.innerHTML=lastName;
+				cell2.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				row.appendChild(cell2);
 				var element2 = document.createElement("input");
 				element2.type = "hidden";
 				element2.name = "contactLastName";
 				element2.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell2.appendChild(element2);
+				row.appendChild(cell2);
 			}
 			else if(contactList[i].name=="contactFirstName" && flag=="true")
 			{
 				debug("Inside addRemoveContact method First Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				var cell3 = row.insertCell(2);
-				cell3.width="11%";
-				var firstName;
-				firstName="<font face='Garamond'>";
-				firstName=firstName+document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value.length<12)
-				{
-					for(var ltname=document.getElementById(srcTable).getElementsByTagName('input')[i].value.length;ltname<17;ltname++)
-					{
-						firstName=firstName+"&nbsp;";
-					}
-				}
-				firstName=firstName+"</font>";
-				cell3.innerHTML=firstName;
+				var cell3 = document.createElement("td");
+				cell3.style.width="24%";
+				cell3.className="wrapText";
+				cell3.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				row.appendChild(cell3);
 				//cell3.appendChild(firstName);
 				var element3 = document.createElement("input");
 				element3.type = "hidden";
 				element3.name = "contactFirstName";
 				element3.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell3.appendChild(element3);
+				row.appendChild(cell3);
 			}
 			else if(contactList[i].name=="contactEmailAddr" && flag=="true")
 			{
 				debug("Inside addRemoveContact method Email Address ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				var cell4 = row.insertCell(3);
-				cell4.width="20%";
-				var email = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
+				var cell4 = document.createElement("td");
+				cell4.style.width="42%";
+				cell4.className="wrapText";
 				cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
-				//cell4.appendChild(email);
+				row.appendChild(cell4);
 				var element4 = document.createElement("input");
 				element4.type = "hidden";
 				element4.name = "contactEmailAddr";
 				element4.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell4.appendChild(element4);
+				row.appendChild(cell4);
 			}
 		}
 
