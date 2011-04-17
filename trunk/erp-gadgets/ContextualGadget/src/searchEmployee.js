@@ -136,8 +136,9 @@ try
 		var row = table.insertRow(rowCount);
 		var empId=xmlDoc.getElementsByTagName('LoginName');
 		
-			var cell1 = row.insertCell(0);
-			cell1.width="3%";
+			var cell1 = document.createElement("td");
+			cell1.width="10%";
+
 			var element1 = document.createElement("input");
 			element1.type = "checkbox";
 			element1.name = "empId";
@@ -147,12 +148,15 @@ try
 			debug("Inside searchEmployeeResult method Employee Login name", empId[j].childNodes[0].nodeValue);
 			}
 			cell1.appendChild(element1);
-			
+			row.appendChild(cell1);
 		
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		var lastName;
-			var cell2 = row.insertCell(1);
-			cell2.width="11%";
+			var cell2 = document.createElement("td");
+			cell2.style.width="22%";
+			//cell2.style.wordwrap='break-word';
+			//cell2.setAttribute('style','word-wrap:break-word');
+			cell2.className="wrapText";
 			if(lstName[j].childNodes.length>0)
 			{
 				lastName="<font face='Garamond'>";
@@ -165,7 +169,9 @@ try
 					}
 				}
 				lastName=lastName+"</font>";
-				cell2.innerHTML=lastName;
+				//cell2.innerHTML=lastName;
+				cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
+				row.appendChild(cell2);
 			}
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
@@ -176,11 +182,15 @@ try
 			debug("Inside searchEmployeeResult method Employee Last name", lstName[j].childNodes[0].nodeValue);
 			}
 			cell2.appendChild(element2);
+			row.appendChild(cell2);
 				
 			var fstName=xmlDoc.getElementsByTagName('FirstName');
 		
-			var cell3 = row.insertCell(2);
-			cell3.width="11%";
+			var cell3 = document.createElement("td");
+			cell3.style.width="24%";
+			//cell3.style.wordwrap='break-word';
+			//cell3.setAttribute('style','word-wrap:break-word');
+			cell3.className="wrapText";
 			var firstName;
 			if(fstName[j].childNodes.length>0)
 			{
@@ -194,7 +204,9 @@ try
 					}
 				}
 				firstName=firstName+"</font>";
-				cell3.innerHTML=firstName;
+				//cell3.innerHTML=firstName;
+				cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
+				row.appendChild(cell3);
 			}
 			
 			var element3 = document.createElement("input");
@@ -206,14 +218,19 @@ try
 			debug("Inside searchEmployeeResult method Employee First name", fstName[j].childNodes[0].nodeValue);
 			}
 			cell3.appendChild(element3);
+			row.appendChild(cell3);
 			var emailAddrss=xmlDoc.getElementsByTagName('EMailAddr');
 		
-			var cell4 = row.insertCell(3);
-			cell4.width="20%";
+			var cell4 = document.createElement("td");
+			cell4.style.width="42%";
+			//cell4.style.wordwrap='break-word';
+			//cell4.setAttribute('style','word-wrap:break-word');
+			cell4.className="wrapText";
 			var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
 			if(emailAddrss[j].childNodes.length>0)
 			{ 
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
+			row.appendChild(cell4);
 			}
 			//.appendChild(email);
 			var element4 = document.createElement("input");
@@ -225,6 +242,7 @@ try
 			debug("Inside searchEmployeeResult method Employee Email Address", emailAddrss[j].childNodes[0].nodeValue);
 			}
 			cell4.appendChild(element4);
+			row.appendChild(cell4);
 	}
 }
 catch (e)
