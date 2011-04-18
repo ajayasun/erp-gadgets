@@ -211,10 +211,10 @@ try
 			
 			debug("Inside searchContactResult method EmailAddress",emailAddrss[j].childNodes[0].nodeValue);
 		}
-		/*else
+		else
 			{
 			cell4.innerHTML="";
-			}*/
+			}
 		row.appendChild(cell4);
 		var element4 = document.createElement("input");
 		element4.type = "hidden";
