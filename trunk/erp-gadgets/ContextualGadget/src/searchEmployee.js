@@ -154,28 +154,14 @@ try
 		var lastName;
 			var cell2 = document.createElement("td");
 			cell2.style.width="22%";
-			//cell2.style.wordwrap='break-word';
-			//cell2.setAttribute('style','word-wrap:break-word');
 			cell2.className="wrapText";
 			if(lstName[j].childNodes.length>0)
 			{
-				lastName="<font face='Garamond'>";
-				lastName=lastName+lstName[j].childNodes[0].nodeValue;
-				if(lstName[j].childNodes[0].nodeValue.length<12)
-				{
-					for(var ltname=lstName[j].childNodes[0].nodeValue.length;ltname<18;ltname++)
-					{
-						lastName=lastName+"&nbsp;";
-					}
-				}
-				lastName=lastName+"</font>";
-				//cell2.innerHTML=lastName;
 				cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
-				//row.appendChild(cell2);
 			}
 			else
 			{
-			cell2.innerHTML="<font face='Garamond'>te</font>";
+			cell2.innerHTML="<font face='Garamond'>&nbsp;</font>";
 			}
 			row.appendChild(cell2);
 			var element2 = document.createElement("input");
@@ -193,29 +179,16 @@ try
 		
 			var cell3 = document.createElement("td");
 			cell3.style.width="24%";
-			//cell3.style.wordwrap='break-word';
-			//cell3.setAttribute('style','word-wrap:break-word');
 			cell3.className="wrapText";
 			var firstName;
 			if(fstName[j].childNodes.length>0)
 			{
-				firstName="<font face='Garamond'>";
-				firstName=firstName+fstName[j].childNodes[0].nodeValue;
-				if(fstName[j].childNodes[0].nodeValue.length<12)
-				{
-					for(var ltname=fstName[j].childNodes[0].nodeValue.length;ltname<18;ltname++)
-					{
-						firstName=firstName+"&nbsp;";
-					}
-				}
-				firstName=firstName+"</font>";
-				//cell3.innerHTML=firstName;
 				cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
 				
 			}
 			else
 			{
-			cell3.innerHTML="<font face='Garamond'>te</font>";
+			cell3.innerHTML="<font face='Garamond'>&nbsp;</font>";
 			}
 			row.appendChild(cell3);
 			var element3 = document.createElement("input");
@@ -232,21 +205,17 @@ try
 		
 			var cell4 = document.createElement("td");
 			cell4.style.width="42%";
-			//cell4.style.wordwrap='break-word';
-			//cell4.setAttribute('style','word-wrap:break-word');
 			cell4.className="wrapText";
-			var email = document.createTextNode(emailAddrss[j].childNodes[0].nodeValue);
 			if(emailAddrss[j].childNodes.length>0)
 			{ 
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
-			
 			}
 			else
 			{
-			cell4.innerHTML="<font face='Garamond'>te</font>";
+			cell4.innerHTML="<font face='Garamond'>&nbsp;</font>";
 			}
 			row.appendChild(cell4);
-			//.appendChild(email);
+			
 			var element4 = document.createElement("input");
 			element4.type = "hidden";
 			element4.name = "empEmailAddr";
