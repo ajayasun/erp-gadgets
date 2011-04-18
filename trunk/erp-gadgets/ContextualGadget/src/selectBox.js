@@ -51,7 +51,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				}
 				else
 				{
-				cell2.innerHTML="&nbsp;";
+				cell2.innerHTML="<font face='Garamond'>&nbsp;</font>";
 				}
 				//cell2.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell2);
@@ -74,7 +74,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				}
 				else
 				{
-				cell3.innerHTML="&nbsp;";
+				cell3.innerHTML="<font face='Garamond'>&nbsp;</font>";
 				}
 				//cell3.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell3);
@@ -97,7 +97,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				}
 				else
 				{
-				cell4.innerHTML="&nbsp;";
+				cell4.innerHTML="<font face='Garamond'>&nbsp;</font>";
 				}
 				//cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell4);
@@ -175,7 +175,7 @@ function addRemoveContact(srcTable,dscTable)
 				}
 				else
 				{
-				cell2.innerHTML="&nbsp;";
+				cell2.innerHTML="<font face='Garamond'>&nbsp;</font>";
 				}
 				row.appendChild(cell2);
 				var element2 = document.createElement("input");
@@ -197,7 +197,7 @@ function addRemoveContact(srcTable,dscTable)
 				}
 				else
 				{
-				cell3.innerHTML="&nbsp;";
+				cell3.innerHTML="<font face='Garamond'>&nbsp;</font>";
 				}
 				//cell3.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell3);
@@ -221,7 +221,7 @@ function addRemoveContact(srcTable,dscTable)
 				}
 				else
 				{
-				cell4.innerHTML="&nbsp;";
+				cell4.innerHTML="<font face='Garamond'>&nbsp;</font>";
 				}
 				//cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell4);
