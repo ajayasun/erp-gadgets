@@ -243,7 +243,7 @@ try
 			}
 			else
 			{
-			cell4.innerHTML="<font face='Garamond'>&nbsp;</font>";
+			cell4.innerHTML="<font face='Garamond'>.</font>";
 			}
 			row.appendChild(cell4);
 			//.appendChild(email);
