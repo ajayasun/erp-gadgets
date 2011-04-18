@@ -156,6 +156,10 @@ try
 			
 			debug("Inside searchContactResult method LastName",lstName[j].childNodes[0].nodeValue);
 		}
+		/*else
+		{
+		cell2.innerHTML="";
+		}*/
 		row.appendChild(cell2);
 		var element2 = document.createElement("input");
 		element2.type = "hidden";
@@ -180,6 +184,10 @@ try
 			
 			debug("Inside searchContactResult method FirstName",fstName[j].childNodes[0].nodeValue);
 		}
+		/*else
+		{
+		cell3.innerHTML="";
+		}*/
 		row.appendChild(cell3);
 		var element3 = document.createElement("input");
 		element3.type = "hidden";
@@ -203,6 +211,10 @@ try
 			
 			debug("Inside searchContactResult method EmailAddress",emailAddrss[j].childNodes[0].nodeValue);
 		}
+		/*else
+			{
+			cell4.innerHTML="";
+			}*/
 		row.appendChild(cell4);
 		var element4 = document.createElement("input");
 		element4.type = "hidden";
