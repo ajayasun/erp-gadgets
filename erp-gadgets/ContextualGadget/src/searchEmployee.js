@@ -171,8 +171,13 @@ try
 				lastName=lastName+"</font>";
 				//cell2.innerHTML=lastName;
 				cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
-				row.appendChild(cell2);
+				//row.appendChild(cell2);
 			}
+			else
+			{
+			cell2.innerHTML="&nbsp;";
+			}
+			row.appendChild(cell2);
 			var element2 = document.createElement("input");
 			element2.type = "hidden";
 			element2.name = "empLastName";
@@ -206,9 +211,13 @@ try
 				firstName=firstName+"</font>";
 				//cell3.innerHTML=firstName;
 				cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
-				row.appendChild(cell3);
+				
 			}
-			
+			else
+			{
+			cell3.innerHTML="&nbsp;";
+			}
+			row.appendChild(cell3);
 			var element3 = document.createElement("input");
 			element3.type = "hidden";
 			element3.name = "empFirstName";
@@ -230,8 +239,13 @@ try
 			if(emailAddrss[j].childNodes.length>0)
 			{ 
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
-			row.appendChild(cell4);
+			
 			}
+			else
+			{
+			cell4.innerHTML="&nbsp;";
+			}
+			row.appendChild(cell4);
 			//.appendChild(email);
 			var element4 = document.createElement("input");
 			element4.type = "hidden";

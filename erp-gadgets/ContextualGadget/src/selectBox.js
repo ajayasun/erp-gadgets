@@ -45,7 +45,15 @@ function addRemoveEmployee(srcTable,dscTable)
 				var cell2 = document.createElement("td");
 				cell2.style.width="22%";
 				cell2.className="wrapText";
+				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!=null)
+				{
 				cell2.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				}
+				else
+				{
+				cell2.innerHTML="&nbsp;";
+				}
+				//cell2.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell2);
 				var element2 = document.createElement("input");
 				element2.type = "hidden";
@@ -60,8 +68,15 @@ function addRemoveEmployee(srcTable,dscTable)
 				var cell3 = document.createElement("td");
 				cell3.style.width="24%";
 				cell3.className="wrapText";
-
+				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!=null)
+				{
 				cell3.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				}
+				else
+				{
+				cell3.innerHTML="&nbsp;";
+				}
+				//cell3.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell3);
 				var element3 = document.createElement("input");
 				element3.type = "hidden";
@@ -76,7 +91,15 @@ function addRemoveEmployee(srcTable,dscTable)
 				var cell4 = document.createElement("td");
 				cell4.style.width="42%";
 				cell4.className="wrapText";
+				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!=null)
+				{
 				cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
+				}
+				else
+				{
+				cell4.innerHTML="&nbsp;";
+				}
+				//cell4.innerHTML="<font face='Garamond'>"+document.getElementById(srcTable).getElementsByTagName('input')[i].value+"</font>";
 				row.appendChild(cell4);
 				var element4 = document.createElement("input");
 				element4.type = "hidden";
