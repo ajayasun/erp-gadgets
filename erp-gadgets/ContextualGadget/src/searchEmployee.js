@@ -175,7 +175,7 @@ try
 			}
 			else
 			{
-			cell2.innerHTML="<font face='Garamond'>&nbsp;</font>";
+			cell2.innerHTML="<font face='Garamond'>te</font>";
 			}
 			row.appendChild(cell2);
 			var element2 = document.createElement("input");
@@ -215,7 +215,7 @@ try
 			}
 			else
 			{
-			cell3.innerHTML="<font face='Garamond'>&nbsp;</font>";
+			cell3.innerHTML="<font face='Garamond'>te</font>";
 			}
 			row.appendChild(cell3);
 			var element3 = document.createElement("input");
@@ -243,7 +243,7 @@ try
 			}
 			else
 			{
-			cell4.innerHTML="<font face='Garamond'>.</font>";
+			cell4.innerHTML="<font face='Garamond'>te</font>";
 			}
 			row.appendChild(cell4);
 			//.appendChild(email);
