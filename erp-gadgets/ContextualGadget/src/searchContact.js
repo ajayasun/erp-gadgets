@@ -153,9 +153,10 @@ try
 		{
 			cell2.innerHTML="<font face='Garamond'>"+lstName[j].childNodes[0].nodeValue+"</font>";
 			//cell2.innerHTML=lastName;
-			row.appendChild(cell2);
+			
 			debug("Inside searchContactResult method LastName",lstName[j].childNodes[0].nodeValue);
 		}
+		row.appendChild(cell2);
 		var element2 = document.createElement("input");
 		element2.type = "hidden";
 		element2.name = "contactLastName";
@@ -176,9 +177,10 @@ try
 		if(fstName[j].childNodes.length>0)
 		{
 			cell3.innerHTML="<font face='Garamond'>"+fstName[j].childNodes[0].nodeValue+"</font>";
-			row.appendChild(cell3);
+			
 			debug("Inside searchContactResult method FirstName",fstName[j].childNodes[0].nodeValue);
 		}
+		row.appendChild(cell3);
 		var element3 = document.createElement("input");
 		element3.type = "hidden";
 		element3.name = "contactFirstName";
@@ -198,9 +200,10 @@ try
 		if(emailAddrss[j].childNodes.length>0)
 		{ 
 			cell4.innerHTML="<font face='Garamond'>"+emailAddrss[j].childNodes[0].nodeValue+"</font>";
-			row.appendChild(cell4);
+			
 			debug("Inside searchContactResult method EmailAddress",emailAddrss[j].childNodes[0].nodeValue);
 		}
+		row.appendChild(cell4);
 		var element4 = document.createElement("input");
 		element4.type = "hidden";
 		element4.name = "contactEmailAddr";
