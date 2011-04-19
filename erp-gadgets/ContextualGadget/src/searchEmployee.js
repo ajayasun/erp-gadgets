@@ -1,3 +1,4 @@
+
 function searchEmployee(){
 debug("Inside searchEmployee method Begin","");
 try
@@ -111,6 +112,8 @@ debug("Inside searchEmployeeResult method Employee Response authErrorText",searc
 
 	
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
+if(searchEmployeeResultObj.rc=="200")
+{
 deleteAllRow("employeeAvailable");
 var table = document.getElementById("employeeAvailable");
 var text=searchEmployeeResultObjText;
@@ -232,6 +235,20 @@ catch (e)
 {
 debug("Inside searchEmployeeResult method Exception",e);
 }
+}
+else
+	{
+	debug("Inside searchEmployeeResult method Activity Failure");
+	if(searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")
+		{
+	debug("Inside searchEmployeeResult method Employee Query Failure with empty text");
+	document.getElementById('Employee_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
+		}
+	else
+		{
+		document.getElementById('Employee_div').innerHTML = 'Activity created Failure : '+searchEmployeeResultObj.text;
+		}
+	}
 document.getElementById('Employeeloading').innerHTML = '';
 document.getElementById('Employeeloading').style.display = 'none';
 document.getElementById('Employeeloading').style.visibility = 'invisible';
