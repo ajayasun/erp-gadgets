@@ -99,6 +99,8 @@ debug("Inside searchContactResult method Response Text",searchContactResultObj.t
 debug("Inside searchContactResult method Response authErrorText",searchContactResultObj.oauthErrorText);
 
 var searchContactResultObjText = searchContactResultObj.text;
+if(searchContactResultObj.rc=="200")
+{
 deleteAllRow("contactAvailable");
 var table = document.getElementById("contactAvailable");
 var text=searchContactResultObjText;
@@ -232,6 +234,20 @@ catch (e)
 {
 debug("Inside searchContactResult method Exception",e);
 }
+}
+else
+	{
+	debug("Inside searchContactResult method Activity Failure");
+	if(searchContactResultObj.text==null||searchContactResultObj.text=="")
+		{
+	debug("Inside searchContactResult method Contact Query Failure with empty text");
+	document.getElementById('Contact_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
+		}
+	else
+		{
+		document.getElementById('Contact_div').innerHTML = 'Activity created Failure : '+searchContactResultObj.text;
+		}
+	}
 document.getElementById('contactloading').innerHTML = '';
 document.getElementById('contactloading').style.display = 'none';
 document.getElementById('contactloading').style.visibility = 'invisible';
