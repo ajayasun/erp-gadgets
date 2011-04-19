@@ -95,3 +95,13 @@ function assignClass()
 		}
 	debug("Inside assignClass method End","");
 }
+function On_submit()
+{
+	if(document.CRMActivity.classSelected.value==null||document.CRMActivity.classSelected.value=="")
+		{
+		alert("Please Enter"+document.CRMActivity.classval.value+"Value");
+		return false;
+		}
+	else
+		return true;
+}
