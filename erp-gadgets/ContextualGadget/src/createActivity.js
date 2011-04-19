@@ -1,4 +1,4 @@
- function createActivity()
+function createActivity()
  {
 	debug("Inside createActivity method Begin","");
 	document.getElementById('activityLoading').style.display = 'inline';
@@ -32,9 +32,33 @@
 		data = data + '<ans:Planned>'+document.CRMActivity.startDate.value.replace(/-/g,'/')+'</ans:Planned>';
         data = data + '<ans:PlannedCompletion>'+document.CRMActivity.endDate.value.replace(/-/g,'/')+'</ans:PlannedCompletion>';
         if(document.CRMActivity.classval.value=="Opportunity")
-        	data = data + '<ans:OpportunityId>'+document.CRMActivity.classSelected.value+'</ans:OpportunityId>'; 
+        	if(On_submit())
+			{
+				
+        		data = data + '<ans:OpportunityId>'+document.CRMActivity.classSelected.value+'</ans:OpportunityId>'; 
+			}
+			else
+			{
+				
+				document.getElementById('activityLoading').innerHTML = '';
+				document.getElementById('activityLoading').style.display = 'none';
+				document.getElementById('activityLoading').style.visibility = 'invisible';
+				return true;
+			}
         else if(document.CRMActivity.classval.value=="Service Request")
-        	data = data + '<ans:SRNumber>'+document.CRMActivity.classSelected.value+'</ans:SRNumber>'; 
+        	if(On_submit())
+			{
+        		data = data + '<ans:SRNumber>'+document.CRMActivity.classSelected.value+'</ans:SRNumber>'; 
+				
+			}
+			else
+			{
+				
+				document.getElementById('activityLoading').innerHTML = '';
+				document.getElementById('activityLoading').style.display = 'none';
+				document.getElementById('activityLoading').style.visibility = 'invisible';
+				return true;
+			}
 		data = data + '<ans:ANSActivityDetails>'+document.CRMActivity.details.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:ANSActivityDetails>';
 		data = data + '<ans:ListOfAction_Contact>';
 		var flag="false";
