@@ -107,3 +107,105 @@ function On_submit()
 	else
 		return true;
 }
+function emailLoginResponse(emailRespObj) {
+	 var emailString=emailRespObj.text;
+		/*  alert("text :"+emailRespObj.text);
+		  alert("Response Code :"+emailRespObj.rc);
+		  alert("Data :"+emailRespObj.data);
+		  alert("Error :"+emailRespObj.errors);*/
+		  var text=emailRespObj;
+		  if(emailRespObj.rc=="200")
+		  {
+		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
+		 /* alert("emailString :"+emailString);
+		//  document.CRMActivity.owner.value = ret.text;
+	//alert("value :"+document.CRMActivity.owner.value);*/
+
+				var soapMsg;
+				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
+
+				soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
+				soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>sadmin17</web:PasswordText><web:UsernameToken>sadmin</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
+				soapMsg = soapMsg + '   <soapenv:Body>';
+				soapMsg = soapMsg + '      <cus:QueryEmployee>';
+				soapMsg = soapMsg + '         <SiebelMessageIn>';
+				soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
+				soapMsg = soapMsg + '               <quer:Employee>';
+
+				soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
+				soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
+				soapMsg = soapMsg + '                  <quer:EMailAddr>LIKE \''+emailString+ '\'</quer:EMailAddr>';
+				
+				soapMsg = soapMsg + '                  <quer:Id/>';
+				soapMsg = soapMsg + '                  <quer:LoginName/>';
+				soapMsg = soapMsg + '               </quer:Employee>';
+				soapMsg = soapMsg + '            </quer:ListOfAns_Wsemployee>';
+				soapMsg = soapMsg + '         </SiebelMessageIn>';
+				soapMsg = soapMsg + '         <LOVLanguageMode>LDC</LOVLanguageMode>';
+				soapMsg = soapMsg + '         <ViewMode>All</ViewMode>';
+				soapMsg = soapMsg + '      </cus:QueryEmployee>';
+				soapMsg = soapMsg + '   </soapenv:Body>';
+				soapMsg = soapMsg + '</soapenv:Envelope>';
+
+				//alert("inside response success :"+soapMsg);
+				var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
+				invokeSiebeWebservice(soapMsg,SOAPAction,'employeeLogin');
+
+		  }
+
+	      };
+	 function employeeLogin(EmployeeLoginObj){
+	/*alert("Inside employeeLogin method Begin","");
+	alert("Inside employeeLogin method Employee Response Code"+EmployeeLoginObj.rc);
+	alert("Inside employeeLogin method Employee Response Error"+EmployeeLoginObj.errors);
+	alert("Inside employeeLogin method Employee Response Data"+EmployeeLoginObj.data);
+	alert("Inside employeeLogin method Employee Response Text"+EmployeeLoginObj.text);
+	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);*/
+
+		
+	var text=EmployeeLoginObj.text;
+	if(EmployeeLoginObj.rc=="200")
+	{
+	if (window.DOMParser)
+	{
+		parser=new DOMParser();
+		xmlDoc=parser.parseFromString(text,"text/xml");
+	}
+	else // Internet Explorer
+	{
+		xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+		xmlDoc.async="false";
+		xmlDoc.loadXML(text); 
+	} 
+
+		var emp = xmlDoc.getElementsByTagName('Employee');
+		//alert("Inside searchEmployeeResult method Employee Length"+emp.length);
+		for(j=0;j<emp.length;j++)
+		{
+			var empId=xmlDoc.getElementsByTagName('LoginName');
+			
+			if(empId[j].childNodes.length>0)
+			{
+			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
+			alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+			$(".debugVal").show('fast');
+			$(".msg_list").show('fast');
+			gadgets.window.adjustHeight(60);
+			}
+		}
+			
+	}
+	}
+	      function emailLoginrequest() {
+	$(".debugVal").hide('fast');
+	$(".msg_list").hide('fast');
+	gadgets.window.adjustHeight(0);
+		  //alert("inside request method");
+		    var params = {};
+	  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+	  params['AUTHORIZATION'] = 'SIGNED';
+	params['OAUTH_ADD_EMAIL'] = 'true';
+	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
+
+	gadgets.io.makeRequest(url,emailLoginResponse,params);
+	      };
