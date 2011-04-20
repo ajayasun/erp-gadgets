@@ -238,7 +238,7 @@ debug("Inside searchEmployeeResult method Exception",e);
 }
 else
 	{
-	debug("Inside searchEmployeeResult method Activity Failure");
+	debug("Inside searchEmployeeResult method Employee Query Failure");
 	if(searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")
 		{
 	debug("Inside searchEmployeeResult method Employee Query Failure with empty text");
@@ -246,7 +246,7 @@ else
 		}
 	else
 		{
-		document.getElementById('Employee_div').innerHTML = 'Activity created Failure : '+searchEmployeeResultObj.text;
+		document.getElementById('Employee_div').innerHTML = 'Employee Query Failure : '+searchEmployeeResultObj.text;
 		}
 	}
 document.getElementById('Employeeloading').innerHTML = '';

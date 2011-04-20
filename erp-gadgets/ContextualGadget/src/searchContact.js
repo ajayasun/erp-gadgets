@@ -74,7 +74,7 @@ try
 
 				//alert("Before send to Siebel :"+ soapMsg);
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
-				var SOAPAction='rpc/http://siebel.com/asi/:ANSContactQueryByExampleASI';
+				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'contactResponse');
 			}
 		else
