@@ -187,7 +187,7 @@ function emailLoginResponse(emailRespObj) {
 			if(empId[j].childNodes.length>0)
 			{
 			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
-			alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
 			gadgets.window.adjustHeight(60);
