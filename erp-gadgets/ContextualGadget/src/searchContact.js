@@ -36,35 +36,38 @@ try
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
 
-				soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:asi="http://siebel.com/asi/" xmlns:ans="http://www.siebel.com/xml/ANS_WSContact" xmlns:web="http://siebel.com/webservices">';
+				soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSContact/Query" xmlns:web="http://siebel.com/webservices">';
 				soapMsg = soapMsg + '   <soapenv:Header>';
 				soapMsg = soapMsg + '      <web:PasswordText>sadmin17</web:PasswordText>';
 				soapMsg = soapMsg + '      <web:UsernameToken>sadmin</web:UsernameToken>';
 				soapMsg = soapMsg + '      <web:SessionType>stateless</web:SessionType>';
 				soapMsg = soapMsg + '    </soapenv:Header>';
 				soapMsg = soapMsg + '   <soapenv:Body>';
-				soapMsg = soapMsg + '      <asi:ANSContactQueryByExampleASI>';
-				soapMsg = soapMsg + '         <SiebelMessage>';
-				soapMsg = soapMsg + '            <ans:ListOfAns_Wscontact>';
-				soapMsg = soapMsg + '            <ans:Contact>';
+				soapMsg = soapMsg + '      <cus:ANSQueryPageCustomUI>';
+				soapMsg = soapMsg + '         <SiebelMessageIn>';
+				soapMsg = soapMsg + '            <quer:ListOfAns_Wscontact>';
+				soapMsg = soapMsg + '            <quer:Contact>';
 
 				if (LastName != null)
 				{
-					soapMsg = soapMsg + '                  <ans:LastName>'+LastName+'</ans:LastName>';
+					soapMsg = soapMsg + '                  <quer:LastName>'+LastName+'</ans:LastName>';
 				}	
 				if (FirstName != null)
 				{
-					soapMsg = soapMsg + '                  <ans:FirstName>'+FirstName+'</ans:FirstName>';
+					soapMsg = soapMsg + '                  <quer:FirstName>'+FirstName+'</ans:FirstName>';
 				}
 				if (EMailAddr != null)
 				{
-					soapMsg = soapMsg + '                  <ans:EmailAddress>'+EMailAddr+'</ans:EmailAddress>';
+					soapMsg = soapMsg + '                  <quer:EmailAddress>'+EMailAddr+'</ans:EmailAddress>';
 				}
 
-				soapMsg = soapMsg + '            </ans:Contact>';
-				soapMsg = soapMsg + '         </ans:ListOfAns_Wscontact>';
-				soapMsg = soapMsg + '      </SiebelMessage>';
-				soapMsg = soapMsg + '      </asi:ANSContactQueryByExampleASI>';
+				soapMsg = soapMsg + '            </quer:Contact>';
+				soapMsg = soapMsg + '         </quer:ListOfAns_Wscontact>';
+				soapMsg = soapMsg + '      </SiebelMessageIn>';
+				soapMsg = soapMsg + ' <LOVLanguageMode>LDC</LOVLanguageMode>';
+				soapMsg = soapMsg + ' <ViewMode>All</ViewMode>';
+
+				soapMsg = soapMsg + '      </cus:ANSQueryPageCustomUI>';
 
 				soapMsg = soapMsg + '   </soapenv:Body>';
 				soapMsg = soapMsg + '</soapenv:Envelope>';
