@@ -187,6 +187,8 @@ function emailLoginResponse(emailRespObj) {
 			if(empId[j].childNodes.length>0)
 			{
 			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
+			prefs.set("LoginName", empId[j].childNodes[0].nodeValue);
+
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
@@ -198,8 +200,9 @@ function emailLoginResponse(emailRespObj) {
 	}
 	      function emailLoginrequest() {
 	    	  var prefs = new gadgets.Prefs();
-	    	  alert("default:"+prefs.getString("LoginName"));
-	    	  if(prefs.getString("LoginName")!="")
+	    	  
+	    	  alert("default:"+prefs.get("LoginName"));
+	    	  if(prefs.get("LoginName")!="")
 	    		  {
 	    		  document.CRMActivity.owner.value = prefs.getString("LoginName");
 	    		  }
