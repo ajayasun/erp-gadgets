@@ -54,7 +54,7 @@ try
 				}	
 				if (FirstName != null)
 				{
-					soapMsg = soapMsg + '                  <quer:FirstName>'+FirstName+'</quer:FirstName>';
+					soapMsg = soapMsg + '                  <quer:FirstName>LIKE \''+FirstName+'</quer:FirstName>';
 				}
 				if (EMailAddr != null)
 				{
