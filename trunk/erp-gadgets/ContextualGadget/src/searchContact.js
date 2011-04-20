@@ -50,11 +50,11 @@ try
 
 				if (LastName != null)
 				{
-					soapMsg = soapMsg + '                  <quer:LastName>'+LastName+'</quer:LastName>';
+					soapMsg = soapMsg + '                  <quer:LastName>LIKE \''+LastName+'</quer:LastName>';
 				}	
 				if (FirstName != null)
 				{
-					soapMsg = soapMsg + '                  <quer:FirstName>'+FirstName+'</quer:FirstName>';
+					soapMsg = soapMsg + '                  <quer:FirstName>LIKE \''+FirstName+'</quer:FirstName>';
 				}
 				if (EMailAddr != null)
 				{
@@ -240,7 +240,7 @@ debug("Inside searchContactResult method Exception",e);
 }
 else
 	{
-	debug("Inside searchContactResult method Activity Failure");
+	debug("Inside searchContactResult method Contact Query Failure");
 	if(searchContactResultObj.text==null||searchContactResultObj.text=="")
 		{
 	debug("Inside searchContactResult method Contact Query Failure with empty text");
@@ -248,7 +248,7 @@ else
 		}
 	else
 		{
-		document.getElementById('Contact_div').innerHTML = 'Activity created Failure : '+searchContactResultObj.text;
+		document.getElementById('Contact_div').innerHTML = 'Contact Query Failure : '+searchContactResultObj.text;
 		}
 	}
 document.getElementById('contactloading').innerHTML = '';
