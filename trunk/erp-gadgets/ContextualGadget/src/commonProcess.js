@@ -187,9 +187,6 @@ function emailLoginResponse(emailRespObj) {
 			if(empId[j].childNodes.length>0)
 			{
 			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
-			//prefs.set("LoginName", empId[j].childNodes[0].nodeValue);
-			//alert("After Setting"+prefs.getString("LoginName"));
-			
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
@@ -200,16 +197,6 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 	      function emailLoginrequest() {
-	    	 
-	    	  
-	    	 // alert("default:"+prefs.getString("LoginName"));
-	    	  if(prefs.getString("LoginName")!="")
-	    		  {
-	    		  document.CRMActivity.owner.value = prefs.getString("LoginName");
-	    		  }
-	    	  else
-	    		  {
-	    		  alert("inside else");
 	$(".debugVal").hide('fast');
 	$(".msg_list").hide('fast');
 	gadgets.window.adjustHeight(0);
@@ -221,5 +208,4 @@ function emailLoginResponse(emailRespObj) {
 	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
 
 	gadgets.io.makeRequest(url,emailLoginResponse,params);
-	    		  }
 	      };
