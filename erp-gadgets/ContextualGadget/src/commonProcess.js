@@ -199,10 +199,10 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 	      function emailLoginrequest() {
-	    	  alert(prefs.getString("LoginName"));
+	    	 
 	    	  if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    		  {
-	    		  alert("inside if");
+	    		  
 	$(".debugVal").hide('fast');
 	$(".msg_list").hide('fast');
 	gadgets.window.adjustHeight(0);
