@@ -201,7 +201,7 @@ function emailLoginResponse(emailRespObj) {
 	      function emailLoginrequest() {
 	    	 
 	    	  
-	    	  alert("default:"+prefs.getString("LoginName"));
+	    	 // alert("default:"+prefs.getString("LoginName"));
 	    	  if(prefs.getString("LoginName")!="")
 	    		  {
 	    		  document.CRMActivity.owner.value = prefs.getString("LoginName");
