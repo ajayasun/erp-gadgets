@@ -24,6 +24,9 @@ try
 	document.getElementById('contactloading').innerHTML = '';
 	document.getElementById('contactloading').style.display = 'none';
 	document.getElementById('contactloading').style.visibility = 'invisible';
+	document.getElementById('Contact_div').innerHTML = '';
+	document.getElementById('Contact_div').style.display = 'none';
+	document.getElementById('Contact_div').style.visibility = 'invisible';
 	}
 	else
 	{
@@ -68,7 +71,7 @@ try
 				}
 				if (EMailAddr != null)
 				{
-					soapMsg = soapMsg + '                  <quer:EmailAddress>'+EMailAddr+'</quer:EmailAddress>';
+					soapMsg = soapMsg + '                  <quer:EmailAddress>LIKE \''+EMailAddr+'\'</quer:EmailAddress>';
 				}
 				else
 				{
