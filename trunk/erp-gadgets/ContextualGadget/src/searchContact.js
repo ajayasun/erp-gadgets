@@ -50,11 +50,11 @@ try
 
 				if (LastName != null)
 				{
-					soapMsg = soapMsg + '                  <quer:LastName>LIKE \''+LastName+'</quer:LastName>';
+					soapMsg = soapMsg + '                  <quer:LastName>LIKE \''+LastName+ '\'</quer:LastName>';
 				}	
 				if (FirstName != null)
 				{
-					soapMsg = soapMsg + '                  <quer:FirstName>LIKE \''+FirstName+'</quer:FirstName>';
+					soapMsg = soapMsg + '                  <quer:FirstName>LIKE \''+FirstName+ '\'</quer:FirstName>';
 				}
 				if (EMailAddr != null)
 				{
