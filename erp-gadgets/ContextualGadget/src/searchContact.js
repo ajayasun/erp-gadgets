@@ -50,15 +50,15 @@ try
 
 				if (LastName != null)
 				{
-					soapMsg = soapMsg + '                  <quer:LastName>'+LastName+'</ans:LastName>';
+					soapMsg = soapMsg + '                  <quer:LastName>'+LastName+'</quer:LastName>';
 				}	
 				if (FirstName != null)
 				{
-					soapMsg = soapMsg + '                  <quer:FirstName>'+FirstName+'</ans:FirstName>';
+					soapMsg = soapMsg + '                  <quer:FirstName>'+FirstName+'</quer:FirstName>';
 				}
 				if (EMailAddr != null)
 				{
-					soapMsg = soapMsg + '                  <quer:EmailAddress>'+EMailAddr+'</ans:EmailAddress>';
+					soapMsg = soapMsg + '                  <quer:EmailAddress>'+EMailAddr+'</quer:EmailAddress>';
 				}
 
 				soapMsg = soapMsg + '            </quer:Contact>';
