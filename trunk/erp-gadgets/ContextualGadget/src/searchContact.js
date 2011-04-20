@@ -48,7 +48,7 @@ try
 				soapMsg = soapMsg + '   <soapenv:Body>';
 				soapMsg = soapMsg + '      <cus:ANSQueryPageCustomUI>';
 				soapMsg = soapMsg + '         <SiebelMessageIn>';
-				soapMsg = soapMsg + '            <quer:ListOfAns_Wscontact>';
+				soapMsg = soapMsg + '            <quer:ListOfAns_Wscontact pagesize="100" startrownum="0" recordcountneeded="true">';
 				soapMsg = soapMsg + '            <quer:Contact>';
 				soapMsg = soapMsg + '<quer:ANSContactNumber></quer:ANSContactNumber>';
 
