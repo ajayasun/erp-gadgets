@@ -199,7 +199,7 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 	      function emailLoginrequest() {
-	    	  var prefs = new gadgets.Prefs();
+	    	 
 	    	  
 	    	  alert("default:"+prefs.get("LoginName"));
 	    	  if(prefs.get("LoginName")!="")
