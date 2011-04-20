@@ -47,20 +47,33 @@ try
 				soapMsg = soapMsg + '         <SiebelMessageIn>';
 				soapMsg = soapMsg + '            <quer:ListOfAns_Wscontact>';
 				soapMsg = soapMsg + '            <quer:Contact>';
+				soapMsg = soapMsg + '<quer:ANSContactNumber></quer:ANSContactNumber>';
+
 
 				if (LastName != null)
 				{
 					soapMsg = soapMsg + '                  <quer:LastName>LIKE \''+LastName+ '\'</quer:LastName>';
 				}	
+				else
+				{
+					soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
+				}
 				if (FirstName != null)
 				{
 					soapMsg = soapMsg + '                  <quer:FirstName>LIKE \''+FirstName+ '\'</quer:FirstName>';
+				}
+				else
+				{
+					soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
 				}
 				if (EMailAddr != null)
 				{
 					soapMsg = soapMsg + '                  <quer:EmailAddress>'+EMailAddr+'</quer:EmailAddress>';
 				}
-
+				else
+				{
+					soapMsg = soapMsg + '                  <quer:EmailAddress></quer:EmailAddress>';
+				}
 				soapMsg = soapMsg + '            </quer:Contact>';
 				soapMsg = soapMsg + '         </quer:ListOfAns_Wscontact>';
 				soapMsg = soapMsg + '      </SiebelMessageIn>';
