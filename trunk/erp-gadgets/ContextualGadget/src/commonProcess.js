@@ -188,7 +188,7 @@ function emailLoginResponse(emailRespObj) {
 			{
 			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
 			prefs.set("LoginName", empId[j].childNodes[0].nodeValue);
-
+			alert("After Setting"+prefs.get("LoginName"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
