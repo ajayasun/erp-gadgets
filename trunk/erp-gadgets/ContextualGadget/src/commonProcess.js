@@ -197,6 +197,14 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 	      function emailLoginrequest() {
+	    	  var prefs = new gadgets.Prefs();
+	    	  alert("default:"+prefs.getString("LoginName"));
+	    	  if(prefs.getString("LoginName")!="")
+	    		  {
+	    		  document.CRMActivity.owner.value = prefs.getString("LoginName");
+	    		  }
+	    	  else
+	    		  {
 	$(".debugVal").hide('fast');
 	$(".msg_list").hide('fast');
 	gadgets.window.adjustHeight(0);
@@ -208,4 +216,5 @@ function emailLoginResponse(emailRespObj) {
 	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
 
 	gadgets.io.makeRequest(url,emailLoginResponse,params);
+	    		  }
 	      };
