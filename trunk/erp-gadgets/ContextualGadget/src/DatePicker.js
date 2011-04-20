@@ -788,13 +788,13 @@
             var offset = { left: $.datetimepicker._pos[0], top: $.datetimepicker._pos[1] };
             $.datetimepicker._pos = null;
             // determine sizing offscreen
-            inst.dpDiv.css({ position: 'relative', display: 'block', top: '-1000px' });
+            inst.dpDiv.css({ position: 'absolute', display: 'block', top: '-1000px' });
             $.datetimepicker._updateDatepicker(inst);
             // fix width for dynamic number of date pickers
             // and adjust position before showing
             offset = $.datetimepicker._checkOffset(inst, offset, isFixed);
             inst.dpDiv.css({ position: ($.datetimepicker._inDialog && $.blockUI ?
-			'static' : (isFixed ? 'fixed' : 'relative')), display: 'none',
+			'static' : (isFixed ? 'fixed' : 'absolute')), display: 'none',
                 left: offset.left + 'px', top: offset.top + 'px'
             });
             if (!inst.inline) {
