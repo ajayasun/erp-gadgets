@@ -187,8 +187,8 @@ function emailLoginResponse(emailRespObj) {
 			if(empId[j].childNodes.length>0)
 			{
 			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
-			 prefs.set("LoginName","VSRINIVA");
-			 alert(prefs.getString("LoginName"));
+			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
+			// alert(prefs.getString("LoginName"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
@@ -200,6 +200,9 @@ function emailLoginResponse(emailRespObj) {
 	}
 	      function emailLoginrequest() {
 	    	  alert(prefs.getString("LoginName"));
+	    	  if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
+	    		  {
+	    		  alert("inside if");
 	$(".debugVal").hide('fast');
 	$(".msg_list").hide('fast');
 	gadgets.window.adjustHeight(0);
@@ -211,4 +214,10 @@ function emailLoginResponse(emailRespObj) {
 	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
 
 	gadgets.io.makeRequest(url,emailLoginResponse,params);
+	    		  }
+	    	  else
+	    		  {
+	    		  document.CRMActivity.owner.value=prefs.getString("LoginName");
+	    		  gadgets.window.adjustHeight(60);
+	    		  }
 	      };
