@@ -91,7 +91,7 @@ p {
 .msg_list {
 	margin: 0px;
 	padding: 0px;
-	width: 750px;
+	width: 100%;
 }
 .msg_head {
 	padding: 5px 10px;
