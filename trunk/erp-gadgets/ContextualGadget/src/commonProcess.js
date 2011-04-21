@@ -101,7 +101,14 @@ function On_submit()
 {
 	if(document.CRMActivity.classSelected.value==null||document.CRMActivity.classSelected.value=="")
 		{
-		alert("Please Enter "+document.CRMActivity.classval.value+" Value");
+		if(document.CRMActivity.classval.value=="Opportunity")
+			{
+			alert("Please enter a valid Opportunity Identifiier.");
+			}
+		else if(document.CRMActivity.classval.value=="Service Request")
+			{
+			alert("Please enter a valid Service Request number.");
+			}
 		return false;
 		}
 	else
