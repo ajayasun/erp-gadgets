@@ -77,7 +77,8 @@ try
 				{
 					soapMsg = soapMsg + '                  <quer:EmailAddress></quer:EmailAddress>';
 				}
-				soapMsg = soapMsg + '<quer:EmployeeFlag sortorder="" sortsequence="">=\'''N''\'</quer:EmployeeFlag>';
+				var empFlag='N';
+				soapMsg = soapMsg + '<quer:EmployeeFlag sortorder="" sortsequence="">=\''+empFlag+'\'</quer:EmployeeFlag>';
 				soapMsg = soapMsg + '            </quer:Contact>';
 				soapMsg = soapMsg + '         </quer:ListOfAns_Wscontact>';
 				soapMsg = soapMsg + '      </SiebelMessageIn>';
