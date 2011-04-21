@@ -88,7 +88,17 @@ function assignClass()
 	if(classValue!='Generic')
 		{
 		debug("Inside assignClass method inside if classValue",classValue);
-		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+" : <input type='text' name='classSelected' size='18'></font></strong>";
+		if(classValue=="Opportunity")
+			{
+		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+"&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
+			}
+		else 
+			{
+			if(classValue=="Service Request")
+			{
+		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+" :&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
+			}
+			}
 		}
 	else
 		{
