@@ -24,7 +24,7 @@ debug("Inside invokeSiebeWebservice method End","");
 }
 function debug(textName,textValue)
 {
-	if(document.CRMActivity.debug.checked)
+	if(document.CRMActivity.debug.value=="Debug On")
 	{
 		alert(textName+" : "+textValue);
 	}
