@@ -4,7 +4,7 @@ function createActivity()
 	document.getElementById('activityLoading').style.display = 'inline';
 	document.getElementById('activityLoading').style.visibility = 'visible';
 	document.getElementById('activityLoading').innerHTML = 'Saving activity ...';
-	 
+	document.getElementById('content_div').innerHTML = '';
 	try
 	{
 		var data;

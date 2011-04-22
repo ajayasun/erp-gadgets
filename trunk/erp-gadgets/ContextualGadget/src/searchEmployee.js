@@ -7,8 +7,7 @@ try
 	document.getElementById('Employeeloading').style.visibility = 'visible';
 	document.getElementById('Employeeloading').innerHTML = 'Loading ...';
 	document.getElementById('Employee_div').innerHTML = '';
-	document.getElementById('Employee_div').style.display = 'none';
-	document.getElementById('Employee_div').style.visibility = 'invisible';
+
 
 	var LastName = null;
 	var FirstName = null;
