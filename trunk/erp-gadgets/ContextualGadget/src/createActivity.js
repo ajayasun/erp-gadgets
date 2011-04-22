@@ -27,6 +27,7 @@ function createActivity()
 		data = data + '<ans:Class>Generic</ans:Class>';
 		data = data + '<ans:Type>'+document.CRMActivity.type.value+'</ans:Type>';
 		data = data + '<ans:PrimaryOwnedBy>'+document.CRMActivity.owner.value+'</ans:PrimaryOwnedBy>'	
+		data = data + '<ans:DueDate>'+document.CRMActivity.dueDate.value+'</ans:DueDate>'	
 		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
 		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
 		data = data + '<ans:Planned>'+document.CRMActivity.startDate.value+'</ans:Planned>';
