@@ -4,8 +4,7 @@ document.getElementById('contactloading').style.display = 'inline';
 document.getElementById('contactloading').style.visibility = 'visible';
 document.getElementById('contactloading').innerHTML = 'Loading ...';
 document.getElementById('Contact_div').innerHTML = '';
-document.getElementById('Contact_div').style.display = 'none';
-document.getElementById('Contact_div').style.visibility = 'invisible';
+
 try
 {
 	var soapMsg;
