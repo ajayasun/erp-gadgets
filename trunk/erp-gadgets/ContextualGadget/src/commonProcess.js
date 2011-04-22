@@ -209,7 +209,7 @@ function emailLoginResponse(emailRespObj) {
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
-			gadgets.window.adjustHeight(90);
+			gadgets.window.adjustHeight(60);
 			}
 		}
 			
@@ -235,6 +235,6 @@ function emailLoginResponse(emailRespObj) {
 	    	  else
 	    		  {
 	    		  document.CRMActivity.owner.value=prefs.getString("LoginName");
-	    		  gadgets.window.adjustHeight(90);
+	    		  gadgets.window.adjustHeight(60);
 	    		  }
 	      };
