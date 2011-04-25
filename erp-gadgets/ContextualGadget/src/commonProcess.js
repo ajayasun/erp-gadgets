@@ -124,6 +124,12 @@ function On_submit()
 	else
 		return true;
 }
+function clearFields()
+{
+	document.CRMActivity.reset();
+	document.getElementById('classValue').innerHTML = "";
+	document.CRMActivity.owner.value=prefs.getString("LoginName");
+}
 function emailLoginResponse(emailRespObj) {
 	 var emailString=emailRespObj.text;
 		/*  alert("text :"+emailRespObj.text);
