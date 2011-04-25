@@ -7,7 +7,7 @@ try
 	document.getElementById('Employeeloading').style.visibility = 'visible';
 	document.getElementById('Employeeloading').innerHTML = 'Loading ...';
 	document.getElementById('Employee_div').innerHTML = '';
-	gadgets.window.adjustHeight(300);
+	
 
 	var LastName = null;
 	var FirstName = null;
@@ -239,6 +239,7 @@ debug("Inside searchEmployeeResult method Exception",e);
 }
 else
 	{
+	gadgets.window.adjustHeight(300);
 	debug("Inside searchEmployeeResult method Employee Query Failure");
 	if(searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")
 		{
