@@ -238,7 +238,7 @@ function emailLoginrequest() {
 	alert("inside login request Session Expire time :"+prefs.getString("sessionExpire"));
 	alert("inside login request System Time:"+sessionTime);
 
-	    	  if((prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")||(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")==""))
+	    	  if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    		  {
 	    		  alert("inside login request if condition System Time:"+sessionTime);
 	    		  	$(".debugVal").hide('fast');
@@ -255,7 +255,24 @@ function emailLoginrequest() {
 	    	  else
 	    		  {
 	    		  alert("inside login request else condition System Time:"+sessionTime);
-	    		  	document.CRMActivity.owner.value=prefs.getString("LoginName");
-	    		  	gadgets.window.adjustHeight(60);
+	    		  if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
+	    			  {
+	    			  $(".debugVal").hide('fast');
+		    		  	$(".msg_list").hide('fast');
+		    		  	gadgets.window.adjustHeight(0);
+		    		  	//alert("inside request method");
+		    		  	var params = {};
+		    		  	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+		    		  	params['AUTHORIZATION'] = 'SIGNED';
+		    		  	params['OAUTH_ADD_EMAIL'] = 'true';
+		    		  	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
+		    		  	gadgets.io.makeRequest(url,emailLoginResponse,params);
+	    			  }
+	    		  else
+	    			  {
+	    			  document.CRMActivity.owner.value=prefs.getString("LoginName");
+		    		  	gadgets.window.adjustHeight(60);
+	    			  }
+	    		  	
 	    		  }
 	      };
