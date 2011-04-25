@@ -217,10 +217,11 @@ function emailLoginResponse(emailRespObj) {
 			if(empId[j].childNodes.length>0)
 			{
 			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
-			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
 			 day = currentTime.getDate()+1;
 			 sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
 			 prefs.set("LoginExpire",sessionTime);
+			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
+			
 			 alert("Login Name :"+prefs.getString("LoginName"));
 			 alert("Session Expire"+prefs.getString("LoginExpire"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
