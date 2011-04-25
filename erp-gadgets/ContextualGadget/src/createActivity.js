@@ -5,7 +5,7 @@ function createActivity()
 	document.getElementById('activityLoading').style.visibility = 'visible';
 	document.getElementById('activityLoading').innerHTML = 'Saving activity ...';
 	document.getElementById('content_div').innerHTML = '';
-	gadgets.window.adjustHeight(300);
+	gadgets.window.adjustHeight(320);
 	try
 	{
 		var data;
