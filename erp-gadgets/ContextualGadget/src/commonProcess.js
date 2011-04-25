@@ -219,7 +219,7 @@ function emailLoginResponse(emailRespObj) {
 			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
 			 day = currentTime.getDate()+1;
 			 sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-			 prefs.set("LoginExpire","date");
+			 prefs.set("LoginExpire",sessionTime);
 			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
 			
 			 alert("Login Name :"+prefs.getString("LoginName"));
