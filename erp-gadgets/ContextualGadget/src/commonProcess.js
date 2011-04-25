@@ -237,9 +237,8 @@ function emailLoginrequest() {
 	alert("inside login request Login Name :"+prefs.getString("LoginName"));
 	alert("inside login request Session Expire time :"+prefs.getString("sessionExpire"));
 	alert("inside login request System Time:"+sessionTime);
-	alert("inside login request");
-	alert("inside login request");
-	    	  if((prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")&&(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")==""))
+
+	    	  if((prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")||(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")==""))
 	    		  {
 	    		  alert("inside login request if condition System Time:"+sessionTime);
 	    		  	$(".debugVal").hide('fast');
