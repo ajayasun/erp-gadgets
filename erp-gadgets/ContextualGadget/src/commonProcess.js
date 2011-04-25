@@ -255,7 +255,7 @@ function emailLoginrequest() {
 	    	  else
 	    		  {
 	    		  alert("inside login request else condition System Time:"+sessionTime);
-	    		  if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
+	    		 /* if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
 	    			  {
 	    			  $(".debugVal").hide('fast');
 		    		  	$(".msg_list").hide('fast');
@@ -269,10 +269,10 @@ function emailLoginrequest() {
 		    		  	gadgets.io.makeRequest(url,emailLoginResponse,params);
 	    			  }
 	    		  else
-	    			  {
+	    			  {*/
 	    			  document.CRMActivity.owner.value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
-	    			  }
+	    			 // }
 	    		  	
 	    		  }
 	      };
