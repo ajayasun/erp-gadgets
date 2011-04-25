@@ -220,9 +220,9 @@ function emailLoginResponse(emailRespObj) {
 			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
 			 day = currentTime.getDate()+1;
 			 sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-			 prefs.set("sessionExpire",sessionTime);
+			 prefs.set("LoginExpire",sessionTime);
 			 alert("Login Name :"+prefs.getString("LoginName"));
-			 alert("Session Expire"+prefs.getString("sessionExpire"));
+			 alert("Session Expire"+prefs.getString("LoginExpire"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
@@ -235,10 +235,10 @@ function emailLoginResponse(emailRespObj) {
 function emailLoginrequest() {
 	alert("inside login request");
 	alert("inside login request Login Name :"+prefs.getString("LoginName"));
-	alert("inside login request Session Expire time :"+prefs.getString("sessionExpire"));
+	alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
 	alert("inside login request System Time:"+sessionTime);
 
-	    	  if((prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")||(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")==""))
+	    	  if((prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")||(sessionTime==prefs.getString("LoginExpire")||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")==""))
 	    		  {
 	    		  alert("inside login request if condition System Time:"+sessionTime);
 	    		  	$(".debugVal").hide('fast');
