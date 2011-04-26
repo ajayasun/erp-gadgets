@@ -132,6 +132,7 @@ function clearFields()
 	document.CRMActivity.reset();
 	document.getElementById('classValue').innerHTML = "";
 	document.CRMActivity.owner.value=prefs.getString("LoginName");
+	document.getElementById('content_div').innerHTML = '';
 	debug("Inside clearFields method Login Name",document.CRMActivity.owner.value);
 	debug("Inside clearFields method End","");
 }
