@@ -154,7 +154,7 @@ try
 		debug("Inside searchContactResult method Child Node Length value",contactId[j].childNodes.length);
 		
 		var cell1 = document.createElement("td");
-		cell1.width="10%";
+		cell1.width="20px";
 		var element1 = document.createElement("input");
 		element1.type = "checkbox";
 		element1.name = "ANSContactNumber";
@@ -171,7 +171,7 @@ try
 		debug("Inside searchContactResult method LastName Node Length value",lstName[j].childNodes.length);
 		var lastName;
 		var cell2 = document.createElement("td");
-		cell2.style.width="22%";
+		cell2.style.width="80px";
 		cell2.className="wrapText";
 		if(lstName[j].childNodes.length>0)
 		{
@@ -200,7 +200,7 @@ try
 		debug("Inside searchContactResult method FirstName Node Length value",fstName[j].childNodes.length);
 		var firstName;
 		var cell3 = document.createElement("td");
-		cell3.style.width="24%";
+		cell3.style.width="80px";
 		cell3.className="wrapText";
 		if(fstName[j].childNodes.length>0)
 		{
@@ -227,7 +227,7 @@ try
 		debug("Inside searchContactResult method emailAddrss Node Length value",emailAddrss[j].childNodes.length);
 		
 		var cell4 = document.createElement("td");
-		cell4.style.width="42%";
+		cell4.style.width="135px";
 		cell4.className="wrapText";
 		if(emailAddrss[j].childNodes.length>0)
 		{ 
