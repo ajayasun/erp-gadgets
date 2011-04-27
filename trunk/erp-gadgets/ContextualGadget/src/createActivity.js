@@ -28,11 +28,11 @@ function createActivity()
 		data = data + '<ans:Class>Generic</ans:Class>';
 		data = data + '<ans:Type>'+document.CRMActivity.type.value+'</ans:Type>';
 		data = data + '<ans:PrimaryOwnedBy>'+document.CRMActivity.owner.value+'</ans:PrimaryOwnedBy>'	
-		data = data + '<ans:DueDate>'+document.CRMActivity.dueDate.value.substring(0,document.CRMActivity.dueDate.value.lastIndexOf(" "))+'</ans:DueDate>'	
+		data = data + '<ans:DueDate>'+getUTCDateFormat(document.CRMActivity.dueDate.value)+'</ans:DueDate>'	
 		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
 		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
-		data = data + '<ans:Planned>'+document.CRMActivity.startDate.value.substring(0,document.CRMActivity.startDate.value.lastIndexOf(" "))+'</ans:Planned>';
-        data = data + '<ans:PlannedCompletion>'+document.CRMActivity.endDate.value.substring(0,document.CRMActivity.endDate.value.lastIndexOf(" "))+'</ans:PlannedCompletion>';
+		data = data + '<ans:Planned>'+getUTCDateFormat(document.CRMActivity.startDate.value)+'</ans:Planned>';
+        data = data + '<ans:PlannedCompletion>'+getUTCDateFormat(document.CRMActivity.endDate.value)+'</ans:PlannedCompletion>';
         if(document.CRMActivity.classval.value=="Opportunity")
         	if(On_submit())
 			{
