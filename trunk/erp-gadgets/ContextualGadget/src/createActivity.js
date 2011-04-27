@@ -203,7 +203,7 @@ try
 		document.CRMActivity.reset();
 		document.getElementById('classValue').innerHTML = "";
 		document.CRMActivity.owner.value=prefs.getString("LoginName");
-		document.CRMActivity.startdatepicker.value=currentTimeString;
+		document.CRMActivity.startdatepicker.value=getDate();
 		document.getElementById('content_div').innerHTML = 'Activity Saved.';
 		document.getElementById('activityLoading').style.display = 'inline';
 		document.getElementById('activityLoading').style.visibility = 'visible';

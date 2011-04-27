@@ -133,10 +133,29 @@ function clearFields()
 	document.getElementById('classValue').innerHTML = "";
 	document.CRMActivity.owner.value=prefs.getString("LoginName");
 	document.getElementById('content_div').innerHTML = '';
-	document.CRMActivity.startdatepicker.value=currentTimeString;
+	document.CRMActivity.startdatepicker.value=getDate();
 	debug("Inside clearFields method Login Name",document.CRMActivity.owner.value);
 	debug("Inside clearFields method End","");
 }
+function getDate()
+{
+	var currentTime = new Date()
+	var month = currentTime.getMonth()+1;
+	var day = currentTime.getDate();
+	var year = currentTime.getFullYear();
+	var currentHours = currentTime.getHours ( );
+	var currentMinutes = currentTime.getMinutes ( );
+	var currentSeconds = currentTime.getSeconds ( );
+	currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+	currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+	var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+	currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+	currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+	currentHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
+	month = ( month < 10 ? "0" : "" ) + month;
+	var currentTimeString = month+"/"+day+"/"+year+" "+currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+	return currentTimeString;
+	}
 function emailLoginResponse(emailRespObj) {
 	debug("Inside emailLoginResponse method Begin","");
 	 var emailString=emailRespObj.text;
