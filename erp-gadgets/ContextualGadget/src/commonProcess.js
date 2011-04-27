@@ -137,6 +137,23 @@ function clearFields()
 	debug("Inside clearFields method Login Name",document.CRMActivity.owner.value);
 	debug("Inside clearFields method End","");
 }
+function getUTCDateFormat(dateString)
+{
+	var currentTime = new Date(dateString);
+	var month = currentTime.getUTCMonth()+1;
+	var day = currentTime.getUTCDate();
+	var year = currentTime.getUTCFullYear();
+	var currentHours = currentTime.getUTCHours ( );
+	var currentMinutes = currentTime.getUTCMinutes ( );
+	var currentSeconds = currentTime.getUTCSeconds ( );
+	currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+	currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+	currentHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
+	month = ( month < 10 ? "0" : "" ) + month;
+	day = ( day < 10 ? "0" : "" ) + day;
+	var currentUTCTimeString = month+"/"+day+"/"+year+" "+currentHours + ":" + currentMinutes + ":" + currentSeconds ;
+	return currentUTCTimeString;
+}
 function getDate()
 {
 	var currentTime = new Date()
