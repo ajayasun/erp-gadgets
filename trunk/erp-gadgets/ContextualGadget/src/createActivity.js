@@ -27,12 +27,33 @@ function createActivity()
 		data = data + '<ans:Id>999999</ans:Id>';
 		data = data + '<ans:Class>Generic</ans:Class>';
 		data = data + '<ans:Type>'+document.CRMActivity.type.value+'</ans:Type>';
-		data = data + '<ans:PrimaryOwnedBy>'+document.CRMActivity.owner.value+'</ans:PrimaryOwnedBy>'	
-		data = data + '<ans:DueDate>'+getUTCDateFormat(document.CRMActivity.dueDate.value)+'</ans:DueDate>'	
+		data = data + '<ans:PrimaryOwnedBy>'+document.CRMActivity.owner.value+'</ans:PrimaryOwnedBy>';
+		if(document.CRMActivity.dueDate.value!=null)
+			{
+		data = data + '<ans:DueDate>'+getUTCDateFormat(document.CRMActivity.dueDate.value)+'</ans:DueDate>';	
+			}
+		else
+			{
+		data = data + '<ans:DueDate>'+document.CRMActivity.dueDate.value+'</ans:DueDate>';	
+			}
 		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
 		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
+		if(document.CRMActivity.startDate.value!=null)
+		{
 		data = data + '<ans:Planned>'+getUTCDateFormat(document.CRMActivity.startDate.value)+'</ans:Planned>';
+		}
+		else
+		{
+		data = data + '<ans:Planned>'+document.CRMActivity.startDate.value+'</ans:Planned>';
+		}
+		if(document.CRMActivity.endDate.value!=null)
+		{
         data = data + '<ans:PlannedCompletion>'+getUTCDateFormat(document.CRMActivity.endDate.value)+'</ans:PlannedCompletion>';
+		}
+		else
+			{
+			data = data + '<ans:PlannedCompletion>'+document.CRMActivity.endDate.value+'</ans:PlannedCompletion>';
+			}
         if(document.CRMActivity.classval.value=="Opportunity")
         	if(On_submit())
 			{
