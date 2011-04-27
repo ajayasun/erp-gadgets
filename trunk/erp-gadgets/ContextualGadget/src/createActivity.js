@@ -30,28 +30,34 @@ function createActivity()
 		data = data + '<ans:PrimaryOwnedBy>'+document.CRMActivity.owner.value+'</ans:PrimaryOwnedBy>';
 		if(document.CRMActivity.dueDate.value!=null)
 			{
+			debug("Inside createActivity method Begin due date not null",document.CRMActivity.dueDate.value);
 		data = data + '<ans:DueDate>'+getUTCDateFormat(document.CRMActivity.dueDate.value)+'</ans:DueDate>';	
 			}
 		else
 			{
+			debug("Inside createActivity method Begin due date  null",document.CRMActivity.dueDate.value);
 		data = data + '<ans:DueDate>'+document.CRMActivity.dueDate.value+'</ans:DueDate>';	
 			}
 		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
 		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
 		if(document.CRMActivity.startDate.value!=null)
 		{
+			debug("Inside createActivity method Begin Start date not null",document.CRMActivity.startDate.value);
 		data = data + '<ans:Planned>'+getUTCDateFormat(document.CRMActivity.startDate.value)+'</ans:Planned>';
 		}
 		else
 		{
+			debug("Inside createActivity method Begin Start date null",document.CRMActivity.startDate.value);
 		data = data + '<ans:Planned>'+document.CRMActivity.startDate.value+'</ans:Planned>';
 		}
 		if(document.CRMActivity.endDate.value!=null)
 		{
+			debug("Inside createActivity method Begin endDate date not null",document.CRMActivity.endDate.value);
         data = data + '<ans:PlannedCompletion>'+getUTCDateFormat(document.CRMActivity.endDate.value)+'</ans:PlannedCompletion>';
 		}
 		else
 			{
+			debug("Inside createActivity method Begin endDate date  null",document.CRMActivity.endDate.value);
 			data = data + '<ans:PlannedCompletion>'+document.CRMActivity.endDate.value+'</ans:PlannedCompletion>';
 			}
         if(document.CRMActivity.classval.value=="Opportunity")
