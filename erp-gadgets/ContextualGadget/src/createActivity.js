@@ -31,12 +31,12 @@ function createActivity()
 		if(document.CRMActivity.dueDate.value!=null&&document.CRMActivity.dueDate.value!="")
 			{
 			debug("Inside createActivity method Begin due date not null",document.CRMActivity.dueDate.value);
-		data = data + '<ans:DueDate>'+getUTCDateFormat(document.CRMActivity.dueDate.value)+'</ans:DueDate>';	
+		data = data + '<ans:Due>'+getUTCDateFormat(document.CRMActivity.dueDate.value)+'</ans:Due>';	
 			}
 		else
 			{
 			debug("Inside createActivity method Begin due date  null",document.CRMActivity.dueDate.value);
-		data = data + '<ans:DueDate>'+document.CRMActivity.dueDate.value+'</ans:DueDate>';	
+		data = data + '<ans:Due>'+document.CRMActivity.dueDate.value+'</ans:Due>';	
 			}
 		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
 		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
