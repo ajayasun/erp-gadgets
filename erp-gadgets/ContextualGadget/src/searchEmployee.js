@@ -47,7 +47,7 @@ try
 
 			if (LastName != null)
 			{
-				soapMsg = soapMsg + '                  <quer:LastName>LIKE \''+LastName+ '\'</quer:LastName>';
+				soapMsg = soapMsg + '                  <quer:LastName>~LIKE \''+LastName+ '\'</quer:LastName>';
 			}
 			else
 			{
