@@ -172,7 +172,8 @@ hours = ( hours < 10 ? "0" : "" ) + hours;
 month = ( month < 10 ? "0" : "" ) + month;
 day = ( day < 10 ? "0" : "" ) + day;
 
-var changedTimeString=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+var changedTimeString=month + "/" + day + "/" + year+" "+hours+":"+minutes+ ":" +seconds;
+/*var currentUTCTimeString = month+"/"+day+"/"+year+" "+currentHours + ":" + currentMinutes + ":" + currentSeconds ;*/
 	return changedTimeString;
 }
 function getDate()
