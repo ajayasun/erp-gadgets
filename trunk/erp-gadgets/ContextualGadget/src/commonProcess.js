@@ -92,11 +92,13 @@ function assignClass()
 			{
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Opportunity ID :&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
 		document.getElementById('timeSpentValue').innerHTML = "";
+		gadgets.window.adjustHeight(300);
 			}
 		else 
 			{
 			if(classValue=="Service Request")
 			{
+				gadgets.window.adjustHeight(320);
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+" : <input type='text' name='classSelected' size='18'></font></strong>";
 		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent Hr &nbsp;&nbsp;: <input type='text' name='classSelected' size='18'></font></strong>";
 			}
@@ -107,6 +109,7 @@ function assignClass()
 		debug("Inside assignClass method inside else classValue",classValue);
 		document.getElementById('classValue').innerHTML = "";
 		document.getElementById('timeSpentValue').innerHTML = "";
+		gadgets.window.adjustHeight(300);
 		}
 	debug("Inside assignClass method End","");
 }
