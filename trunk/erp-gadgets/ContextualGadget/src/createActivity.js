@@ -229,6 +229,7 @@ try
 		}
 		document.CRMActivity.reset();
 		document.getElementById('classValue').innerHTML = "";
+		document.getElementById('timeSpentValue').innerHTML = "";
 		document.CRMActivity.owner.value=prefs.getString("LoginName");
 		document.CRMActivity.startdatepicker.value=getDate();
 		document.getElementById('content_div').innerHTML = 'Activity Saved.';

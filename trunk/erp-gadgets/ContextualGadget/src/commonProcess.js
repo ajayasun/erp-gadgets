@@ -91,6 +91,7 @@ function assignClass()
 		if(classValue=="Opportunity")
 			{
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Opportunity ID :&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
+		document.getElementById('timeSpentValue').innerHTML = "";
 			}
 		else 
 			{
@@ -105,6 +106,7 @@ function assignClass()
 		{
 		debug("Inside assignClass method inside else classValue",classValue);
 		document.getElementById('classValue').innerHTML = "";
+		document.getElementById('timeSpentValue').innerHTML = "";
 		}
 	debug("Inside assignClass method End","");
 }
@@ -132,6 +134,7 @@ function clearFields()
 	debug("Inside clearFields method Begin","");
 	document.CRMActivity.reset();
 	document.getElementById('classValue').innerHTML = "";
+	document.getElementById('timeSpentValue').innerHTML = "";
 	document.CRMActivity.owner.value=prefs.getString("LoginName");
 	document.getElementById('content_div').innerHTML = '';
 	document.CRMActivity.startdatepicker.value=getDate();
