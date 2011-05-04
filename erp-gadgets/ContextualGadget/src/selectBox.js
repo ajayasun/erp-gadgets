@@ -26,6 +26,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				var element1 = document.createElement("input");
 				element1.type = "checkbox";
 				element1.name = "empId";
+				element1.id = "empId";
 				element1.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell1.appendChild(element1);
 				row.appendChild(cell1);
@@ -58,6 +59,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				var element2 = document.createElement("input");
 				element2.type = "hidden";
 				element2.name = "empLastName";
+				element2.id = "empLastName";
 				element2.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell2.appendChild(element2);
 				row.appendChild(cell2);
@@ -80,6 +82,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				row.appendChild(cell3);
 				var element3 = document.createElement("input");
 				element3.type = "hidden";
+				element3.name = "empFirstName";
 				element3.name = "empFirstName";
 				element3.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell3.appendChild(element3);
@@ -104,6 +107,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				var element4 = document.createElement("input");
 				element4.type = "hidden";
 				element4.name = "empEmailAddr";
+				element4.id = "empEmailAddr";
 				element4.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell4.appendChild(element4);
 				row.appendChild(cell4);
@@ -147,6 +151,7 @@ function addRemoveContact(srcTable,dscTable)
 				var element1 = document.createElement("input");
 				element1.type = "checkbox";
 				element1.name = "ANSContactNumber";
+				element1.id = "ANSContactNumber";
 				element1.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell1.appendChild(element1);
 				row.appendChild(cell1);
@@ -182,6 +187,7 @@ function addRemoveContact(srcTable,dscTable)
 				var element2 = document.createElement("input");
 				element2.type = "hidden";
 				element2.name = "contactLastName";
+				element2.id = "contactLastName";
 				element2.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell2.appendChild(element2);
 				row.appendChild(cell2);
@@ -206,6 +212,7 @@ function addRemoveContact(srcTable,dscTable)
 				var element3 = document.createElement("input");
 				element3.type = "hidden";
 				element3.name = "contactFirstName";
+				element3.id = "contactFirstName";
 				element3.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell3.appendChild(element3);
 				row.appendChild(cell3);
@@ -229,6 +236,7 @@ function addRemoveContact(srcTable,dscTable)
 				var element4 = document.createElement("input");
 				element4.type = "hidden";
 				element4.name = "contactEmailAddr";
+				element4.id = "contactEmailAddr";
 				element4.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
 				cell4.appendChild(element4);
 				row.appendChild(cell4);
