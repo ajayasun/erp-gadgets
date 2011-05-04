@@ -90,7 +90,7 @@ function assignClass()
 		debug("Inside assignClass method inside if classValue",classValue);
 		if(classValue=="Opportunity")
 			{
-		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Opportunity ID :&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
+		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Opportunity ID&nbsp;:&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
 		document.getElementById('timeSpentValue').innerHTML = "";
 		gadgets.window.adjustHeight(300);
 			}
@@ -100,7 +100,7 @@ function assignClass()
 			{
 				gadgets.window.adjustHeight(320);
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+" :&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
-		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent Hr &nbsp;&nbsp;:&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
+		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent Hr&nbsp;&nbsp;:&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
 			}
 			}
 		}
