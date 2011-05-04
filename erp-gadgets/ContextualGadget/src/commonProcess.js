@@ -141,7 +141,7 @@ function getUTCDateFormat(dateString)
 {
 	var offset ="-4";
 	var currentTime = new Date(dateString);
-	var month = currentTime.getUTCMonth()+1;
+	/*var month = currentTime.getUTCMonth()+1;
 	var day = currentTime.getUTCDate();
 	var year = currentTime.getUTCFullYear();
 	var currentHours = currentTime.getUTCHours ( );
@@ -153,8 +153,8 @@ function getUTCDateFormat(dateString)
 	month = ( month < 10 ? "0" : "" ) + month;
 	day = ( day < 10 ? "0" : "" ) + day;
 	var currentUTCTimeString = month+"/"+day+"/"+year+" "+currentHours + ":" + currentMinutes + ":" + currentSeconds ;
-	return currentUTCTimeString;
-	/*utc = currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000);
+	return currentUTCTimeString;*/
+	utc = currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000);
 	   
     // create new Date object for different city
     // using supplied offset
@@ -173,8 +173,9 @@ month = ( month < 10 ? "0" : "" ) + month;
 day = ( day < 10 ? "0" : "" ) + day;
 
 var changedTimeString=month + "/" + day + "/" + year+" "+hours+":"+minutes+ ":" +seconds;
+return changedTimeString;
 /*var currentUTCTimeString = month+"/"+day+"/"+year+" "+currentHours + ":" + currentMinutes + ":" + currentSeconds ;*/
-	//return changedTimeString;
+	
 }
 function getDate()
 {
