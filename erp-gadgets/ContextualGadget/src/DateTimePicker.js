@@ -1161,6 +1161,7 @@ function NewCssCal(pCtrl, pFormat, pScroller, pShowTime, pTimeMode, pShowSeconds
 
 	selDate = new Date(Cal.Year, Cal.Month, Cal.Date);//version 1.7
 	RenderCssCal(true);
+	return true;
 }
 
 function closewin(id) {
