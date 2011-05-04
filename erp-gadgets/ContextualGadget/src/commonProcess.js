@@ -139,8 +139,9 @@ function clearFields()
 }
 function getUTCDateFormat(dateString)
 {
+	var offset ="-4";
 	var currentTime = new Date(dateString);
-	var month = currentTime.getUTCMonth()+1;
+	/*var month = currentTime.getUTCMonth()+1;
 	var day = currentTime.getUTCDate();
 	var year = currentTime.getUTCFullYear();
 	var currentHours = currentTime.getUTCHours ( );
@@ -151,8 +152,28 @@ function getUTCDateFormat(dateString)
 	currentHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
 	month = ( month < 10 ? "0" : "" ) + month;
 	day = ( day < 10 ? "0" : "" ) + day;
-	var currentUTCTimeString = month+"/"+day+"/"+year+" "+currentHours + ":" + currentMinutes + ":" + currentSeconds ;
-	return currentUTCTimeString;
+	var currentUTCTimeString = month+"/"+day+"/"+year+" "+currentHours + ":" + currentMinutes + ":" + currentSeconds ;*/
+	
+	utc = currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000);
+	   
+    // create new Date object for different city
+    // using supplied offset
+    var changedTime = new Date(utc + (3600000*offset));
+   
+ var month = changedTime.getMonth()+1;
+var day = changedTime.getDate();
+var year = changedTime.getFullYear();
+var hours = changedTime.getHours();
+var minutes = changedTime.getMinutes();
+var seconds = changedTime.getSeconds();
+minutes = ( minutes < 10 ? "0" : "" ) + minutes;
+seconds = ( seconds < 10 ? "0" : "" ) + seconds;
+hours = ( hours < 10 ? "0" : "" ) + hours;
+month = ( month < 10 ? "0" : "" ) + month;
+day = ( day < 10 ? "0" : "" ) + day;
+
+var changedTimeString=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+	return changedTimeString;
 }
 function getDate()
 {
