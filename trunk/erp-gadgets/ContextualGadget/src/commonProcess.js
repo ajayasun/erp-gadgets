@@ -99,8 +99,8 @@ function assignClass()
 			if(classValue=="Service Request")
 			{
 				gadgets.window.adjustHeight(320);
-		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+" : <input type='text' name='classSelected' size='18'></font></strong>";
-		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent Hr &nbsp;&nbsp;: <input type='text' name='classSelected' size='18'></font></strong>";
+		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>"+classValue+":&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
+		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent Hr&nbsp;&nbsp;:&nbsp; <input type='text' name='classSelected' size='18'></font></strong>";
 			}
 			}
 		}
