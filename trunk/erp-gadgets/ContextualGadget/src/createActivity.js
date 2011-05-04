@@ -25,46 +25,46 @@ function createActivity()
 		data = data + '<ans:ListOfAnsaction3>';
 		data = data + '<ans:Action operation="insert">';
 		data = data + '<ans:Id>999999</ans:Id>';
-		data = data + '<ans:Class>Generic</ans:Class>';
-		data = data + '<ans:Type>'+document.CRMActivity.type.value+'</ans:Type>';
-		data = data + '<ans:PrimaryOwnedBy>'+document.CRMActivity.owner.value+'</ans:PrimaryOwnedBy>';
-		if(document.CRMActivity.dueDate.value!=null&&document.CRMActivity.dueDate.value!="")
+		data = data + '<ans:Class>'+document.getElementById('classval').value+'</ans:Class>';
+		data = data + '<ans:Type>'+document.getElementById('type').value+'</ans:Type>';
+		data = data + '<ans:PrimaryOwnedBy>'+document.getElementById('owner').value+'</ans:PrimaryOwnedBy>';
+		if(document.getElementById('duedatepicker').value!=null&&document.getElementById('duedatepicker').value!="")
 			{
-			debug("Inside createActivity method Begin due date not null",document.CRMActivity.dueDate.value);
-		data = data + '<ans:Due>'+getUTCDateFormat(document.CRMActivity.dueDate.value)+'</ans:Due>';	
+			debug("Inside createActivity method Begin due date not null",document.getElementById('duedatepicker').value);
+		data = data + '<ans:Due>'+getUTCDateFormat(document.getElementById('duedatepicker').value)+'</ans:Due>';	
 			}
 		else
 			{
-			debug("Inside createActivity method Begin due date  null",document.CRMActivity.dueDate.value);
-		data = data + '<ans:Due>'+document.CRMActivity.dueDate.value+'</ans:Due>';	
+			debug("Inside createActivity method Begin due date  null",document.getElementById('duedatepicker').value);
+		data = data + '<ans:Due>'+document.getElementById('duedatepicker').value+'</ans:Due>';	
 			}
-		data = data + '<ans:Description>'+document.CRMActivity.description.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
-		data = data + '<ans:Priority>'+document.CRMActivity.priority.value+'</ans:Priority>';
-		if(document.CRMActivity.startDate.value!=null&&document.CRMActivity.startDate.value!="")
+		data = data + '<ans:Description>'+document.getElementById('description').value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
+		data = data + '<ans:Priority>'+document.getElementById('priority').value+'</ans:Priority>';
+		if(document.getElementById('startdatepicker').value!=null&&document.getElementById('startdatepicker').value!="")
 		{
-			debug("Inside createActivity method Begin Start date not null",document.CRMActivity.startDate.value);
-		data = data + '<ans:Planned>'+getUTCDateFormat(document.CRMActivity.startDate.value)+'</ans:Planned>';
+			debug("Inside createActivity method Begin Start date not null",document.getElementById('startdatepicker').value);
+		data = data + '<ans:Planned>'+getUTCDateFormat(document.getElementById('startdatepicker').value)+'</ans:Planned>';
 		}
 		else
 		{
-			debug("Inside createActivity method Begin Start date null",document.CRMActivity.startDate.value);
-		data = data + '<ans:Planned>'+document.CRMActivity.startDate.value+'</ans:Planned>';
+			debug("Inside createActivity method Begin Start date null",document.getElementById('startdatepicker').value);
+		data = data + '<ans:Planned>'+document.getElementById('startdatepicker').value+'</ans:Planned>';
 		}
-		if(document.CRMActivity.endDate.value!=null&&document.CRMActivity.endDate.value!="")
+		if(document.getElementById('enddatepicker').value!=null&&document.getElementById('enddatepicker').value!="")
 		{
-			debug("Inside createActivity method Begin endDate date not null",document.CRMActivity.endDate.value);
-        data = data + '<ans:PlannedCompletion>'+getUTCDateFormat(document.CRMActivity.endDate.value)+'</ans:PlannedCompletion>';
+			debug("Inside createActivity method Begin endDate date not null",document.getElementById('enddatepicker').value);
+        data = data + '<ans:PlannedCompletion>'+getUTCDateFormat(document.getElementById('enddatepicker').value)+'</ans:PlannedCompletion>';
 		}
 		else
 			{
-			debug("Inside createActivity method Begin endDate date  null",document.CRMActivity.endDate.value);
-			data = data + '<ans:PlannedCompletion>'+document.CRMActivity.endDate.value+'</ans:PlannedCompletion>';
+			debug("Inside createActivity method Begin endDate date  null",document.getElementById('enddatepicker').value);
+			data = data + '<ans:PlannedCompletion>'+document.getElementById('enddatepicker').value+'</ans:PlannedCompletion>';
 			}
-        if(document.CRMActivity.classval.value=="Opportunity")
+        if(document.getElementById('classval').value=="Opportunity")
         	if(On_submit())
 			{
 				
-        		data = data + '<ans:OpportunityId>'+document.CRMActivity.classSelected.value+'</ans:OpportunityId>'; 
+        		data = data + '<ans:OpportunityId>'+document.getElementById('classSelected').value+'</ans:OpportunityId>'; 
 			}
 			else
 			{
@@ -74,10 +74,10 @@ function createActivity()
 				document.getElementById('activityLoading').style.visibility = 'invisible';
 				return true;
 			}
-        else if(document.CRMActivity.classval.value=="Service Request")
+        else if(document.getElementById('classval').value=="Service Request")
         	if(On_submit())
 			{
-        		data = data + '<ans:SRNumber>'+document.CRMActivity.classSelected.value+'</ans:SRNumber>'; 
+        		data = data + '<ans:SRNumber>'+document.getElementById('classSelected').value+'</ans:SRNumber>'; 
 				
 			}
 			else
@@ -88,7 +88,7 @@ function createActivity()
 				document.getElementById('activityLoading').style.visibility = 'invisible';
 				return true;
 			}
-		data = data + '<ans:ANSActivityDetails>'+document.CRMActivity.details.value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:ANSActivityDetails>';
+		data = data + '<ans:ANSActivityDetails>'+document.getElementById('details').value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:ANSActivityDetails>';
 		data = data + '<ans:ListOfAction_Contact>';
 		var flag="false";
 		var closeTag ="false";

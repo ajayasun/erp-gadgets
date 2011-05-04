@@ -13,14 +13,14 @@ try
 	var FirstName = null;
 	var EMailAddr = null;
 
-	if(document.CRMActivity.contactfind.value=='contactLastName')
-		var LastName=document.CRMActivity.contactstarting.value;
-	else if(document.CRMActivity.contactfind.value=='contactFirstName')
-		var FirstName=document.CRMActivity.contactstarting.value;
-	else if(document.CRMActivity.contactfind.value=='contactEmail')
-		var EMailAddr=document.CRMActivity.contactstarting.value;
+	if(document.getElementById('contactfind').value=='contactLastName')
+		var LastName=document.getElementById('contactstarting').value;
+	else if(document.getElementById('contactfind').value=='contactFirstName')
+		var FirstName=document.getElementById('contactstarting').value;
+	else if(document.getElementById('contactfind').value=='contactEmail')
+		var EMailAddr=document.getElementById('contactstarting').value;
 
-	if(document.CRMActivity.contactstarting.value=='*')
+	if(document.getElementById('contactstarting').value=='*')
 	{
 	//alert("Please enter a valid search criteria. Wild card search such as this is not permitted.");
 	debug("Please enter a valid search criteria. Wild card search such as this is not permitted.", "");
@@ -31,7 +31,7 @@ try
 	}
 	else
 	{
-		if(document.CRMActivity.contactstarting.value!="")
+		if(document.getElementById('contactstarting').value!="")
 			{
 				debug("Inside searchConact method  Last Name", LastName);
 				debug("Inside searchConact method  First Name", FirstName);
@@ -158,6 +158,7 @@ try
 		var element1 = document.createElement("input");
 		element1.type = "checkbox";
 		element1.name = "ANSContactNumber";
+		element1.id = "ANSContactNumber";
 		if(contactId[j].childNodes.length>0)
 		{
 			element1.value = contactId[j].childNodes[0].nodeValue;
@@ -188,6 +189,7 @@ try
 		var element2 = document.createElement("input");
 		element2.type = "hidden";
 		element2.name = "contactLastName";
+		element2.id = "contactLastName";
 		if(lstName[j].childNodes.length>0)
 		{
 			element2.value = lstName[j].childNodes[0].nodeValue;
@@ -216,6 +218,7 @@ try
 		var element3 = document.createElement("input");
 		element3.type = "hidden";
 		element3.name = "contactFirstName";
+		element3.id = "contactFirstName";
 		if(fstName[j].childNodes.length>0)
 		{
 			element3.value = fstName[j].childNodes[0].nodeValue;
@@ -243,6 +246,7 @@ try
 		var element4 = document.createElement("input");
 		element4.type = "hidden";
 		element4.name = "contactEmailAddr";
+		element4.id = "contactEmailAddr";
 		if(emailAddrss[j].childNodes.length>0)
 		{ 
 			element4.value = emailAddrss[j].childNodes[0].nodeValue;
