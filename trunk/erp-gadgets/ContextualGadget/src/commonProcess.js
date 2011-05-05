@@ -106,6 +106,7 @@ function assignClass()
 		document.getElementById('classSelected').value=document.getElementById('OppId').value;
 		document.getElementById('Status').selectedIndex=0;
 		document.getElementById('timeSpentValue').innerHTML = "";
+		document.getElementById('externalFlag').innerHTML = "";
 		gadgets.window.adjustHeight(320);
 			}
 		else 
@@ -115,6 +116,7 @@ function assignClass()
 				gadgets.window.adjustHeight(320);
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Service Request :&nbsp; <input type='text' name='classSelected' id='classSelected' size='18'></font></strong>";
 		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent(Hr) &nbsp;:&nbsp; <input type='text' name='timeSpent' id='timeSpent' size='18'></font></strong>";
+		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External Flag &nbsp;:&nbsp; <input type='checkbox' name='extFlag' id='extFlag' size='18'></font></strong>";
 		document.getElementById('classSelected').value=document.getElementById('ServiceRST').value;
 		document.getElementById('Status').selectedIndex=3;
 			}
@@ -125,6 +127,7 @@ function assignClass()
 		debug("Inside assignClass method inside else classValue",classValue);
 		document.getElementById('classValue').innerHTML = "";
 		document.getElementById('timeSpentValue').innerHTML = "";
+		document.getElementById('externalFlag').innerHTML = "";
 		document.getElementById('classSelected').value="";
 		document.getElementById('Status').selectedIndex=0;
 		gadgets.window.adjustHeight(300);
