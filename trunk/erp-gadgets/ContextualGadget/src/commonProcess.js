@@ -116,7 +116,7 @@ function assignClass()
 				gadgets.window.adjustHeight(320);
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Service Request :&nbsp; <input type='text' name='classSelected' id='classSelected' size='18'></font></strong>";
 		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent(Hr) &nbsp;:&nbsp; <input type='text' name='timeSpent' id='timeSpent' size='18'></font></strong>";
-		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type='checkbox' name='extFlag' id='extFlag' size='18'></font></strong>";
+		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type='checkbox' name='extFlag' id='extFlag' size='18'></font></strong>";
 		document.getElementById('classSelected').value=document.getElementById('ServiceRST').value;
 		document.getElementById('Status').selectedIndex=3;
 			}
