@@ -52,7 +52,7 @@ function deleteRow(tableID)
         for(var i=0; i<rowCount; i++) 
 		{
 			var row = table.rows[i];
-            var chkbox = row.cells[0].childNodes[0];
+            var chkbox = row.cells[3].childNodes[0];
             if(null != chkbox && true == chkbox.checked) 
 			{
 				table.deleteRow(i);
