@@ -139,31 +139,8 @@ function addRemoveContact(srcTable,dscTable)
 		debug("Inside addRemoveContact method Flag value",flag);
 		for(var i=0; i<contactList.length;i++)
 		{
-			if(contactList[i].name=="ANSContactNumber")
-			{
-				if(document.getElementById(srcTable).getElementsByTagName('input')[i].checked)
-				{
-				var rowCount = tableSelected.rows.length;
-				var row = tableSelected.insertRow(rowCount);
-				flag ="true";
-				var cell1 = document.createElement("td");
-				cell1.width="20px";
-				var element1 = document.createElement("input");
-				element1.type = "checkbox";
-				element1.name = "ANSContactNumber";
-				element1.id = "ANSContactNumber";
-				element1.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
-				cell1.appendChild(element1);
-				row.appendChild(cell1);
-				//	alert("Selected Contact Id value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
-				debug("Inside addRemoveContact method AnsysContactNumber  ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
-				}
-				else
-				{
-					flag ="false";
-				}
-			}
-			else if(contactList[i].name=="contactLastName" && flag=="true")
+			
+			if(contactList[i].name=="contactLastName" && flag=="true")
 			{
 			
 				//alert("Selected First Name value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
@@ -241,7 +218,32 @@ function addRemoveContact(srcTable,dscTable)
 				cell4.appendChild(element4);
 				row.appendChild(cell4);
 			}
+			else if(contactList[i].name=="ANSContactNumber")
+			{
+				if(document.getElementById(srcTable).getElementsByTagName('input')[i].checked)
+				{
+				var rowCount = tableSelected.rows.length;
+				var row = tableSelected.insertRow(rowCount);
+				flag ="true";
+				var cell1 = document.createElement("td");
+				cell1.width="20px";
+				var element1 = document.createElement("input");
+				element1.type = "checkbox";
+				element1.name = "ANSContactNumber";
+				element1.id = "ANSContactNumber";
+				element1.value = document.getElementById(srcTable).getElementsByTagName('input')[i].value;
+				cell1.appendChild(element1);
+				row.appendChild(cell1);
+				//	alert("Selected Contact Id value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
+				debug("Inside addRemoveContact method AnsysContactNumber  ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
+				}
+				else
+				{
+					flag ="false";
+				}
+			}
 		}
+		
 
 		deleteRow(srcTable)
 	}
