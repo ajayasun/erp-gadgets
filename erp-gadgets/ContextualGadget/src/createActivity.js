@@ -194,7 +194,7 @@ try
 		var table = document.getElementById("employeeAvailable");
 		var rowCount = table.rows.length;
 		debug("Inside createActivityResult method employeeAvailable table length",rowCount);
-		for(var i=1; i<rowCount; i++)
+		for(var i=0; i<rowCount; i++)
 		{
 			table.deleteRow(i);
 			rowCount--;
@@ -203,7 +203,7 @@ try
 		var table1 = document.getElementById("employeeSelected");
 		var rowCount1 = table1.rows.length;
 		debug("Inside createActivityResult method employeeSelected table length",rowCount1);
-		for(var j=1; j<rowCount1; j++)
+		for(var j=0; j<rowCount1; j++)
 		{
 			table1.deleteRow(j);
 			rowCount1--;
@@ -212,7 +212,7 @@ try
 		var table2 = document.getElementById("contactAvailable");
 		var rowCount2 = table2.rows.length;
 		debug("Inside createActivityResult method contactAvailable table length",rowCount2);
-		for(var k=1; k<rowCount2; k++) 
+		for(var k=0; k<rowCount2; k++) 
 		{
 			table2.deleteRow(k);
 			rowCount2--;
@@ -221,7 +221,7 @@ try
 		var table3 = document.getElementById("contactSelected");
 		var rowCount3 = table3.rows.length;
 		debug("Inside createActivityResult method contactSelected table length",rowCount3);
-		for(var m=1; m<rowCount3; m++) 
+		for(var m=0; m<rowCount3; m++) 
 		{
 			table3.deleteRow(m);
 			rowCount3--;
