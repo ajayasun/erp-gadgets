@@ -80,7 +80,11 @@ function createActivity()
         	if(On_submit())
 			{
         		data = data + '<ans:SRNumber>'+document.getElementById('classSelected').value+'</ans:SRNumber>'; 
-        		data = data + '<ans:ANSExternalFlag>Yes</ans:ANSExternalFlag>';
+        		if(document.getElementById('extFlag').checked)
+        			data = data + '<ans:ANSExternalFlag>Y</ans:ANSExternalFlag>';
+        		else
+        			data = data + '<ans:ANSExternalFlag>N</ans:ANSExternalFlag>';
+        		data = data + '<ans:DurationHours>'+document.getElementById('timeSpent').value+'</ans:DurationHours>';
 
 			}
 			else
