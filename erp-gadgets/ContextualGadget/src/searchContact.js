@@ -149,25 +149,7 @@ try
 		var rowCount = table.rows.length;
 		debug("Inside searchContactResult method Table Row length",rowCount);
 		var row = table.insertRow(rowCount);
-		var contactId=xmlDoc.getElementsByTagName('ANSContactNumber');
-		debug("Inside searchContactResult method J value",j);
-		debug("Inside searchContactResult method Child Node Length value",contactId[j].childNodes.length);
-		
-		var cell1 = document.createElement("td");
-		cell1.width="20px";
-		var element1 = document.createElement("input");
-		element1.type = "checkbox";
-		element1.name = "ANSContactNumber";
-		element1.id = "ANSContactNumber";
-		if(contactId[j].childNodes.length>0)
-		{
-			element1.value = contactId[j].childNodes[0].nodeValue;
-			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
-		}
-		cell1.appendChild(element1);
-		row.appendChild(cell1);
-		k++;
-		
+				
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		debug("Inside searchContactResult method LastName Node Length value",lstName[j].childNodes.length);
 		var lastName;
@@ -253,6 +235,25 @@ try
 		}
 		cell4.appendChild(element4);
 		row.appendChild(cell4);
+		k++;
+		
+		var contactId=xmlDoc.getElementsByTagName('ANSContactNumber');
+		debug("Inside searchContactResult method J value",j);
+		debug("Inside searchContactResult method Child Node Length value",contactId[j].childNodes.length);
+		
+		var cell1 = document.createElement("td");
+		cell1.width="20px";
+		var element1 = document.createElement("input");
+		element1.type = "checkbox";
+		element1.name = "ANSContactNumber";
+		element1.id = "ANSContactNumber";
+		if(contactId[j].childNodes.length>0)
+		{
+			element1.value = contactId[j].childNodes[0].nodeValue;
+			debug("Inside searchContactResult method ANSContactNumber",contactId[j].childNodes[0].nodeValue);
+		}
+		cell1.appendChild(element1);
+		row.appendChild(cell1);
 		k++;
 	}
 }
