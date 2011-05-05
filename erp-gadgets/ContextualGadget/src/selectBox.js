@@ -22,7 +22,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				var row = tableSelected.insertRow(rowCount);
 				flag ="true";
 				var cell1 = document.createElement("td");
-				cell1.width="10%";
+				cell1.width="20px";
 				var element1 = document.createElement("input");
 				element1.type = "checkbox";
 				element1.name = "empId";
@@ -44,7 +44,7 @@ function addRemoveEmployee(srcTable,dscTable)
 				//alert("Selected First Name value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
 				debug("Inside addRemoveEmployee method EMPLOYEE last Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell2 = document.createElement("td");
-				cell2.style.width="22%";
+				cell2.style.width="80px";
 				cell2.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -68,7 +68,7 @@ function addRemoveEmployee(srcTable,dscTable)
 			{
 				debug("Inside addRemoveEmployee method Employee First Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell3 = document.createElement("td");
-				cell3.style.width="24%";
+				cell3.style.width="80px";
 				cell3.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -92,7 +92,7 @@ function addRemoveEmployee(srcTable,dscTable)
 			{
 				debug("Inside addRemoveEmployee method Email Address ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell4 = document.createElement("td");
-				cell4.style.width="42%";
+				cell4.style.width="135px";
 				cell4.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -147,7 +147,7 @@ function addRemoveContact(srcTable,dscTable)
 				var row = tableSelected.insertRow(rowCount);
 				flag ="true";
 				var cell1 = document.createElement("td");
-				cell1.width="10%";
+				cell1.width="20px";
 				var element1 = document.createElement("input");
 				element1.type = "checkbox";
 				element1.name = "ANSContactNumber";
@@ -170,7 +170,7 @@ function addRemoveContact(srcTable,dscTable)
 				debug("Inside addRemoveContact method last Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var lastName;
 				var cell2 = document.createElement("td");
-				cell2.style.width="22%";
+				cell2.style.width="80px";
 				cell2.className="wrapText";
 				//var lastName = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				//cell2.appendChild(lastName);
@@ -196,7 +196,7 @@ function addRemoveContact(srcTable,dscTable)
 			{
 				debug("Inside addRemoveContact method First Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell3 = document.createElement("td");
-				cell3.style.width="24%";
+				cell3.style.width="80px";
 				cell3.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -221,7 +221,7 @@ function addRemoveContact(srcTable,dscTable)
 			{
 				debug("Inside addRemoveContact method Email Address ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell4 = document.createElement("td");
-				cell4.style.width="42%";
+				cell4.style.width="135px";
 				cell4.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{

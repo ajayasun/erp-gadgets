@@ -141,7 +141,7 @@ try
 		var empId=xmlDoc.getElementsByTagName('LoginName');
 		
 			var cell1 = document.createElement("td");
-			cell1.width="10%";
+			cell1.width="20px";
 
 			var element1 = document.createElement("input");
 			element1.type = "checkbox";
@@ -158,7 +158,7 @@ try
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		var lastName;
 			var cell2 = document.createElement("td");
-			cell2.style.width="22%";
+			cell2.style.width="75px";
 			cell2.className="wrapText";
 			if(lstName[j].childNodes.length>0)
 			{
@@ -184,7 +184,7 @@ try
 			var fstName=xmlDoc.getElementsByTagName('FirstName');
 		
 			var cell3 = document.createElement("td");
-			cell3.style.width="24%";
+			cell3.style.width="75px";
 			cell3.className="wrapText";
 			var firstName;
 			if(fstName[j].childNodes.length>0)
@@ -211,7 +211,7 @@ try
 			var emailAddrss=xmlDoc.getElementsByTagName('EMailAddr');
 		
 			var cell4 = document.createElement("td");
-			cell4.style.width="42%";
+			cell4.style.width="136";
 			cell4.className="wrapText";
 			if(emailAddrss[j].childNodes.length>0)
 			{ 
