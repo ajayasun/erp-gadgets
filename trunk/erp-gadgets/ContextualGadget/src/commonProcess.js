@@ -76,7 +76,7 @@ function deleteAllRow(tableID)
 		var table = document.getElementById(tableID);
         var rowCount = table.rows.length;
 		debug("Inside deleteAllRow method Table Length",rowCount);
-        for(var i=1; i<rowCount; i++) 
+        for(var i=0; i<rowCount; i++) 
 		{
 			var row = table.rows[i];
             var chkbox = row.cells[0].childNodes[0];
