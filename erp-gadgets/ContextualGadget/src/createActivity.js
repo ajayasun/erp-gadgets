@@ -28,6 +28,8 @@ function createActivity()
 		data = data + '<ans:Class>'+document.getElementById('classval').value+'</ans:Class>';
 		data = data + '<ans:Type>'+document.getElementById('type').value+'</ans:Type>';
 		data = data + '<ans:PrimaryOwnedBy>'+document.getElementById('owner').value+'</ans:PrimaryOwnedBy>';
+		data = data + '<ans:Status>'+document.getElementById('Status').value+'</ans:Status>';
+
 		if(document.getElementById('duedatepicker').value!=null&&document.getElementById('duedatepicker').value!="")
 			{
 			debug("Inside createActivity method Begin due date not null",document.getElementById('duedatepicker').value);
@@ -78,7 +80,8 @@ function createActivity()
         	if(On_submit())
 			{
         		data = data + '<ans:SRNumber>'+document.getElementById('classSelected').value+'</ans:SRNumber>'; 
-				
+        		data = data + '<ans:ANSExternalFlag>Yes</ans:ANSExternalFlag>';
+
 			}
 			else
 			{
