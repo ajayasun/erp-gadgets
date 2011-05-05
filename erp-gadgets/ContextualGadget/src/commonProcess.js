@@ -95,6 +95,7 @@ function assignClass()
 	debug("Inside assignClass method Begin","");
 	var selIdx = document.getElementById('classval').selectedIndex;
 	var classValue = document.getElementById('classval').options[selIdx].text;
+	document.getElementById('Status').selectedIndex=0;
 	debug("Inside assignClass method classValue",classValue);
 	if(classValue!='Generic')
 		{
