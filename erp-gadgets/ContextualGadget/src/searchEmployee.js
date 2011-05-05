@@ -142,7 +142,17 @@ try
 		
 			var cell1 = document.createElement("td");
 			cell1.width="20px";
-
+			var element1 = document.createElement("input");
+			element1.type = "checkbox";
+			element1.name = "empId";
+			element1.id = "empId";
+			if(empId[j].childNodes.length>0)
+			{
+			element1.value = empId[j].childNodes[0].nodeValue;
+			debug("Inside searchEmployeeResult method Employee Login name", empId[j].childNodes[0].nodeValue);
+			}
+			cell1.appendChild(element1);
+			row.appendChild(cell1);
 					
 		var lstName=xmlDoc.getElementsByTagName('LastName');
 		var lastName;
@@ -224,17 +234,7 @@ try
 			cell4.appendChild(element4);
 			row.appendChild(cell4);
 			
-			var element1 = document.createElement("input");
-			element1.type = "checkbox";
-			element1.name = "empId";
-			element1.id = "empId";
-			if(empId[j].childNodes.length>0)
-			{
-			element1.value = empId[j].childNodes[0].nodeValue;
-			debug("Inside searchEmployeeResult method Employee Login name", empId[j].childNodes[0].nodeValue);
-			}
-			cell1.appendChild(element1);
-			row.appendChild(cell1);
+
 	}
 }
 catch (e)
