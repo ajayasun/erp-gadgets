@@ -81,9 +81,9 @@ function createActivity()
 			{
         		data = data + '<ans:SRNumber>'+document.getElementById('classSelected').value+'</ans:SRNumber>'; 
         		if(document.getElementById('extFlag').checked)
-        			data = data + '<ans:ANSExternalFlag>Y</ans:ANSExternalFlag>';
+        			data = data + '<ans:ANSExternalFlag>Yes</ans:ANSExternalFlag>';
         		else
-        			data = data + '<ans:ANSExternalFlag>N</ans:ANSExternalFlag>';
+        			data = data + '<ans:ANSExternalFlag>No</ans:ANSExternalFlag>';
         		data = data + '<ans:DurationHours>'+document.getElementById('timeSpent').value+'</ans:DurationHours>';
 
 			}
