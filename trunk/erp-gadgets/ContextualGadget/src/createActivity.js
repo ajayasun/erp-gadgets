@@ -12,8 +12,8 @@ function createActivity()
 		data = '<?xml version="1.0" encoding="utf-8"?>';
 		data = data + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://siebel.com/webservices" xmlns:asi="http://siebel.com/asi/" xmlns:ans="http://www.siebel.com/xml/ANSAction3">';
 		data = data + '<soapenv:Header>';
-		data = data + '<web:PasswordText>sadmin17</web:PasswordText>';
-		data = data + '<web:UsernameToken>sadmin</web:UsernameToken>';
+		data = data + '<web:PasswordText>innoveer09</web:PasswordText>';
+		data = data + '<web:UsernameToken>soauser</web:UsernameToken>';
 		data=  data + '<web:SessionType>stateless</web:SessionType>';
 		data=  data + '</soapenv:Header>';
 			
