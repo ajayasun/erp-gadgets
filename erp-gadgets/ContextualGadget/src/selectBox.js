@@ -44,7 +44,10 @@ function addRemoveEmployee(srcTable,dscTable)
 				//alert("Selected First Name value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
 				debug("Inside addRemoveEmployee method EMPLOYEE last Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell2 = document.createElement("td");
-				cell2.style.width="80px";
+				if(dscTable=="employeeSelected")
+					cell2.style.width="80px";
+				else
+					cell2.style.width="75px";
 				cell2.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -68,7 +71,11 @@ function addRemoveEmployee(srcTable,dscTable)
 			{
 				debug("Inside addRemoveEmployee method Employee First Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell3 = document.createElement("td");
-				cell3.style.width="80px";
+				if(dscTable=="employeeSelected")
+					cell3.style.width="80px";
+				else
+					cell3.style.width="75px";
+				
 				cell3.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -92,7 +99,11 @@ function addRemoveEmployee(srcTable,dscTable)
 			{
 				debug("Inside addRemoveEmployee method Email Address ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell4 = document.createElement("td");
-				cell4.style.width="135px";
+				if(dscTable=="employeeSelected")
+					cell4.style.width="135px";
+				else
+					cell4.style.width="136px";
+				//cell4.style.width="135px";
 				cell4.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -147,7 +158,11 @@ function addRemoveContact(srcTable,dscTable)
 				debug("Inside addRemoveContact method last Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var lastName;
 				var cell2 = document.createElement("td");
-				cell2.style.width="80px";
+				if(dscTable=="contactSelected")
+					cell2.style.width="80px";
+				else
+					cell2.style.width="75px";
+				//cell2.style.width="80px";
 				cell2.className="wrapText";
 				//var lastName = document.createTextNode(document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				//cell2.appendChild(lastName);
@@ -173,7 +188,11 @@ function addRemoveContact(srcTable,dscTable)
 			{
 				debug("Inside addRemoveContact method First Name ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell3 = document.createElement("td");
-				cell3.style.width="80px";
+				if(dscTable=="contactSelected")
+					cell3.style.width="80px";
+				else
+					cell3.style.width="75px";
+				//cell3.style.width="80px";
 				cell3.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
@@ -198,7 +217,11 @@ function addRemoveContact(srcTable,dscTable)
 			{
 				debug("Inside addRemoveContact method Email Address ",document.getElementById(srcTable).getElementsByTagName('input')[i].value);
 				var cell4 = document.createElement("td");
-				cell4.style.width="135px";
+				if(dscTable=="contactSelected")
+					cell4.style.width="135px";
+				else
+					cell4.style.width="136px";
+				//cell4.style.width="135px";
 				cell4.className="wrapText";
 				if(document.getElementById(srcTable).getElementsByTagName('input')[i].value!="")
 				{
