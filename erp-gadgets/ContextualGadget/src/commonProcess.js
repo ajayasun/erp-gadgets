@@ -22,6 +22,7 @@ var SOAPparams = {};
 		SOAPparams[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
 		SOAPparams[gadgets.io.RequestParameters.HEADERS]={"Content-Type" : "'text/xml;charset=UTF-8'","SOAPAction" :"'" +soapAction+"'"};
 		SOAPparams[gadgets.io.RequestParameters.POST_DATA]=soapData;
+		debug("Inside invokeSiebeWebservice method SOAP URL",soapURL);
 		if(soapResponse=="contactResponse")
 			gadgets.io.makeRequest(soapURL, searchContactResult, SOAPparams);
 		if(soapResponse=="employeeResponse")
