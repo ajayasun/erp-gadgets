@@ -34,7 +34,7 @@ try
 			soapMsg = soapMsg + '      </cus:QueryEmployee>';
 			soapMsg = soapMsg + '   </soapenv:Body>';
 			soapMsg = soapMsg + '</soapenv:Envelope>';
-alert("before send to siebel :"+soapMsg);
+//alert("before send to siebel :"+soapMsg);
 			debug("Inside getEmployee method Before send Employee Data to siebel .",soapMsg);
 
 			var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
@@ -55,11 +55,11 @@ debug("Inside getEmployeeResult method Employee Response Data",searchEmployeeRes
 debug("Inside getEmployeeResult method Employee Response Text",searchEmployeeResultObj.text);
 debug("Inside getEmployeeResult method Employee Response authErrorText",searchEmployeeResultObj.oauthErrorText);
 
-alert("rc"+searchEmployeeResultObj.rc);
+/*alert("rc"+searchEmployeeResultObj.rc);
 alert("Error"+searchEmployeeResultObj.errors);
 alert("data"+searchEmployeeResultObj.data);
 alert("Error"+searchEmployeeResultObj.text);
-alert("data"+searchEmployeeResultObj.oauthErrorText);
+alert("data"+searchEmployeeResultObj.oauthErrorText);*/
 	
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
 if(searchEmployeeResultObj.rc=="200")
@@ -236,7 +236,7 @@ try
 				soapMsg = soapMsg + '   </soapenv:Body>';
 				soapMsg = soapMsg + '</soapenv:Envelope>';
 
-				alert("Before send to Siebel :"+ soapMsg);
+				//alert("Before send to Siebel :"+ soapMsg);
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'getcontactResponse');
@@ -258,11 +258,11 @@ debug("Inside getContactResult method Response Text",searchContactResultObj.text
 debug("Inside getContactResult method Response authErrorText",searchContactResultObj.oauthErrorText);
 
 var searchContactResultObjText = searchContactResultObj.text;
-alert("rc"+searchContactResultObj.rc);
+/*alert("rc"+searchContactResultObj.rc);
 alert("Error"+searchContactResultObj.errors);
 alert("data"+searchContactResultObj.data);
 alert("Error"+searchContactResultObj.text);
-alert("data"+searchContactResultObj.oauthErrorText);
+alert("data"+searchContactResultObj.oauthErrorText);*/
 if(searchContactResultObj.rc=="200")
 {
 var table = document.getElementById("contactSelected");
