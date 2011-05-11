@@ -33,7 +33,8 @@ var SOAPparams = {};
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
 		if(soapResponse=="getemployeeResponse")
 			gadgets.io.makeRequest(soapURL, getEmployeeResult, SOAPparams);
-
+		if(soapResponse=="getcontactResponse")
+			gadgets.io.makeRequest(soapURL, getContactResult, SOAPparams);
 debug("Inside invokeSiebeWebservice method End","");
 }
 function debug(textName,textValue)
