@@ -29,7 +29,7 @@ try
 	}
 	else
 	{
-		if(document.getElementById('employeestarting').value!="")
+		if(document.getElementById('employeestarting').value!=""||document.getElementById('activity').value=="true")
 		{
 			debug("Inside searchEmployee method Employee Last Name.",LastName);
 			debug("Inside searchEmployee method Employee First Name.",FirstName);
@@ -68,7 +68,23 @@ try
 			}
 			else
 			{
-				soapMsg = soapMsg + '                  <quer:EMailAddr></quer:EMailAddr>';
+				if(document.getElementById('activity').value=="true")
+				{
+					var Mail=document.getElementsByTagName('input');
+					 for(var i=0; i<Mail.length;i++)
+					 {
+						if(Mail[i].name=="userToCC")
+						{
+							soapMsg = soapMsg + '                  <quer:EMailAddr>~LIKE \''+Mail[i].value+ '\'</quer:EMailAddr>';
+						}
+					 }
+					 document.getElementById('activity').value="false";
+				}
+				else
+				{
+					soapMsg = soapMsg + '                  <quer:EMailAddr></quer:EMailAddr>';
+				}
+				
 			}
 
 			soapMsg = soapMsg + '                  <quer:Id/>';
