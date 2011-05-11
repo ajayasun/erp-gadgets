@@ -45,7 +45,8 @@ try
 			soapMsg = soapMsg + '         <SiebelMessageIn>';
 			soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
 			soapMsg = soapMsg + '               <quer:Employee>';
-
+			if(document.getElementById('employeestarting').value!="")
+			{
 			if (LastName != null)
 			{
 				soapMsg = soapMsg + '                  <quer:LastName>~LIKE \''+LastName+ '\'</quer:LastName>';
@@ -69,25 +70,22 @@ try
 			}
 			else
 			{
-				if(document.getElementById('activity').value=="true")
-				{
-					var Mail=document.getElementsByTagName('input');
-					 for(var i=0; i<Mail.length;i++)
-					 {
-						if(Mail[i].name=="userToCC")
-						{
-							soapMsg = soapMsg + '                  <quer:EMailAddr>~LIKE \''+Mail[i].value+ '\'</quer:EMailAddr>';
-						}
-					 }
-					 document.getElementById('activity').value="false";
-				}
-				else
-				{
-					soapMsg = soapMsg + '                  <quer:EMailAddr></quer:EMailAddr>';
-				}
-				
+				soapMsg = soapMsg + '                  <quer:EMailAddr></quer:EMailAddr>';
 			}
-
+			}
+			
+			if(document.getElementById('activity').value=="true")
+			{
+				var Mail=document.getElementsByTagName('input');
+				 for(var i=0; i<Mail.length;i++)
+				 {
+					if(Mail[i].name=="userToCC")
+					{
+						soapMsg = soapMsg + '                  <quer:EMailAddr>~LIKE \''+Mail[i].value+ '\'</quer:EMailAddr>';
+					}
+				 }
+				 document.getElementById('activity').value="false";
+			}
 			soapMsg = soapMsg + '                  <quer:Id/>';
 			soapMsg = soapMsg + '                  <quer:LoginName/>';
 			soapMsg = soapMsg + '               </quer:Employee>';
