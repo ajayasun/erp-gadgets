@@ -55,6 +55,11 @@ debug("Inside getEmployeeResult method Employee Response Data",searchEmployeeRes
 debug("Inside getEmployeeResult method Employee Response Text",searchEmployeeResultObj.text);
 debug("Inside getEmployeeResult method Employee Response authErrorText",searchEmployeeResultObj.oauthErrorText);
 
+alert("rc"+searchEmployeeResultObj.rc);
+alert("Error"+searchEmployeeResultObj.errors);
+alert("data"+searchEmployeeResultObj.data);
+alert("Error"+searchEmployeeResultObj.text);
+alert("data"+searchEmployeeResultObj.oauthErrorText);
 	
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
 if(searchEmployeeResultObj.rc=="200")
