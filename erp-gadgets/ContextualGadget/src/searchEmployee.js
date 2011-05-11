@@ -45,7 +45,7 @@ try
 			soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
 			soapMsg = soapMsg + '               <quer:Employee>';
 
-			if (LastName != null)
+			if (LastName != null||LastName != "")
 			{
 				soapMsg = soapMsg + '                  <quer:LastName>~LIKE \''+LastName+ '\'</quer:LastName>';
 			}
@@ -53,7 +53,7 @@ try
 			{
 				soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
 			}
-			if (FirstName != null)
+			if (FirstName != null||FirstName != "")
 			{
 				soapMsg = soapMsg + '                  <quer:FirstName>~LIKE \''+FirstName+ '\'</quer:FirstName>';
 			}
@@ -62,7 +62,7 @@ try
 				soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
 			}
 
-			if (EMailAddr != null)
+			if (EMailAddr != null||EMailAddr != "")
 			{
 				soapMsg = soapMsg + '                  <quer:EMailAddr>~LIKE \''+EMailAddr+ '\'</quer:EMailAddr>';
 			}
