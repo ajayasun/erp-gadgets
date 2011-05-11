@@ -31,6 +31,8 @@ var SOAPparams = {};
 			gadgets.io.makeRequest(soapURL, createActivityResult, SOAPparams);
 		if(soapResponse=="employeeLogin")
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
+		if(soapResponse=="getemployeeResponse")
+			gadgets.io.makeRequest(soapURL, getEmployeeResult, SOAPparams);
 
 debug("Inside invokeSiebeWebservice method End","");
 }
