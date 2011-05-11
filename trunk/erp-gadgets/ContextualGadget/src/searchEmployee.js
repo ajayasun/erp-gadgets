@@ -29,6 +29,7 @@ try
 	}
 	else
 	{
+		debug("Inside searchEmployee method activity selected.",document.getElementById('activity').value);
 		if(document.getElementById('employeestarting').value!=""||document.getElementById('activity').value=="true")
 		{
 			debug("Inside searchEmployee method Employee Last Name.",LastName);
@@ -45,7 +46,7 @@ try
 			soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
 			soapMsg = soapMsg + '               <quer:Employee>';
 
-			if (LastName != null||LastName != "")
+			if (LastName != null)
 			{
 				soapMsg = soapMsg + '                  <quer:LastName>~LIKE \''+LastName+ '\'</quer:LastName>';
 			}
@@ -53,7 +54,7 @@ try
 			{
 				soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
 			}
-			if (FirstName != null||FirstName != "")
+			if (FirstName != null)
 			{
 				soapMsg = soapMsg + '                  <quer:FirstName>~LIKE \''+FirstName+ '\'</quer:FirstName>';
 			}
@@ -62,7 +63,7 @@ try
 				soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
 			}
 
-			if (EMailAddr != null||EMailAddr != "")
+			if (EMailAddr != null)
 			{
 				soapMsg = soapMsg + '                  <quer:EMailAddr>~LIKE \''+EMailAddr+ '\'</quer:EMailAddr>';
 			}
