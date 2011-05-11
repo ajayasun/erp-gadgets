@@ -10,22 +10,24 @@ try
 			soapMsg = soapMsg + '   <soapenv:Body>';
 			soapMsg = soapMsg + '      <cus:QueryEmployee>';
 			soapMsg = soapMsg + '         <SiebelMessageIn>';
-			soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
-			soapMsg = soapMsg + '               <quer:Employee>';
-			soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
-			soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
+			
 			var Mail=document.getElementsByTagName('input');
 	        for(var i=0; i<Mail.length;i++)
 				{
 					if(Mail[i].name=="userToCC")
 					{
+						soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
+						soapMsg = soapMsg + '               <quer:Employee>';
+						soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
+						soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
 						soapMsg = soapMsg + '                  <quer:EMailAddr>~LIKE \''+Mail[i].value+ '\'</quer:EMailAddr>';
+						soapMsg = soapMsg + '                  <quer:Id/>';
+						soapMsg = soapMsg + '                  <quer:LoginName/>';
+						soapMsg = soapMsg + '               </quer:Employee>';
+						soapMsg = soapMsg + '            </quer:ListOfAns_Wsemployee>';
 					}
 				}
-			soapMsg = soapMsg + '                  <quer:Id/>';
-			soapMsg = soapMsg + '                  <quer:LoginName/>';
-			soapMsg = soapMsg + '               </quer:Employee>';
-			soapMsg = soapMsg + '            </quer:ListOfAns_Wsemployee>';
+
 			soapMsg = soapMsg + '         </SiebelMessageIn>';
 			soapMsg = soapMsg + '         <LOVLanguageMode>LDC</LOVLanguageMode>';
 			soapMsg = soapMsg + '         <ViewMode>All</ViewMode>';
@@ -201,23 +203,25 @@ try
 				soapMsg = soapMsg + '   <soapenv:Body>';
 				soapMsg = soapMsg + '      <cus:ANSQueryPageCustomUI>';
 				soapMsg = soapMsg + '         <SiebelMessageIn>';
-				soapMsg = soapMsg + '            <quer:ListOfAns_Wscontact pagesize="100" startrownum="0" recordcountneeded="true">';
-				soapMsg = soapMsg + '            <quer:Contact>';
-				soapMsg = soapMsg + '<quer:ANSContactNumber></quer:ANSContactNumber>';
-				soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
-				soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
+				
 				var Mail=document.getElementsByTagName('input');
 	        for(var i=0; i<Mail.length;i++)
 				{
 					if(Mail[i].name=="userToCC")
 					{
+						soapMsg = soapMsg + '            <quer:ListOfAns_Wscontact pagesize="100" startrownum="0" recordcountneeded="true">';
+						soapMsg = soapMsg + '            <quer:Contact>';
+						soapMsg = soapMsg + '<quer:ANSContactNumber></quer:ANSContactNumber>';
+						soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
+						soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
 						soapMsg = soapMsg + '                  <quer:EmailAddress>~LIKE \''+Mail[i].value+'\'</quer:EmailAddress>';
+						var empFlag='N';
+						soapMsg = soapMsg + '<quer:EmployeeFlag sortorder="" sortsequence="">=\''+empFlag+'\'</quer:EmployeeFlag>';
+						soapMsg = soapMsg + '            </quer:Contact>';
+						soapMsg = soapMsg + '         </quer:ListOfAns_Wscontact>';
 					}
 				}
-				var empFlag='N';
-				soapMsg = soapMsg + '<quer:EmployeeFlag sortorder="" sortsequence="">=\''+empFlag+'\'</quer:EmployeeFlag>';
-				soapMsg = soapMsg + '            </quer:Contact>';
-				soapMsg = soapMsg + '         </quer:ListOfAns_Wscontact>';
+
 				soapMsg = soapMsg + '      </SiebelMessageIn>';
 				soapMsg = soapMsg + ' <LOVLanguageMode>LDC</LOVLanguageMode>';
 				soapMsg = soapMsg + ' <ViewMode>All</ViewMode>';
