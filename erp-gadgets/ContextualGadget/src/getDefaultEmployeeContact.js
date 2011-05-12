@@ -6,7 +6,7 @@ try
 			soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
 			soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
-			soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>sadmin17</web:PasswordText><web:UsernameToken>sadmin</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
+			soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>innoveer09</web:PasswordText><web:UsernameToken>SOAUSER</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
 			soapMsg = soapMsg + '   <soapenv:Body>';
 			soapMsg = soapMsg + '      <cus:QueryEmployee>';
 			soapMsg = soapMsg + '         <SiebelMessageIn>';
@@ -201,8 +201,8 @@ try
 
 				soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSContact/Query" xmlns:web="http://siebel.com/webservices">';
 				soapMsg = soapMsg + '   <soapenv:Header>';
-				soapMsg = soapMsg + '      <web:PasswordText>sadmin17</web:PasswordText>';
-				soapMsg = soapMsg + '      <web:UsernameToken>sadmin</web:UsernameToken>';
+				soapMsg = soapMsg + '      <web:PasswordText>innoveer09</web:PasswordText>';
+				soapMsg = soapMsg + '      <web:UsernameToken>SOAUSER</web:UsernameToken>';
 				soapMsg = soapMsg + '      <web:SessionType>stateless</web:SessionType>';
 				soapMsg = soapMsg + '    </soapenv:Header>';
 				soapMsg = soapMsg + '   <soapenv:Body>';
