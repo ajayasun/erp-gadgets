@@ -107,7 +107,7 @@ function assignClass()
 		if(classValue=="Opportunity")
 			{
 		//document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Opportunity ID &nbsp;:&nbsp; <input type='text' name='classSelected' id='classSelected' size='18'></font></strong>";
-		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Opportunity ID &nbsp;:&nbsp; <input type='text' name='classSelected' id='classSelected' size='18' class='fontRel'></font></strong>";
+		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Opportunity ID &nbsp;:&nbsp; <input type='text' name='classSelected' id='classSelected' size='15' class='fontRel'></font></strong>";
 		document.getElementById('classSelected').value=document.getElementById('OppId').value;
 		document.getElementById('Status').selectedIndex=0;
 		document.getElementById('timeSpentValue').innerHTML = "";
@@ -123,8 +123,8 @@ function assignClass()
 		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent(Hr) :&nbsp; <input type='text' name='timeSpent' id='timeSpent' size='18'></font></strong>";
 		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type='checkbox' name='extFlag' id='extFlag' size='18'></font></strong>";*/
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Service Request :&nbsp; <input type='text' name='classSelected' id='classSelected' size='15' class='fontRel'></font></strong>";
-		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent(Hr) : <input type='text' name='timeSpent' id='timeSpent' size='7' class='fontRel'></font></strong>";
-		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type='checkbox' name='extFlag' id='extFlag' size='18' class='fontRel'></font></strong>";
+		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent(Hr) : <input type='text' name='timeSpent' id='timeSpent' size='14' class='fontRel'></font></strong>";
+		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp; : <input type='checkbox' name='extFlag' id='extFlag' size='18' class='fontRel'></font></strong>";
 		document.getElementById('classSelected').value=document.getElementById('ServiceRST').value;
 		document.getElementById('Status').selectedIndex=3;
 			}
