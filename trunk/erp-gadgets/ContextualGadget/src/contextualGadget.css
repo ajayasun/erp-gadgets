@@ -20,7 +20,7 @@ body {
 	/*color: #444;*/
 }
 h1 {font-size: 3em; margin: 20px 0;}
-.container {width: 810px; margin: 0px;}
+.container {width: 780px; margin: 0px;}
 ul.tabs {
 	margin: 0;
 	padding: 0;
@@ -31,7 +31,7 @@ ul.tabs {
 	border-right: 0px solid #999;
 	border-left: 0px solid #999;
 	/*background: #005CE6;*/
-	width: 810px;
+	width: 780px;
 	
 }
 ul.tabs li {
@@ -68,7 +68,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 	border-top: none;
 	clear: both;
 	/*float: left; */
-	width: 810px;
+	width: 780px;
 	background: #F8F8F8;
 	font-size: 1.0em;
 	/*overflow: auto;*/
@@ -96,7 +96,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 .msg_list {
 	margin: 0px;
 	padding: 0px;
-	width: 810px;
+	width: 780px;
 	
 }
 .msg_head {
