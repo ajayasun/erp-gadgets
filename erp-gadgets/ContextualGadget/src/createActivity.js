@@ -271,7 +271,7 @@ var text=obj.text;
 			xmlDoc.loadXML(text); 
 		} 
 		alert("XML Root Tag Name: " + xmlDoc.documentElement.tagName);
-		alert("Child node length: " + xmlDoc.documentElement.childNodes.length);
+		alert("Child node length: " + xmlDoc.documentElement.childNodes[0].firstChild.length);
 		alert("First Child: " + xmlDoc.documentElement.childNodes[1].firstChild.tagName);
 		 
 		//Using lastChild Properties
