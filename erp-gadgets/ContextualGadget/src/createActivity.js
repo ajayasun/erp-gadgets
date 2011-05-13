@@ -272,14 +272,16 @@ var text=obj.text;
 		} 
 		alert("XML Root Tag Name: " + xmlDoc.documentElement.tagName);
 		alert("Child node length: " + xmlDoc.documentElement.childNodes[1].firstChild.length);
-		alert("First Child: " + xmlDoc.documentElement.childNodes[1].firstChild[1].tagName);
-		 
+		alert("First Child: " + xmlDoc.documentElement.childNodes[1].firstChild.tagName);
+		alert("First Child: " + xmlDoc.getElementsByTagName("faultstring")[0].childNodes[0].nodeValue);
+		
 		//Using lastChild Properties
 		//Output average
 		alert("Last Child: " + xmlDoc.documentElement.childNodes[1].lastChild.tagName);
 	 
+		
 
-		document.getElementById('content_div').innerHTML = 'Activity created Failure : '+obj.text;
+		document.getElementById('content_div').innerHTML = 'Activity created Failure : '+xmlDoc.getElementsByTagName("faultstring")[0].childNodes[0].nodeValue;
 		}
 	}
 }
