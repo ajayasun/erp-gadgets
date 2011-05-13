@@ -199,20 +199,7 @@ try
 {
 	if(obj.rc=="200")
 	{
-		var text=obj.text;
 		
-		if (window.DOMParser)
-		{
-			parser=new DOMParser();
-			xmlDoc=parser.parseFromString(text,"text/xml");
-		}
-		else // Internet Explorer
-		{
-			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
-			xmlDoc.async="false";
-			xmlDoc.loadXML(text); 
-		} 
-		alert("XML Root Tag Name: " + xmlDoc.documentElement.tagName);
 
 		debug("Inside createActivityResult method Activity success","");
 		var table = document.getElementById("employeeAvailable");
@@ -270,6 +257,28 @@ try
 		}
 	else
 		{
+var text=obj.text;
+		
+		if (window.DOMParser)
+		{
+			parser=new DOMParser();
+			xmlDoc=parser.parseFromString(text,"text/xml");
+		}
+		else // Internet Explorer
+		{
+			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async="false";
+			xmlDoc.loadXML(text); 
+		} 
+		alert("XML Root Tag Name: " + xmlDoc.documentElement.tagName);
+		alert("Child node length: " + xmlDoc.documentElement.childNodes.length);
+		alert("First Child: " + xmlDoc.documentElement.childNodes[1].firstChild.tagName);
+		 
+		//Using lastChild Properties
+		//Output average
+		alert("Last Child: " + xmlDoc.documentElement.childNodes[1].lastChild.tagName);
+	 
+
 		document.getElementById('content_div').innerHTML = 'Activity created Failure : '+obj.text;
 		}
 	}
