@@ -270,14 +270,14 @@ var text=obj.text;
 			xmlDoc.async="false";
 			xmlDoc.loadXML(text); 
 		} 
-		alert("XML Root Tag Name: " + xmlDoc.documentElement.tagName);
-		alert("Child node length: " + xmlDoc.documentElement.childNodes[1].firstChild.length);
-		alert("First Child: " + xmlDoc.documentElement.childNodes[1].firstChild.tagName);
-		alert("First Child: " + xmlDoc.getElementsByTagName("faultstring")[0].childNodes[0].nodeValue);
+		//alert("XML Root Tag Name: " + xmlDoc.documentElement.tagName);
+		//alert("Child node length: " + xmlDoc.documentElement.childNodes[1].firstChild.length);
+		//alert("First Child: " + xmlDoc.documentElement.childNodes[1].firstChild.tagName);
+		//alert("First Child: " + xmlDoc.getElementsByTagName("faultstring")[0].childNodes[0].nodeValue);
 		
 		//Using lastChild Properties
 		//Output average
-		alert("Last Child: " + xmlDoc.documentElement.childNodes[1].lastChild.tagName);
+		//alert("Last Child: " + xmlDoc.documentElement.childNodes[1].lastChild.tagName);
 	 
 		
 
