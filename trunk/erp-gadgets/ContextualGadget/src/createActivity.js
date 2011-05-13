@@ -41,7 +41,8 @@ function createActivity()
 		data = data + '<ans:Due>'+document.getElementById('duedatepicker').value+'</ans:Due>';	
 			}
 		//data = data + '<ans:Description>'+document.getElementById('description').value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
-		data = data + '<ans:Description>'+document.getElementById('description').value.replace(/</g,'').replace(/>/g,'')+'</ans:Description>';
+		//data = data + '<ans:Description>'+document.getElementById('description').value.replace(/</g,'').replace(/>/g,'')+'</ans:Description>';
+		data = data + '<ans:Description><![CDATA['+document.getElementById('description').value+']]></ans:Description>';
 		data = data + '<ans:Priority>'+document.getElementById('priority').value+'</ans:Priority>';
 		if(document.getElementById('startdatepicker').value!=null&&document.getElementById('startdatepicker').value!="")
 		{
