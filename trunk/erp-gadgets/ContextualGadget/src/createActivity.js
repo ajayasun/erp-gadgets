@@ -199,6 +199,21 @@ try
 {
 	if(obj.rc=="200")
 	{
+		var text=obj.text;
+		
+		if (window.DOMParser)
+		{
+			parser=new DOMParser();
+			xmlDoc=parser.parseFromString(text,"text/xml");
+		}
+		else // Internet Explorer
+		{
+			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async="false";
+			xmlDoc.loadXML(text); 
+		} 
+		alert("XML Root Tag Name: " + xmlDoc.documentElement.tagName);
+
 		debug("Inside createActivityResult method Activity success","");
 		var table = document.getElementById("employeeAvailable");
 		var rowCount = table.rows.length;
