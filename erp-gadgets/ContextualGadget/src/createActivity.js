@@ -97,7 +97,7 @@ function createActivity()
 				document.getElementById('activityLoading').style.visibility = 'invisible';
 				return true;
 			}
-		data = data + '<ans:ANSActivityDetails>'+document.getElementById('details').value+'</ans:ANSActivityDetails>';
+		data = data + '<ans:ANSActivityDetails><![CDATA['+document.getElementById('details').value+']]></ans:ANSActivityDetails>';
 		data = data + '<ans:ListOfAction_Contact>';
 		var flag="false";
 		var closeTag ="false";
