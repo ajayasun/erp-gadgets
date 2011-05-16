@@ -175,7 +175,7 @@ function clearFields()
 }
 function getUTCDateFormat(dateString)
 {
-	var offset ="0";
+	var offset ="-4";
 	var currentTime = new Date(dateString);
 	/*var month = currentTime.getUTCMonth()+1;
 	var day = currentTime.getUTCDate();
