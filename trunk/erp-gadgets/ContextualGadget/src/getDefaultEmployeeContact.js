@@ -214,7 +214,7 @@ try
 				{
 					if(Mail[i].name=="userToCC")
 					{
-						alert("Contact Mail id"+Mail[i].value);
+						//alert("Contact Mail id"+Mail[i].value);
 						soapMsg = soapMsg + '            <quer:Contact>';
 						soapMsg = soapMsg + '<quer:ANSContactNumber></quer:ANSContactNumber>';
 						soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
@@ -236,7 +236,7 @@ try
 				soapMsg = soapMsg + '   </soapenv:Body>';
 				soapMsg = soapMsg + '</soapenv:Envelope>';
 
-				alert("Before send to Siebel :"+ soapMsg);
+				//alert("Before send to Siebel :"+ soapMsg);
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'getcontactResponse');
