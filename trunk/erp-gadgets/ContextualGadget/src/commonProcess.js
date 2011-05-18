@@ -327,6 +327,17 @@ function emailLoginResponse(emailRespObj) {
 			$(".msg_list").show('fast');
 			gadgets.window.adjustHeight(60);
 			}
+			else
+				{
+				hours = currentTime.getHours()+4;
+				if(hours>24)
+				{
+				hours=hours-24;
+				day = currentTime.getDate()+1;
+				}
+				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+				prefs.set("LoginExpire",sessionTime);
+				}
 		}
 			
 	}
@@ -369,12 +380,14 @@ function emailLoginrequest() {
 	    			  }
 	    		  else
 	    			  {*/
+	    		  if((prefs.getString("LoginName")!=null||prefs.getString("LoginName")!="")&&(sessionTime!=prefs.getString("LoginExpire")||prefs.getString("LoginExpire")!=null||prefs.getString("LoginExpire")!="")
+	    				  {
 	    		  getEmployee();
 					getConact();
 	    		  document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			 // }
-	    		  	
+	    				  }
 	    		  }
 	      };
 function limitText(limitField, limitNum)
