@@ -433,7 +433,7 @@ function emailLoginrequest() {
 	    		  {
     		//  alert("inside login request if condition System Time:"+sessionTime);
 
-	    		  alert("inside login request if condition System Time:"+sessionTime);
+	    		 // alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
 	    		  	$(".msg_list").hide('fast');
@@ -449,7 +449,7 @@ function emailLoginrequest() {
 	    	  else
 	    		  {
 	    		//  alert("inside login request else condition System Time:"+sessionTime);
-	    		  alert("inside login request else condition System Time:"+sessionTime);
+	    		 // alert("inside login request else condition System Time:"+sessionTime);
 	    		 /* if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
 	    			  {
 	    			  $(".debugVal").hide('fast');
