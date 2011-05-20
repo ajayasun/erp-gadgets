@@ -870,7 +870,7 @@
 
                 var Hour = inst.currentHour;
                 if (inst.currentAMPM == 'PM') {
-                    Hour = parseInt(Hour) + 12;
+                   // Hour = parseInt(Hour) + 12;
                 }
                 if (show24HourClock) {
                     $.datetimepicker.DrawHours($("#DP_jQuery_clock_" + dpuuid)[0], Hour);
