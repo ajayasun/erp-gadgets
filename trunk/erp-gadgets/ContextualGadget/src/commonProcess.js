@@ -244,7 +244,7 @@ function emailLoginResponse(emailRespObj) {
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		 /* alert("emailString :"+emailString);
+		  alert("emailString :"+emailString);
 		//  document.CRMActivity.owner.value = ret.text;
 	//alert("value :"+document.CRMActivity.owner.value);*/
 
@@ -320,9 +320,9 @@ function emailLoginResponse(emailRespObj) {
 			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
 			 getEmployee();
 				getConact();
-			 //alert("Login Name :"+prefs.getString("LoginName"));
-			// alert("Session Expire"+prefs.getString("LoginExpire"));
-			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+			 alert("Login Name :"+prefs.getString("LoginName"));
+			 alert("Session Expire"+prefs.getString("LoginExpire"));
+			alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
 			gadgets.window.adjustHeight(60);
@@ -350,7 +350,7 @@ function emailLoginrequest() {
 
 	    	  if((prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")||(sessionTime==prefs.getString("LoginExpire")||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")==""))
 	    		  {
-	    		 // alert("inside login request if condition System Time:"+sessionTime);
+	    		  alert("inside login request if condition System Time:"+sessionTime);
 	    		  	$(".debugVal").hide('fast');
 	    		  	$(".msg_list").hide('fast');
 	    		  	gadgets.window.adjustHeight(0);
@@ -364,7 +364,7 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-	    		 // alert("inside login request else condition System Time:"+sessionTime);
+	    		  alert("inside login request else condition System Time:"+sessionTime);
 	    		 /* if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
 	    			  {
 	    			  $(".debugVal").hide('fast');
