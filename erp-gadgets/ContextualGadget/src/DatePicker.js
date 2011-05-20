@@ -112,7 +112,7 @@
             dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // For formatting
             dayNamesMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], // Column headings for days starting at Sunday
             weekHeader: 'Wk', // Column header for week of the year
-            dateFormat: 'mm/dd/yyyy hh:MM:ss', // See format options on parseDate
+            dateFormat: 'mm/dd/yyyy hh:MM:ss TT', // See format options on parseDate
             /*  format options.
             dd     - Day of the month as digits; leading zero for single-digit days. 
             ddd    - Day of the week as a three-letter abbreviation. 
@@ -2056,7 +2056,7 @@
 
                 // Hour Drop Down
                 html += 'Time <select id="DP_jQuery_Hour_' + dpuuid + '">';
-                for (i = 1; i < 24; i++) {
+                for (i = 1; i < 13; i++) {
                     html += '<option value="' + i + '"';
 
                     if (inst.currentHour == i) {
@@ -2094,13 +2094,13 @@
                 html += MinuteHTML;
 
                 //AM/PM drop Down
-               /* html += ' <select id="DP_jQuery_AMPM_' + dpuuid + '"><option value="AM"';
+                html += ' <select id="DP_jQuery_AMPM_' + dpuuid + '"><option value="AM"';
                 if (inst.currentAMPM == "AM")
                     html += ' selected ';
                 html += '>AM</option><option value="PM"';
                 if (inst.currentAMPM == "PM")
                     html += ' selected ';
-                html += '>PM</option></select>';*/
+                html += '>PM</option></select>';
             }
 
             if (show24HourClock) {
