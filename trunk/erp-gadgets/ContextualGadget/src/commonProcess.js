@@ -247,7 +247,7 @@ function emailLoginResponse(emailRespObj) {
 
 		 // alert("emailString :"+emailString);
 
-		  alert("emailString :"+emailString);
+		 // alert("emailString :"+emailString);
 
 		//  document.CRMActivity.owner.value = ret.text;
 	//alert("value :"+document.CRMActivity.owner.value);*/
@@ -335,9 +335,9 @@ function emailLoginResponse(emailRespObj) {
 			 //alert("Session Expire"+prefs.getString("LoginExpire"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 
-			 alert("Login Name :"+prefs.getString("LoginName"));
-			 alert("Session Expire"+prefs.getString("LoginExpire"));
-			alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+			// alert("Login Name :"+prefs.getString("LoginName"));
+			// alert("Session Expire"+prefs.getString("LoginExpire"));
+			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
