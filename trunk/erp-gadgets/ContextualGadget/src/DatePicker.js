@@ -1313,7 +1313,7 @@
             var objID = t.id.split("_");
             var ID = objID[objID.length - 1];
             if (parseInt(v) > 12) {
-                $("#DP_jQuery_Hour_" + ID).val(parseInt(v) - 12);
+                $("#DP_jQuery_Hour_" + ID).val(parseInt(v));
                 $("#DP_jQuery_AMPM_" + ID).val("PM");
             }
             else {
