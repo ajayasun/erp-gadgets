@@ -219,7 +219,7 @@
             constrainInput: false, // The input is constrained by the current date format
             showButtonPanel: false, // True to show button panel, false to not show it
             autoSize: false, // True to size the input for the date format, false to leave as is
-            show24HourClock: true //True to display an analog clock to pick time and hour
+            show24HourClock: false //True to display an analog clock to pick time and hour
         };
         $.extend(this._defaults, this.regional['']);
         var div = '<div id="' + this._mainDivId + '" class="ui-datepicker ';
