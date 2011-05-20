@@ -112,7 +112,7 @@
             dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // For formatting
             dayNamesMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], // Column headings for days starting at Sunday
             weekHeader: 'Wk', // Column header for week of the year
-            dateFormat: 'mm/dd/yyyy hh:MM:ss ', // See format options on parseDate
+            dateFormat: 'mm/dd/yyyy hh:MM:ss TT', // See format options on parseDate
             /*  format options.
             dd     - Day of the month as digits; leading zero for single-digit days. 
             ddd    - Day of the week as a three-letter abbreviation. 
@@ -219,7 +219,7 @@
             constrainInput: false, // The input is constrained by the current date format
             showButtonPanel: false, // True to show button panel, false to not show it
             autoSize: false, // True to size the input for the date format, false to leave as is
-            show24HourClock: false //True to display an analog clock to pick time and hour
+            show24HourClock: true //True to display an analog clock to pick time and hour
         };
         $.extend(this._defaults, this.regional['']);
         var div = '<div id="' + this._mainDivId + '" class="ui-datepicker ';
