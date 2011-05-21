@@ -235,10 +235,10 @@ function getDate()
 function emailLoginResponse(emailRespObj) {
 	debug("Inside emailLoginResponse method Begin","");
 	 var emailString=emailRespObj.text;
-		  alert("text :"+emailRespObj.text);
+		 /* alert("text :"+emailRespObj.text);
 		  alert("Response Code :"+emailRespObj.rc);
 		  alert("Data :"+emailRespObj.data);
-		  alert("Error :"+emailRespObj.errors);
+		  alert("Error :"+emailRespObj.errors);*/
 	 
 		  var text=emailRespObj;
 		  if(emailRespObj.rc=="200")
@@ -247,7 +247,7 @@ function emailLoginResponse(emailRespObj) {
 
 		 // alert("emailString :"+emailString);
 
-		  alert("emailString :"+emailString);
+		 // alert("emailString :"+emailString);
 
 		//  document.CRMActivity.owner.value = ret.text;
 	//alert("value :"+document.CRMActivity.owner.value);*/
@@ -278,7 +278,7 @@ function emailLoginResponse(emailRespObj) {
 				soapMsg = soapMsg + '   </soapenv:Body>';
 				soapMsg = soapMsg + '</soapenv:Envelope>';
 
-				alert("inside response success :"+soapMsg);
+				//alert("inside response success :"+soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'employeeLogin');
 
@@ -286,12 +286,12 @@ function emailLoginResponse(emailRespObj) {
 
 	      };
 	 function employeeLogin(EmployeeLoginObj){
-	alert("Inside employeeLogin method Begin","");
+	/*alert("Inside employeeLogin method Begin","");
 	alert("Inside employeeLogin method Employee Response Code"+EmployeeLoginObj.rc);
 	alert("Inside employeeLogin method Employee Response Error"+EmployeeLoginObj.errors);
 	alert("Inside employeeLogin method Employee Response Data"+EmployeeLoginObj.data);
 	alert("Inside employeeLogin method Employee Response Text"+EmployeeLoginObj.text);
-	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);
+	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);*/
 
 		
 	var text=EmployeeLoginObj.text;
@@ -377,10 +377,10 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 function emailLoginrequest() {
-	alert("inside login request");
+	/*alert("inside login request");
 	alert("inside login request Login Name :"+prefs.getString("LoginName"));
 	alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
-	alert("inside login request System Time:"+sessionTime);
+	alert("inside login request System Time:"+sessionTime);*/
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
@@ -427,11 +427,11 @@ function emailLoginrequest() {
 
     var date1 = new Date(yearval, monthval, dateval,hourval,minuteval);
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
-alert("date1:"+date1);
-alert("date2:"+date2);
+//alert("date1:"+date1);
+//alert("date2:"+date2);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		  alert("inside login request if condition System Time:"+sessionTime);
+    		//  alert("inside login request if condition System Time:"+sessionTime);
 
 	    		 // alert("inside login request if condition System Time:"+sessionTime);
 
@@ -448,7 +448,7 @@ alert("date2:"+date2);
 	    		  }
 	    	  else
 	    		  {
-	    		  alert("inside login request else condition System Time:"+sessionTime);
+	    		//  alert("inside login request else condition System Time:"+sessionTime);
 	    		 // alert("inside login request else condition System Time:"+sessionTime);
 	    		 /* if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
 	    			  {
