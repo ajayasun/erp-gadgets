@@ -235,10 +235,10 @@ function getDate()
 function emailLoginResponse(emailRespObj) {
 	debug("Inside emailLoginResponse method Begin","");
 	 var emailString=emailRespObj.text;
-		 /* alert("text :"+emailRespObj.text);
+		  alert("text :"+emailRespObj.text);
 		  alert("Response Code :"+emailRespObj.rc);
 		  alert("Data :"+emailRespObj.data);
-		  alert("Error :"+emailRespObj.errors);*/
+		  alert("Error :"+emailRespObj.errors);
 	 
 		  var text=emailRespObj;
 		  if(emailRespObj.rc=="200")
@@ -286,12 +286,12 @@ function emailLoginResponse(emailRespObj) {
 
 	      };
 	 function employeeLogin(EmployeeLoginObj){
-	/*alert("Inside employeeLogin method Begin","");
+	alert("Inside employeeLogin method Begin","");
 	alert("Inside employeeLogin method Employee Response Code"+EmployeeLoginObj.rc);
 	alert("Inside employeeLogin method Employee Response Error"+EmployeeLoginObj.errors);
 	alert("Inside employeeLogin method Employee Response Data"+EmployeeLoginObj.data);
 	alert("Inside employeeLogin method Employee Response Text"+EmployeeLoginObj.text);
-	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);*/
+	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);
 
 		
 	var text=EmployeeLoginObj.text;
@@ -429,9 +429,9 @@ function emailLoginrequest() {
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
 //alert("date1:"+date1);
 //alert("date2:"+date2);
-	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
+	    	  if(date2<date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		//  alert("inside login request if condition System Time:"+sessionTime);
+    		  alert("inside login request if condition System Time:"+sessionTime);
 
 	    		 // alert("inside login request if condition System Time:"+sessionTime);
 
