@@ -247,7 +247,7 @@ function emailLoginResponse(emailRespObj) {
 
 		 // alert("emailString :"+emailString);
 
-		 // alert("emailString :"+emailString);
+		  alert("emailString :"+emailString);
 
 		//  document.CRMActivity.owner.value = ret.text;
 	//alert("value :"+document.CRMActivity.owner.value);*/
@@ -278,7 +278,7 @@ function emailLoginResponse(emailRespObj) {
 				soapMsg = soapMsg + '   </soapenv:Body>';
 				soapMsg = soapMsg + '</soapenv:Envelope>';
 
-				//alert("inside response success :"+soapMsg);
+				alert("inside response success :"+soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'employeeLogin');
 
