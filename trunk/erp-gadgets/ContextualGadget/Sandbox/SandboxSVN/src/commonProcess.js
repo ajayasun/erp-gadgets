@@ -135,6 +135,8 @@ function assignClass()
 	else
 		{
 		debug("Inside assignClass method inside else classValue",classValue);
+		debug("Inside assignClass method inside else classValue details value :",document.getElementById('details').value);
+		debug("Inside assignClass method inside else classValue emailBodyText value",document.getElementById('emailBodyText').value);
 		document.getElementById('classValue').innerHTML = "";
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
