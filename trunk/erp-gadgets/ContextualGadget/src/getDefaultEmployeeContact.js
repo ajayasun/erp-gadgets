@@ -2,21 +2,24 @@ function getEmployee(){
 debug("Inside getEmployee method Begin","");
 try
 {
-			var soapMsg;
-			soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
-
-			soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
-			soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>innoveer09</web:PasswordText><web:UsernameToken>SOAUSER</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
-			soapMsg = soapMsg + '   <soapenv:Body>';
-			soapMsg = soapMsg + '      <cus:QueryEmployee>';
-			soapMsg = soapMsg + '         <SiebelMessageIn>';
-			soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
-			var Mail=document.getElementsByTagName('input');
-	        for(var i=0; i<Mail.length;i++)
-				{
-					if(Mail[i].name=="userToCC")
-					{
-						
+	var emptable = document.getElementById("employeeSelected");
+	debug("Employee table length ",emptable.rows.length);
+	if(emptable.rows.length==0)
+	{
+		debug("Employee table length inside if:",emptable.rows.length);
+	var soapMsg;
+	soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
+	soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
+	soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>innoveer09</web:PasswordText><web:UsernameToken>SOAUSER</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
+	soapMsg = soapMsg + '   <soapenv:Body>';
+	soapMsg = soapMsg + '      <cus:QueryEmployee>';
+	soapMsg = soapMsg + '         <SiebelMessageIn>';
+	soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
+	var Mail=document.getElementsByTagName('input');
+    for(var i=0; i<Mail.length;i++)
+    	{
+		if(Mail[i].name=="userToCC")
+			{
 						soapMsg = soapMsg + '               <quer:Employee>';
 						soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
 						soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
@@ -25,8 +28,8 @@ try
 						soapMsg = soapMsg + '                  <quer:LoginName/>';
 						soapMsg = soapMsg + '               </quer:Employee>';
 					
-					}
-				}
+			}
+		}
 	    	soapMsg = soapMsg + '            </quer:ListOfAns_Wsemployee>';
 			soapMsg = soapMsg + '         </SiebelMessageIn>';
 			soapMsg = soapMsg + '         <LOVLanguageMode>LDC</LOVLanguageMode>';
@@ -34,11 +37,12 @@ try
 			soapMsg = soapMsg + '      </cus:QueryEmployee>';
 			soapMsg = soapMsg + '   </soapenv:Body>';
 			soapMsg = soapMsg + '</soapenv:Envelope>';
-//alert("before send to siebel :"+soapMsg);
+
 			debug("Inside getEmployee method Before send Employee Data to siebel .",soapMsg);
 
 			var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
 			invokeSiebeWebservice(soapMsg,SOAPAction,'getemployeeResponse');
+	}
 }
 catch (e)
 {
@@ -55,12 +59,7 @@ debug("Inside getEmployeeResult method Employee Response Data",searchEmployeeRes
 debug("Inside getEmployeeResult method Employee Response Text",searchEmployeeResultObj.text);
 debug("Inside getEmployeeResult method Employee Response authErrorText",searchEmployeeResultObj.oauthErrorText);
 
-/*alert("rc"+searchEmployeeResultObj.rc);
-alert("Error"+searchEmployeeResultObj.errors);
-alert("data"+searchEmployeeResultObj.data);
-alert("Error"+searchEmployeeResultObj.text);
-alert("data"+searchEmployeeResultObj.oauthErrorText);*/
-	
+
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
 if(searchEmployeeResultObj.rc=="200")
 {
@@ -195,7 +194,12 @@ function getConact(){
 debug("Inside getConact method Begin", "");
 try
 {
-	var soapMsg;
+	var contacttable = document.getElementById("contactSelected");
+	debug("contacttable table length :",contacttable.rows.length);
+	if(contacttable.rows.length==0)
+		{
+		debug("contact table length :",contacttable.rows.length);
+			var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
 
@@ -214,7 +218,7 @@ try
 				{
 					if(Mail[i].name=="userToCC")
 					{
-						//alert("Contact Mail id"+Mail[i].value);
+						
 						soapMsg = soapMsg + '            <quer:Contact>';
 						soapMsg = soapMsg + '<quer:ANSContactNumber></quer:ANSContactNumber>';
 						soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
@@ -236,11 +240,11 @@ try
 				soapMsg = soapMsg + '   </soapenv:Body>';
 				soapMsg = soapMsg + '</soapenv:Envelope>';
 
-				//alert("Before send to Siebel :"+ soapMsg);
+				
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'getcontactResponse');
-					
+		}		
 	}
 catch (e)
 {
@@ -258,11 +262,7 @@ debug("Inside getContactResult method Response Text",searchContactResultObj.text
 debug("Inside getContactResult method Response authErrorText",searchContactResultObj.oauthErrorText);
 
 var searchContactResultObjText = searchContactResultObj.text;
-/*alert("rc"+searchContactResultObj.rc);
-alert("Error"+searchContactResultObj.errors);
-alert("data"+searchContactResultObj.data);
-alert("Error"+searchContactResultObj.text);
-alert("data"+searchContactResultObj.oauthErrorText);*/
+
 if(searchContactResultObj.rc=="200")
 {
 var table = document.getElementById("contactSelected");

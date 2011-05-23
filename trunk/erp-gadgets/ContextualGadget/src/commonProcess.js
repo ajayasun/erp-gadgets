@@ -112,6 +112,7 @@ function assignClass()
 		document.getElementById('Status').selectedIndex=0;
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
+		document.getElementById('details').value=document.getElementById('emailBodyText').value;
 		gadgets.window.adjustHeight(320);
 			}
 		else 
@@ -127,17 +128,22 @@ function assignClass()
 		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp; : <input type='checkbox' name='extFlag' id='extFlag' size='18' class='fontRel'></font></strong>";*/
 		document.getElementById('classSelected').value=document.getElementById('ServiceRST').value;
 		document.getElementById('Status').selectedIndex=3;
+		document.getElementById('details').value="";
 			}
 			}
 		}
 	else
 		{
 		debug("Inside assignClass method inside else classValue",classValue);
+		debug("Inside assignClass method inside else classValue details value :",document.getElementById('details').value);
+		debug("Inside assignClass method inside else classValue emailBodyText value",document.getElementById('emailBodyText').value);
+		document.getElementById('details').value=document.getElementById('emailBodyText').value;
 		document.getElementById('classValue').innerHTML = "";
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
 		document.getElementById('classSelected').value="";
 		document.getElementById('Status').selectedIndex=0;
+		
 		gadgets.window.adjustHeight(300);
 		}
 	debug("Inside assignClass method End","");
@@ -293,7 +299,7 @@ function emailLoginResponse(emailRespObj) {
 	alert("Inside employeeLogin method Employee Response Text"+EmployeeLoginObj.text);
 	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);*/
 
-		
+	var emploginName;	
 	var text=EmployeeLoginObj.text;
 	//alert("text"+text);
 	if(EmployeeLoginObj.rc=="200")
@@ -322,26 +328,33 @@ function emailLoginResponse(emailRespObj) {
 			
 			if(empId[j].childNodes.length>0)
 			{
-			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
-			 day = currentTime.getDate()+1;
-			 sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-			// alert("sessionTime"+sessionTime);
-			 prefs.set("LoginExpire",sessionTime);
-			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
-			 getEmployee();
-				getConact();
-
-			// alert("Login Name :"+prefs.getString("LoginName"));
-			 //alert("Session Expire"+prefs.getString("LoginExpire"));
-			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
-
-			// alert("Login Name :"+prefs.getString("LoginName"));
-			// alert("Session Expire"+prefs.getString("LoginExpire"));
-			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
-
-			$(".debugVal").show('fast');
-			$(".msg_list").show('fast');
-			gadgets.window.adjustHeight(60);
+				emploginName=empId[j].childNodes[0].nodeValue;
+				//emploginName="EX-GFPIGANE";
+				if(emploginName.indexOf("EX-")==0)
+				{
+					day = currentTime.getDate()+1;
+					sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+					//alert("sessionTime"+sessionTime);
+					prefs.set("LoginExpire",sessionTime);
+				}
+				else
+				{
+					document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
+					day = currentTime.getDate()+1;
+					sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+					//alert("sessionTime"+sessionTime);
+					prefs.set("LoginExpire",sessionTime);
+					prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
+					// alert("Login Name :"+prefs.getString("LoginName"));
+					//alert("Session Expire"+prefs.getString("LoginExpire"));
+					//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+					// alert("Login Name :"+prefs.getString("LoginName"));
+					// alert("Session Expire"+prefs.getString("LoginExpire"));
+					//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+					$(".debugVal").show('fast');
+					$(".msg_list").show('fast');
+					gadgets.window.adjustHeight(60);
+				}
 			}
 			else
 				{
@@ -431,7 +444,7 @@ function emailLoginrequest() {
 //alert("date2:"+date2);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		//  alert("inside login request if condition System Time:"+sessionTime);
+    		  //alert("inside login request if condition System Time:"+sessionTime);
 
 	    		 // alert("inside login request if condition System Time:"+sessionTime);
 
@@ -448,7 +461,7 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-	    		//  alert("inside login request else condition System Time:"+sessionTime);
+	    		  //alert("inside login request else condition System Time:"+sessionTime);
 	    		 // alert("inside login request else condition System Time:"+sessionTime);
 	    		 /* if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
 	    			  {
@@ -471,9 +484,7 @@ function emailLoginrequest() {
 						  else
 						  {
 						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
-	    		  getEmployee();
-					getConact();
-	    		  document.getElementById('owner').value=prefs.getString("LoginName");
+	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
 	    				  //}
