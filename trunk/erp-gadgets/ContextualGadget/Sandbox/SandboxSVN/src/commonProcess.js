@@ -250,7 +250,28 @@ function emailLoginResponse(emailRespObj) {
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-
+		  if(emailString=="INVALID")
+			  {
+			  	hours = currentTime.getHours()+3;
+				if(hours>24)
+				{
+				hours=hours-24;
+				day = currentTime.getDate()+1;
+				}
+				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+				prefs.set("LoginExpire",sessionTime);
+			 }
+		  else
+			  {
+				document.CRMActivity.owner.value = emailString;
+				day = currentTime.getDate()+1;
+				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+				prefs.set("LoginExpire",sessionTime);
+				prefs.set("LoginName",emailString);
+				$(".debugVal").show('fast');
+				$(".msg_list").show('fast');
+				gadgets.window.adjustHeight(60);
+			  }
 		 // alert("emailString :"+emailString);
 
 		 // alert("emailString :"+emailString);
@@ -258,7 +279,7 @@ function emailLoginResponse(emailRespObj) {
 		//  document.CRMActivity.owner.value = ret.text;
 	//alert("value :"+document.CRMActivity.owner.value);*/
 
-				var soapMsg;
+				/*var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
 				soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
@@ -287,7 +308,7 @@ function emailLoginResponse(emailRespObj) {
 				//alert("inside response success :"+soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'employeeLogin');
-
+			*/
 		  }
 
 	      };
