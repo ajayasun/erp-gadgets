@@ -334,7 +334,7 @@ function emailLoginResponse(emailRespObj) {
 				{
 					day = currentTime.getDate()+1;
 					sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-					alert("sessionTime"+sessionTime);
+					//alert("sessionTime"+sessionTime);
 					prefs.set("LoginExpire",sessionTime);
 				}
 				else
