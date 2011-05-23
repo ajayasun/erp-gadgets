@@ -334,10 +334,7 @@ function emailLoginResponse(emailRespObj) {
 			// alert("sessionTime"+sessionTime);
 			 prefs.set("LoginExpire",sessionTime);
 			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
-			 getEmployee();
-				getConact();
-
-			// alert("Login Name :"+prefs.getString("LoginName"));
+			 // alert("Login Name :"+prefs.getString("LoginName"));
 			 //alert("Session Expire"+prefs.getString("LoginExpire"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 
@@ -477,9 +474,7 @@ function emailLoginrequest() {
 						  else
 						  {
 						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
-	    		  getEmployee();
-					getConact();
-	    		  document.getElementById('owner').value=prefs.getString("LoginName");
+	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
 	    				  //}
