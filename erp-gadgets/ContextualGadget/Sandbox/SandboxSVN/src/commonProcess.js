@@ -112,6 +112,7 @@ function assignClass()
 		document.getElementById('Status').selectedIndex=0;
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
+		document.getElementById('details').value=document.getElementById('emailBodyText').value;
 		gadgets.window.adjustHeight(320);
 			}
 		else 
@@ -127,6 +128,7 @@ function assignClass()
 		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp; : <input type='checkbox' name='extFlag' id='extFlag' size='18' class='fontRel'></font></strong>";*/
 		document.getElementById('classSelected').value=document.getElementById('ServiceRST').value;
 		document.getElementById('Status').selectedIndex=3;
+		document.getElementById('details').value="";
 			}
 			}
 		}
@@ -138,6 +140,7 @@ function assignClass()
 		document.getElementById('externalFlag').innerHTML = "";
 		document.getElementById('classSelected').value="";
 		document.getElementById('Status').selectedIndex=0;
+		document.getElementById('details').value=document.getElementById('emailBodyText').value;
 		gadgets.window.adjustHeight(300);
 		}
 	debug("Inside assignClass method End","");
