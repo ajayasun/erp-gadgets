@@ -461,7 +461,7 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-	    		  alert("inside login request else condition System Time:"+sessionTime);
+	    		 // alert("inside login request else condition System Time:"+sessionTime);
 	    		 // alert("inside login request else condition System Time:"+sessionTime);
 	    		 /* if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
 	    			  {
@@ -483,7 +483,7 @@ function emailLoginrequest() {
 	    				  {}
 						  else
 						  {
-						  alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
+						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
