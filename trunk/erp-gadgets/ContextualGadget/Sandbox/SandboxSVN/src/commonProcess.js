@@ -344,7 +344,7 @@ function emailLoginResponse(emailRespObj) {
 			// alert("Login Name :"+prefs.getString("LoginName"));
 			// alert("Session Expire"+prefs.getString("LoginExpire"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
-				gadgets.window.setTitle("Trackcelerate! CRM Activity Tracker");
+				gadgets.window.setTitle(newTitle);
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
 			gadgets.window.adjustHeight(60);
@@ -435,7 +435,7 @@ function emailLoginrequest() {
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
 //alert("date1:"+date1);
 //alert("date2:"+date2);
-	    	  if(date2<date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
+	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
     		//  alert("inside login request if condition System Time:"+sessionTime);
 
@@ -476,7 +476,9 @@ function emailLoginrequest() {
 	    				  {}
 						  else
 						  {
-							  gadgets.window.setTitle("Trackcelerate! CRM Activity Tracker");
+						      
+						      gadgets.window.setTitle(newTitle);
+							 // gadgets.window.setTitle("Trackcelerate! CRM Activity Tracker");
 						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		  getEmployee();
 					getConact();
