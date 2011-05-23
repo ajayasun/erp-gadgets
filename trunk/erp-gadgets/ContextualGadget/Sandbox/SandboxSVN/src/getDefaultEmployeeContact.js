@@ -2,21 +2,21 @@ function getEmployee(){
 debug("Inside getEmployee method Begin","");
 try
 {
-			var soapMsg;
-			soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
-
-			soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
-			soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>innoveer09</web:PasswordText><web:UsernameToken>SOAUSER</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
-			soapMsg = soapMsg + '   <soapenv:Body>';
-			soapMsg = soapMsg + '      <cus:QueryEmployee>';
-			soapMsg = soapMsg + '         <SiebelMessageIn>';
-			soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
-			var Mail=document.getElementsByTagName('input');
-	        for(var i=0; i<Mail.length;i++)
-				{
-					if(Mail[i].name=="userToCC")
-					{
-						
+	var emptable = document.getElementById("employeeSelected");
+	alert("Employee table length :"+emptable.rows.length);
+	var soapMsg;
+	soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
+	soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
+	soapMsg = soapMsg + '<soapenv:Header><web:PasswordText>innoveer09</web:PasswordText><web:UsernameToken>SOAUSER</web:UsernameToken><web:SessionType>stateless</web:SessionType></soapenv:Header>';
+	soapMsg = soapMsg + '   <soapenv:Body>';
+	soapMsg = soapMsg + '      <cus:QueryEmployee>';
+	soapMsg = soapMsg + '         <SiebelMessageIn>';
+	soapMsg = soapMsg + '            <quer:ListOfAns_Wsemployee pagesize="100" startrownum="0" recordcountneeded="true">';
+	var Mail=document.getElementsByTagName('input');
+    for(var i=0; i<Mail.length;i++)
+    	{
+		if(Mail[i].name=="userToCC")
+			{
 						soapMsg = soapMsg + '               <quer:Employee>';
 						soapMsg = soapMsg + '                  <quer:LastName></quer:LastName>';
 						soapMsg = soapMsg + '                  <quer:FirstName></quer:FirstName>';
@@ -25,8 +25,8 @@ try
 						soapMsg = soapMsg + '                  <quer:LoginName/>';
 						soapMsg = soapMsg + '               </quer:Employee>';
 					
-					}
-				}
+			}
+		}
 	    	soapMsg = soapMsg + '            </quer:ListOfAns_Wsemployee>';
 			soapMsg = soapMsg + '         </SiebelMessageIn>';
 			soapMsg = soapMsg + '         <LOVLanguageMode>LDC</LOVLanguageMode>';
@@ -195,6 +195,8 @@ function getConact(){
 debug("Inside getConact method Begin", "");
 try
 {
+	var contacttable = document.getElementById("contactSelected");
+	alert("contacttable table length :"+contacttable.rows.length);
 	var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
