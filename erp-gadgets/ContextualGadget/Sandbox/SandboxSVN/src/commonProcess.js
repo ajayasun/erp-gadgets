@@ -299,7 +299,7 @@ function emailLoginResponse(emailRespObj) {
 	alert("Inside employeeLogin method Employee Response Text"+EmployeeLoginObj.text);
 	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);*/
 
-		
+	var emploginName;	
 	var text=EmployeeLoginObj.text;
 	//alert("text"+text);
 	if(EmployeeLoginObj.rc=="200")
@@ -328,23 +328,32 @@ function emailLoginResponse(emailRespObj) {
 			
 			if(empId[j].childNodes.length>0)
 			{
-			document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
-			 day = currentTime.getDate()+1;
-			 sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-			// alert("sessionTime"+sessionTime);
-			 prefs.set("LoginExpire",sessionTime);
-			 prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
-			 // alert("Login Name :"+prefs.getString("LoginName"));
-			 //alert("Session Expire"+prefs.getString("LoginExpire"));
-			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
-
-			// alert("Login Name :"+prefs.getString("LoginName"));
-			// alert("Session Expire"+prefs.getString("LoginExpire"));
-			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
-
-			$(".debugVal").show('fast');
-			$(".msg_list").show('fast');
-			gadgets.window.adjustHeight(60);
+				emploginName=empId[j].childNodes[0].nodeValue;
+				if(emploginName.indexOf("EX-")==0)
+				{
+					day = currentTime.getDate()+1;
+					sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+					//alert("sessionTime"+sessionTime);
+					prefs.set("LoginExpire",sessionTime);
+				}
+				else
+				{
+					document.CRMActivity.owner.value = empId[j].childNodes[0].nodeValue;
+					day = currentTime.getDate()+1;
+					sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
+					//alert("sessionTime"+sessionTime);
+					prefs.set("LoginExpire",sessionTime);
+					prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
+					// alert("Login Name :"+prefs.getString("LoginName"));
+					//alert("Session Expire"+prefs.getString("LoginExpire"));
+					//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+					// alert("Login Name :"+prefs.getString("LoginName"));
+					// alert("Session Expire"+prefs.getString("LoginExpire"));
+					//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
+					$(".debugVal").show('fast');
+					$(".msg_list").show('fast');
+					gadgets.window.adjustHeight(60);
+				}
 			}
 			else
 				{
