@@ -365,12 +365,6 @@ function emailLoginResponse(emailRespObj) {
 					//alert("sessionTime"+sessionTime);
 					prefs.set("LoginExpire",sessionTime);
 					prefs.set("LoginName",empId[j].childNodes[0].nodeValue);
-					// alert("Login Name :"+prefs.getString("LoginName"));
-					//alert("Session Expire"+prefs.getString("LoginExpire"));
-					//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
-					// alert("Login Name :"+prefs.getString("LoginName"));
-					// alert("Session Expire"+prefs.getString("LoginExpire"));
-					//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
 					$(".debugVal").show('fast');
 					$(".msg_list").show('fast');
 					gadgets.window.adjustHeight(60);
@@ -410,63 +404,38 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 function emailLoginrequest() {
-	alert("inside login request");
+	/*alert("inside login request");
 	alert("inside login request Login Name :"+prefs.getString("LoginName"));
 	alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
-	alert("inside login request System Time:"+sessionTime);
+	alert("inside login request System Time:"+sessionTime);*/
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
-	//alert("monthval"+monthval);
 	str1=str1.substring(str1.indexOf("/")+1)
-	//alert("str1"+str1);
 	var dateval=str1.substring(0,str1.indexOf("/"));
-		//alert("dateval"+dateval);
-		
 	str1=str1.substring(str1.indexOf("/")+1)
-	//alert("str1"+str1);
 	var yearval=str1.substring(0,str1.indexOf(":"));
-		//alert("yearval"+yearval);
-		
 	str1=str1.substring(str1.indexOf(":")+1)
-	//alert("str1"+str1);
 	var hourval=str1.substring(0,str1.indexOf(":"));
-		//alert("hourval"+hourval);
 	str1=str1.substring(str1.indexOf(":")+1)
-	//alert("str1"+str1);
 	var minuteval=str1.substring(0);
-		//alert("minuteval"+minuteval);
-
-			var monthval1=str2.substring(0,str2.indexOf("/"));
-	//alert("monthval"+monthval1);
+	var monthval1=str2.substring(0,str2.indexOf("/"));
 	str2=str2.substring(str2.indexOf("/")+1)
-	//alert("str2"+str2);
 	var dateval1=str2.substring(0,str2.indexOf("/"));
-		//alert("dateval"+dateval1);
-		
 	str2=str2.substring(str2.indexOf("/")+1)
-	//alert("str2"+str2);
 	var yearval1=str2.substring(0,str2.indexOf(":"));
-		//alert("yearval"+yearval1);
-		
 	str2=str2.substring(str2.indexOf(":")+1)
-	//alert("str2"+str2);
 	var hourval1=str2.substring(0,str2.indexOf(":"));
-		//alert("hourval"+hourval1);
 	str2=str2.substring(str2.indexOf(":")+1)
-	//alert("str2"+str2);
 	var minuteval1=str2.substring(0);
-		//alert("minuteval"+minuteval1);
-
-    var date1 = new Date(yearval, monthval, dateval,hourval,minuteval);
+	
+	var date1 = new Date(yearval, monthval, dateval,hourval,minuteval);
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
 //alert("date1:"+date1);
 //alert("date2:"+date2);
-	    	  if(date2<date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
+	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		  alert("inside login request if condition System Time:"+sessionTime);
-
-	    		 // alert("inside login request if condition System Time:"+sessionTime);
+    		 // alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
 	    		  	$(".msg_list").hide('fast');
@@ -481,23 +450,6 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-	    		  alert("inside login request else condition System Time:"+sessionTime);
-	    		 // alert("inside login request else condition System Time:"+sessionTime);
-	    		 /* if(sessionTime==prefs.getString("sessionExpire")||prefs.getString("sessionExpire")==null||prefs.getString("sessionExpire")=="")
-	    			  {
-	    			  $(".debugVal").hide('fast');
-		    		  	$(".msg_list").hide('fast');
-		    		  	gadgets.window.adjustHeight(0);
-		    		  	//alert("inside request method");
-		    		  	var params = {};
-		    		  	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
-		    		  	params['AUTHORIZATION'] = 'SIGNED';
-		    		  	params['OAUTH_ADD_EMAIL'] = 'true';
-		    		  	params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
-		    		  	gadgets.io.makeRequest(url,emailLoginResponse,params);
-	    			  }
-	    		  else
-	    			  {*/
 					//  alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
 	    		 if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    				  {}
@@ -507,7 +459,7 @@ function emailLoginrequest() {
 	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
-	    				  //}
+	    				  
 	    		  }
 	      };
 function limitText(limitField, limitNum)
