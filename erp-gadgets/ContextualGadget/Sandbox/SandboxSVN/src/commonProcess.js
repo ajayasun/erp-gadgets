@@ -344,7 +344,7 @@ function emailLoginResponse(emailRespObj) {
 			// alert("Login Name :"+prefs.getString("LoginName"));
 			// alert("Session Expire"+prefs.getString("LoginExpire"));
 			//alert("Inside searchEmployeeResult method Employee Login name"+empId[j].childNodes[0].nodeValue);
-
+				gadgets.window.setTitle("Trackcelerate! CRM Activity Tracker");
 			$(".debugVal").show('fast');
 			$(".msg_list").show('fast');
 			gadgets.window.adjustHeight(60);
@@ -476,6 +476,7 @@ function emailLoginrequest() {
 	    				  {}
 						  else
 						  {
+							  gadgets.window.setTitle("Trackcelerate! CRM Activity Tracker");
 						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		  getEmployee();
 					getConact();
