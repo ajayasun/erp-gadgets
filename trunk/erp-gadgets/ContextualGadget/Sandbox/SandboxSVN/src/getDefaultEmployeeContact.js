@@ -4,6 +4,9 @@ try
 {
 	var emptable = document.getElementById("employeeSelected");
 	alert("Employee table length :"+emptable.rows.length);
+	if(emptable.rows.length==0)
+	{
+		alert("Employee table length inside if:"+emptable.rows.length);
 	var soapMsg;
 	soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 	soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
@@ -39,6 +42,7 @@ try
 
 			var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
 			invokeSiebeWebservice(soapMsg,SOAPAction,'getemployeeResponse');
+	}
 }
 catch (e)
 {
@@ -197,7 +201,10 @@ try
 {
 	var contacttable = document.getElementById("contactSelected");
 	alert("contacttable table length :"+contacttable.rows.length);
-	var soapMsg;
+	if(contacttable.rows.length==0)
+		{
+		alert("contact table length :"+contacttable.rows.length);
+			var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
 
@@ -242,7 +249,7 @@ try
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
 				invokeSiebeWebservice(soapMsg,SOAPAction,'getcontactResponse');
-					
+		}		
 	}
 catch (e)
 {
