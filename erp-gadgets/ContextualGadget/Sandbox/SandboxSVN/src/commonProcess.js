@@ -137,12 +137,13 @@ function assignClass()
 		debug("Inside assignClass method inside else classValue",classValue);
 		debug("Inside assignClass method inside else classValue details value :",document.getElementById('details').value);
 		debug("Inside assignClass method inside else classValue emailBodyText value",document.getElementById('emailBodyText').value);
+		document.getElementById('details').value=document.getElementById('emailBodyText').value;
 		document.getElementById('classValue').innerHTML = "";
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
 		document.getElementById('classSelected').value="";
 		document.getElementById('Status').selectedIndex=0;
-		document.getElementById('details').value=document.getElementById('emailBodyText').value;
+		
 		gadgets.window.adjustHeight(300);
 		}
 	debug("Inside assignClass method End","");
