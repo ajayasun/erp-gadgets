@@ -3,10 +3,10 @@ debug("Inside getEmployee method Begin","");
 try
 {
 	var emptable = document.getElementById("employeeSelected");
-	alert("Employee table length :"+emptable.rows.length);
+	debug("Employee table length ",emptable.rows.length);
 	if(emptable.rows.length==0)
 	{
-		alert("Employee table length inside if:"+emptable.rows.length);
+		debug("Employee table length inside if:",emptable.rows.length);
 	var soapMsg;
 	soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 	soapMsg = soapMsg + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANS_WSEmployee/Query" xmlns:web="http://siebel.com/webservices">';
@@ -200,10 +200,10 @@ debug("Inside getConact method Begin", "");
 try
 {
 	var contacttable = document.getElementById("contactSelected");
-	alert("contacttable table length :"+contacttable.rows.length);
+	debug("contacttable table length :",contacttable.rows.length);
 	if(contacttable.rows.length==0)
 		{
-		alert("contact table length :"+contacttable.rows.length);
+		debug("contact table length :",contacttable.rows.length);
 			var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
 
