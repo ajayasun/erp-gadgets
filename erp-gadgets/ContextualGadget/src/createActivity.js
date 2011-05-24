@@ -197,9 +197,23 @@ debug("Inside createActivityResult method Activity Response Text",obj.text);
 debug("Inside createActivityResult method Activity Response authErrorText",obj.oauthErrorText);
 try
 {
+	var createActivityResultObjText = obj.text;
 	if(obj.rc=="200")
 	{
 		
+		var text=createActivityResultObjText;
+		
+		if (window.DOMParser)
+		{
+			parser=new DOMParser();
+			xmlDoc=parser.parseFromString(text,"text/xml");
+		}
+		else // Internet Explorer
+		{
+			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async="false";
+			xmlDoc.loadXML(text); 
+		} 
 
 		debug("Inside createActivityResult method Activity success","");
 		var table = document.getElementById("employeeAvailable");
@@ -243,7 +257,7 @@ try
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.CRMActivity.owner.value=prefs.getString("LoginName");
 		document.CRMActivity.startdatepicker.value=getDate();
-		document.getElementById('content_div').innerHTML = 'Activity Saved.';
+		document.getElementById('content_div').innerHTML = 'Activity Saved.(Activity ID:'+xmlDoc.getElementsByTagName("Id")[0].childNodes[0].nodeValue+')';
 		document.getElementById('activityLoading').style.display = 'inline';
 		document.getElementById('activityLoading').style.visibility = 'visible';
 	}
