@@ -313,7 +313,19 @@ function emailLoginResponse(emailRespObj) {
 		  else
 			  {
 			  alert("inside if");
-			  document.write("Invalied function");
+			  var divTag = document.createElement("div");
+		       
+		        divTag.id = "div1";
+		       
+		        //divTag.setAttribute("align","center");
+		       
+		      //  divTag.style.margin = "0px auto";
+		       
+		        //divTag.className ="dynamicDiv";
+		       
+		        divTag.innerHTML = "This HTML Div tag created using Javascript DOM dynamically.";
+		       
+		        document.body.appendChild(divTag);
 			  gadgets.window.adjustHeight(60);
 			  }
 
