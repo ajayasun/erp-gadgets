@@ -243,7 +243,7 @@ function emailLoginResponse(emailRespObj) {
 	 var emailString=emailRespObj.text;
  
 		  var text=emailRespObj;
-		  if(emailRespObj.rc=="200")
+		  if(emailRespObj.rc=="700")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
 		//  alert("emailString :"+emailString);
@@ -309,6 +309,10 @@ function emailLoginResponse(emailRespObj) {
 				invokeSiebeWebservice(soapMsg,SOAPAction,'employeeLogin');
 			*/
 		  }
+		  else
+			  {
+			  document.write("Invalied function");
+			  }
 
 	      };
 	 function employeeLogin(EmployeeLoginObj){
@@ -433,7 +437,7 @@ function emailLoginrequest() {
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
 //alert("date1:"+date1);
 //alert("date2:"+date2);
-	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
+	    	  if(date2<date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
     		 // alert("inside login request if condition System Time:"+sessionTime);
 
