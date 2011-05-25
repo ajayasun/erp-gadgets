@@ -243,10 +243,11 @@ function emailLoginResponse(emailRespObj) {
 	 var emailString=emailRespObj.text;
  
 		  var text=emailRespObj;
+		  alert("RC code :"+emailRespObj.rc);
 		  if(emailRespObj.rc=="700")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		//  alert("emailString :"+emailString);
+		  alert("emailString :"+emailString);
 		  if(emailString=="INVALID")
 			  {
 			 // alert("emailString inside invalid:"+emailString);
@@ -261,7 +262,7 @@ function emailLoginResponse(emailRespObj) {
 			 }
 		  else
 			  {
-			 // alert("emailString inside valid:"+emailString);
+			  alert("emailString inside valid:"+emailString);
 				document.CRMActivity.owner.value = emailString;
 				day = currentTime.getDate()+1;
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
@@ -311,6 +312,7 @@ function emailLoginResponse(emailRespObj) {
 		  }
 		  else
 			  {
+			  alert("inside if");
 			  document.write("Invalied function");
 			  }
 
@@ -439,7 +441,7 @@ function emailLoginrequest() {
 //alert("date2:"+date2);
 	    	  if(date2<date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		 // alert("inside login request if condition System Time:"+sessionTime);
+    		  alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
 	    		  	$(".msg_list").hide('fast');
