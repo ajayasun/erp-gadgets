@@ -471,7 +471,7 @@ function emailLoginrequest() {
 						  {
 						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
-		    		  	gadgets.window.adjustHeight(60);
+		    		  	gadgets.window.adjustHeight(30);
 	    			  }
 	    				  
 	    		  }
