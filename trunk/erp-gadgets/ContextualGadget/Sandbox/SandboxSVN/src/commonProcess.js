@@ -318,7 +318,7 @@ function emailLoginResponse(emailRespObj) {
 		       
 		        divTag.id = "div1";
 		           
-		        divTag.innerHTML = "<strong><font face='Garamond'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
+		        divTag.innerHTML = "<strong><font face='Garamond' size='4'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
 		       
 		        document.body.appendChild(divTag);
 			  gadgets.window.adjustHeight(30);
