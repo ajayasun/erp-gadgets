@@ -321,7 +321,7 @@ function emailLoginResponse(emailRespObj) {
 		        divTag.innerHTML = "<strong><font face='Garamond' size='4'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
 		       
 		        document.body.appendChild(divTag);
-			  gadgets.window.adjustHeight(30);
+			  gadgets.window.adjustHeight(40);
 			  }
 
 	      };
@@ -471,7 +471,7 @@ function emailLoginrequest() {
 						  {
 						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
-		    		  	gadgets.window.adjustHeight(30);
+		    		  	gadgets.window.adjustHeight(40);
 	    			  }
 	    				  
 	    		  }
