@@ -323,10 +323,10 @@ function emailLoginResponse(emailRespObj) {
 		       
 		        //divTag.className ="dynamicDiv";
 		       
-		        divTag.innerHTML = "This HTML Div tag created using Javascript DOM dynamically.";
+		        divTag.innerHTML = "Error contacting the server. Please contact your System administrator for support.";
 		       
 		        document.body.appendChild(divTag);
-			  gadgets.window.adjustHeight(60);
+			  gadgets.window.adjustHeight(30);
 			  }
 
 	      };
