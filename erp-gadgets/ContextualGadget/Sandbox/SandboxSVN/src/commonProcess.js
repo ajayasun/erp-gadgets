@@ -314,6 +314,7 @@ function emailLoginResponse(emailRespObj) {
 			  {
 			  alert("inside if");
 			  document.write("Invalied function");
+			  gadgets.window.adjustHeight(60);
 			  }
 
 	      };
