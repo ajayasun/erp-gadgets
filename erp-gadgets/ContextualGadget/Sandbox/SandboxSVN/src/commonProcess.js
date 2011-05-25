@@ -271,7 +271,7 @@ function emailLoginResponse(emailRespObj) {
 				prefs.set("LoginName",emailString);
 				$(".debugVal").show('fast');
 				$(".msg_list").show('fast');
-				gadgets.window.adjustHeight(50);
+				gadgets.window.adjustHeight(60);
 			  }
 		 // alert("emailString :"+emailString);
 
@@ -321,7 +321,7 @@ function emailLoginResponse(emailRespObj) {
 		        divTag.innerHTML = "<strong><font face='Garamond' size='4'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
 		       
 		        document.body.appendChild(divTag);
-			  gadgets.window.adjustHeight(50);
+			  gadgets.window.adjustHeight(30);
 			  }
 
 	      };
@@ -471,7 +471,7 @@ function emailLoginrequest() {
 						  {
 						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
-		    		  	gadgets.window.adjustHeight(50);
+		    		  	gadgets.window.adjustHeight(60);
 	    			  }
 	    				  
 	    		  }
