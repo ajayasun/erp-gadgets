@@ -244,10 +244,11 @@ function emailLoginResponse(emailRespObj) {
  
 		  var text=emailRespObj;
 		  alert("RC code :"+emailRespObj.rc);
-		  if(emailRespObj.rc=="700")
+		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
 		  alert("emailString :"+emailString);
+		  emailString="INVALID";
 		  if(emailString=="INVALID")
 			  {
 			 // alert("emailString inside invalid:"+emailString);
