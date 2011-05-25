@@ -1,13 +1,36 @@
 function createActivity()
  {
+	
 	debug("Inside createActivity method Begin","");
 	document.getElementById('activityLoading').style.display = 'inline';
 	document.getElementById('activityLoading').style.visibility = 'visible';
 	document.getElementById('activityLoading').innerHTML = 'Saving activity ...';
 	document.getElementById('content_div').innerHTML = '';
+	var saveActivity=true;
 	gadgets.window.adjustHeight(340);
 	try
 	{
+		if(document.getElementById('activtySave').value=='no')
+		{
+			saveActivity=true;
+		}
+		else
+			{
+			var r=confirm("Do your really want to create an activity with no description or details ?");
+			if (r==true)
+			  {
+				saveActivity=true;
+			  }
+			else
+			  {
+				saveActivity=false;
+				document.getElementById('activityLoading').innerHTML = '';
+				document.getElementById('activityLoading').style.display = 'none';
+				document.getElementById('activityLoading').style.visibility = 'invisible';
+			  }
+			}
+		if(saveActivity)
+		{
 		var data;
 		data = '<?xml version="1.0" encoding="utf-8"?>';
 		data = data + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://siebel.com/webservices" xmlns:asi="http://siebel.com/asi/" xmlns:ans="http://www.siebel.com/xml/ANSAction3">';
@@ -180,6 +203,7 @@ function createActivity()
 
 		//alert('Do you want to track this activity to Siebel?');
 		debug("Do you want to track this activity to Siebel?","");
+		}
 	}
 	catch (e)
 	{
@@ -254,6 +278,7 @@ try
 		}
 		document.CRMActivity.reset();
 		document.getElementById('classValue').innerHTML = "";
+		document.getElementById('activtySave').value="yes";
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.CRMActivity.owner.value=prefs.getString("LoginName");
 		document.CRMActivity.startdatepicker.value=getDate();
