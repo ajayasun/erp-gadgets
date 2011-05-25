@@ -243,12 +243,12 @@ function emailLoginResponse(emailRespObj) {
 	 var emailString=emailRespObj.text;
  
 		  var text=emailRespObj;
-		  alert("RC code :"+emailRespObj.rc);
+		  //alert("RC code :"+emailRespObj.rc);
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		  alert("emailString :"+emailString);
-		  emailString="INVALID";
+		 // alert("emailString :"+emailString);
+		 // emailString="INVALID";
 		  if(emailString=="INVALID")
 			  {
 			 // alert("emailString inside invalid:"+emailString);
@@ -263,7 +263,7 @@ function emailLoginResponse(emailRespObj) {
 			 }
 		  else
 			  {
-			  alert("emailString inside valid:"+emailString);
+			  //alert("emailString inside valid:"+emailString);
 				document.CRMActivity.owner.value = emailString;
 				day = currentTime.getDate()+1;
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
@@ -271,7 +271,7 @@ function emailLoginResponse(emailRespObj) {
 				prefs.set("LoginName",emailString);
 				$(".debugVal").show('fast');
 				$(".msg_list").show('fast');
-				gadgets.window.adjustHeight(60);
+				gadgets.window.adjustHeight(30);
 			  }
 		 // alert("emailString :"+emailString);
 
@@ -313,18 +313,12 @@ function emailLoginResponse(emailRespObj) {
 		  }
 		  else
 			  {
-			  alert("inside if");
+			//  alert("inside if");
 			  var divTag = document.createElement("div");
 		       
 		        divTag.id = "div1";
-		       
-		        //divTag.setAttribute("align","center");
-		       
-		      //  divTag.style.margin = "0px auto";
-		       
-		        //divTag.className ="dynamicDiv";
-		       
-		        divTag.innerHTML = "Error contacting the server. Please contact your System administrator for support.";
+		           
+		        divTag.innerHTML = "<strong><font face='Garamond'> Error contacting the server. Please contact your System administrator for support.</font></strong>";
 		       
 		        document.body.appendChild(divTag);
 			  gadgets.window.adjustHeight(30);
@@ -453,9 +447,9 @@ function emailLoginrequest() {
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
 //alert("date1:"+date1);
 //alert("date2:"+date2);
-	    	  if(date2<date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
+	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		  alert("inside login request if condition System Time:"+sessionTime);
+    		 // alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
 	    		  	$(".msg_list").hide('fast');
