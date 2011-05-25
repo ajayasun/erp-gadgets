@@ -189,6 +189,10 @@ catch (e)
 debug("Inside getEmployeeResult method Exception",e);
 }
 }
+else
+	{
+	document.getElementById('content_div').innerHTML = 'Employee Query Failed. Error contacting the server. Please contact your System administrator for support. ';
+	}
 }
 function getConact(){
 debug("Inside getConact method Begin", "");
@@ -403,5 +407,11 @@ catch (e)
 debug("Inside getContactResult method Exception",e);
 }
 }
+
+else
+{
+document.getElementById('content_div').innerHTML = 'Contact Query Failed. Error contacting the server. Please contact your System administrator for support. ';
+}
+
 debug("Inside getContactResult method End","");
 }
