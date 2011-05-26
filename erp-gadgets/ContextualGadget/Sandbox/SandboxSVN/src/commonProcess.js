@@ -113,13 +113,13 @@ function assignClass()
 		document.getElementById('timeSpentValue').innerHTML = "";
 		document.getElementById('externalFlag').innerHTML = "";
 		document.getElementById('details').value=document.getElementById('emailBodyText').value;
-		gadgets.window.adjustHeight(320);
+		gadgets.window.adjustHeight(350);
 			}
 		else 
 			{
 			if(classValue=="Service Request")
 			{
-				gadgets.window.adjustHeight(320);
+				gadgets.window.adjustHeight(350);
 		document.getElementById('classValue').innerHTML = "<strong><font face='Garamond'>Service Request :&nbsp; <input type='text' name='classSelected' id='classSelected' size='18'></font></strong>";
 		document.getElementById('timeSpentValue').innerHTML = "<strong><font face='Garamond'>Time Spent(Hr) :&nbsp; <input type='text' name='timeSpent' id='timeSpent' size='18'></font></strong>";
 		document.getElementById('externalFlag').innerHTML = "<strong><font face='Garamond'>External &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type='checkbox' name='extFlag' id='extFlag' size='18'></font></strong>";
@@ -144,7 +144,7 @@ function assignClass()
 		document.getElementById('classSelected').value="";
 		document.getElementById('Status').selectedIndex=0;
 		
-		gadgets.window.adjustHeight(300);
+		gadgets.window.adjustHeight(340);
 		}
 	debug("Inside assignClass method End","");
 }
