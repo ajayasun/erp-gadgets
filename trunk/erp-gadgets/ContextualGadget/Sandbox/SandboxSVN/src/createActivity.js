@@ -7,7 +7,7 @@ function createActivity()
 	document.getElementById('activityLoading').innerHTML = 'Saving activity ...';
 	document.getElementById('content_div').innerHTML = '';
 	var saveActivity=true;
-	gadgets.window.adjustHeight(350);
+	gadgets.window.adjustHeight(360);
 	try
 	{
 		if(document.getElementById('activtySave').value=='no')
