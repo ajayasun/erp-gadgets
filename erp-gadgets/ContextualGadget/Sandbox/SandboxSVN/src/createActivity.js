@@ -280,6 +280,7 @@ try
 		document.getElementById('classValue').innerHTML = "";
 		document.getElementById('activtySave').value="yes";
 		document.getElementById('timeSpentValue').innerHTML = "";
+		document.getElementById('externalFlag').innerHTML = "";
 		document.CRMActivity.owner.value=prefs.getString("LoginName");
 		document.CRMActivity.startdatepicker.value=getDate();
 		document.getElementById('content_div').innerHTML = 'Activity Saved.(Activity ID:'+xmlDoc.getElementsByTagName("Id")[0].childNodes[0].nodeValue+')';
