@@ -30,9 +30,11 @@ SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 15;
 		if(soapResponse=="employeeResponse")
 			gadgets.io.makeRequest(soapURL, searchEmployeeResult, SOAPparams);
          if(soapResponse=="activityResponse") 
+         {
+gadgets.io.makeRequest(soapURL, createActivityResult, SOAPparams);
      
 makeCachedRequest(soapURL, createActivityResult, SOAPparams, 15);
-
+         }
 			  	if(soapResponse=="employeeLogin")
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
 		if(soapResponse=="getemployeeResponse")
