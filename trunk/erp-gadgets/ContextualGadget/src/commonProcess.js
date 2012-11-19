@@ -27,8 +27,9 @@ var SOAPparams = {};
 			gadgets.io.makeRequest(soapURL, searchContactResult, SOAPparams);
 		if(soapResponse=="employeeResponse")
 			gadgets.io.makeRequest(soapURL, searchEmployeeResult, SOAPparams);
-		if(soapResponse=="activityResponse")
-			gadgets.io.makeRequest(soapURL, createActivityResult, SOAPparams);
+         if(soapResponse=="activityResponse") 
+
+			gadgadgets.io.makeCachedRequest(soapURL, createActivityResult, SOAPparams,0);
 		if(soapResponse=="employeeLogin")
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
 		if(soapResponse=="getemployeeResponse")
@@ -468,4 +469,16 @@ function limitText(limitField, limitNum)
    {
        limitField.value = limitField.value.substring(0, limitNum);
    } 
+   }function makeCachedRequest(url, callback, params, refreshInterval) {
+  var ts = new Date().getTime();
+  var sep = "?";
+  if (refreshInterval && refreshInterval > 0) {
+    ts = Math.floor(ts / (refreshInterval * 1000));
+  }
+  if (url.indexOf("?") > -1) {
+    sep = "&";
+  }
+  url = [ url, sep, "nocache=", ts ].join("");
+  gadgets.io.makeRequest(url, callback, params);
 }
+
