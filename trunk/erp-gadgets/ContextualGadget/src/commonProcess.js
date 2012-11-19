@@ -20,7 +20,7 @@ var SOAPparams = {};
 		SOAPparams['OAUTH_ADD_EMAIL'] = 'true';
 		SOAPparams['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
 		SOAPparams[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
-SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 1;
+SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 15;
 
 		SOAPparams[gadgets.io.RequestParameters.HEADERS]={"Content-Type" : "'text/xml;charset=UTF-8'","SOAPAction" :"'" +soapAction+"'"};
 		SOAPparams[gadgets.io.RequestParameters.POST_DATA]=soapData;
@@ -31,7 +31,7 @@ SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 1;
 			gadgets.io.makeRequest(soapURL, searchEmployeeResult, SOAPparams);
          if(soapResponse=="activityResponse") 
      
-makeCachedRequest(soapURL, createActivityResult, SOAPparams, 1);
+makeCachedRequest(soapURL, createActivityResult, SOAPparams, 15);
 
 			  	if(soapResponse=="employeeLogin")
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
