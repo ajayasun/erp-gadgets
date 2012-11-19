@@ -28,9 +28,9 @@ var SOAPparams = {};
 		if(soapResponse=="employeeResponse")
 			gadgets.io.makeRequest(soapURL, searchEmployeeResult, SOAPparams);
          if(soapResponse=="activityResponse") 
+        gadgets.io.makeRequest(soapURL, createActivityResult, SOAPparams);
 
-			gadgadgets.io.makeCachedRequest(soapURL, createActivityResult, SOAPparams,0);
-		if(soapResponse=="employeeLogin")
+			  	if(soapResponse=="employeeLogin")
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
 		if(soapResponse=="getemployeeResponse")
 			gadgets.io.makeRequest(soapURL, getEmployeeResult, SOAPparams);
