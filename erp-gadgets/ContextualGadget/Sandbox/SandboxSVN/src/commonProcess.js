@@ -30,7 +30,7 @@ var SOAPparams = {};
 		if(soapResponse=="employeeResponse")
 			gadgets.io.makeRequest(soapURL, searchEmployeeResult, SOAPparams);
 		if(soapResponse=="activityResponse")
-			gadmakeCachedRequest(soapURL, createActivityResult, SOAPparams, 1);
+			makeCachedRequest(soapURL, createActivityResult, SOAPparams, 1);
 		if(soapResponse=="employeeLogin")
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
 		if(soapResponse=="getemployeeResponse")
