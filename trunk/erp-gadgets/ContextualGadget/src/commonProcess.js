@@ -20,6 +20,8 @@ var SOAPparams = {};
 		SOAPparams['OAUTH_ADD_EMAIL'] = 'true';
 		SOAPparams['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
 		SOAPparams[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
+SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 1;
+
 		SOAPparams[gadgets.io.RequestParameters.HEADERS]={"Content-Type" : "'text/xml;charset=UTF-8'","SOAPAction" :"'" +soapAction+"'"};
 		SOAPparams[gadgets.io.RequestParameters.POST_DATA]=soapData;
 		debug("Inside invokeSiebeWebservice method SOAP URL",soapURL);
@@ -28,7 +30,8 @@ var SOAPparams = {};
 		if(soapResponse=="employeeResponse")
 			gadgets.io.makeRequest(soapURL, searchEmployeeResult, SOAPparams);
          if(soapResponse=="activityResponse") 
-        gadgets.io.makeRequest(soapURL, createActivityResult, SOAPparams);
+     
+makeCachedRequest(soapURL, createActivityResult, SOAPparams, 1);
 
 			  	if(soapResponse=="employeeLogin")
 			gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
@@ -470,3 +473,22 @@ function limitText(limitField, limitNum)
        limitField.value = limitField.value.substring(0, limitNum);
    } 
    }
+function makeCachedRequest(url, callback, params, refreshInterval)
+{   
+debug("Inside makeCachedRequest Begin","");
+debug("SOAPURL",url);
+debug("Referesh Interval",refreshInterval);
+
+
+
+var ts = new Date().getTime();   var sep = "?";   
+if (refreshInterval && refreshInterval > 0) 
+{     ts = Math.floor(ts / (refreshInterval * 1000));   }  
+if (url.indexOf("?") > -1) {     sep = "&";   }   
+url = [ url, sep, "nocache=", ts ].join(""); 
+debug("SOAP URL After Change",url);
+gadgets.io.makeRequest(url, callback, params);
+debug("Inside makeCachedRequest End","");
+
+} 
+
