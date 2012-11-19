@@ -470,7 +470,13 @@ function limitText(limitField, limitNum)
        limitField.value = limitField.value.substring(0, limitNum);
    } 
    }function makeCachedRequest(url, callback, params, refreshInterval) {
-  var ts = new Date().getTime();
+debug("Inside invmakeCachedReques method begin","");
+
+
+var ts = new Date().getTime();
+debug("ts",ts);
+
+
   var sep = "?";
   if (refreshInterval && refreshInterval > 0) {
     ts = Math.floor(ts / (refreshInterval * 1000));
@@ -478,7 +484,7 @@ function limitText(limitField, limitNum)
   if (url.indexOf("?") > -1) {
     sep = "&";
   }
-  url = [ url, sep, "nocache=", ts ].join("");
+  //url = [ url, sep, "nocache=", ts ].join("");
   gadgets.io.makeRequest(url, callback, params);
 }
 
