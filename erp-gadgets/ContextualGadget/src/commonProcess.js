@@ -275,6 +275,7 @@ function emailLoginResponse(emailRespObj) {
 				prefs.set("LoginName",emailString);
         if(emailString=="VSRINIVA")
         {
+          alert("Inside if :"+emailString);
               $(".debugVal").show('fast');
         }
 				$(".msg_list").show('fast');
