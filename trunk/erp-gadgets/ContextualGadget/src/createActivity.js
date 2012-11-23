@@ -27,8 +27,8 @@ function createActivity()
 		data = data + '<ans:Id>999999</ans:Id>';
 		data = data + '<ans:Class>'+document.getElementById('classval').value+'</ans:Class>';
 		data = data + '<ans:Type>'+document.getElementById('type').value+'</ans:Type>';
-	  // data = data + '<ans:PrimaryOwnedBy>'+document.getElementById('owner').value+'</ans:PrimaryOwnedBy>';
-     data = data + '<ans:PrimaryOwnedBy>VSRINIVA1</ans:PrimaryOwnedBy>';
+	   data = data + '<ans:PrimaryOwnedBy>'+document.getElementById('owner').value+'</ans:PrimaryOwnedBy>';
+    // data = data + '<ans:PrimaryOwnedBy>VSRINIVA1</ans:PrimaryOwnedBy>';
 		data = data + '<ans:Status>'+document.getElementById('Status').value+'</ans:Status>';
 
 		if(document.getElementById('duedatepicker').value!=null&&document.getElementById('duedatepicker').value!="")
