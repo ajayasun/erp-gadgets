@@ -273,7 +273,10 @@ function emailLoginResponse(emailRespObj) {
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
 				prefs.set("LoginExpire",sessionTime);
 				prefs.set("LoginName",emailString);
-				$(".debugVal").show('fast');
+        if(emailString=="VSRINIVA")
+        {
+              $(".debugVal").show('fast');
+        }
 				$(".msg_list").show('fast');
 				gadgets.window.adjustHeight(60);
 			  }
@@ -444,7 +447,7 @@ function emailLoginrequest() {
     		 // alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
-	    		  	$(".msg_list").hide('fast');
+            	$(".msg_list").hide('fast');
 	    		  	gadgets.window.adjustHeight(0);
 	    		  	//alert("inside request method");
 	    		  	var params = {};
