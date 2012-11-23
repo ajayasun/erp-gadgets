@@ -252,7 +252,7 @@ function emailLoginResponse(emailRespObj) {
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		  alert("emailString :"+emailString);
+		 // alert("emailString :"+emailString);
 		  if(emailString=="INVALID")
 			  {
 			 // alert("emailString inside invalid:"+emailString);
@@ -273,9 +273,9 @@ function emailLoginResponse(emailRespObj) {
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
 				prefs.set("LoginExpire",sessionTime);
 				prefs.set("LoginName",emailString);
-        if(emailString=="VSRINIVA1")
+        if(emailString=="VSRINIVA")
         {
-          alert("Inside if :"+emailString);
+         // alert("Inside if :"+emailString);
               $(".debugVal").show('fast');
         }
 				$(".msg_list").show('fast');
