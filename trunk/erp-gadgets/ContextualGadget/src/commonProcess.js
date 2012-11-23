@@ -273,7 +273,7 @@ function emailLoginResponse(emailRespObj) {
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
 				prefs.set("LoginExpire",sessionTime);
 				prefs.set("LoginName",emailString);
-        if(emailString=="VSRINIVA")
+        if(emailString=="VSRINIVA1")
         {
           alert("Inside if :"+emailString);
               $(".debugVal").show('fast');
