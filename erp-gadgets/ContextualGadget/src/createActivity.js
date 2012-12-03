@@ -262,6 +262,8 @@ try
 		document.getElementById('content_div').innerHTML = 'Activity Saved.(Activity ID:'+xmlDoc.getElementsByTagName("Id")[0].childNodes[0].nodeValue+')';
 		document.getElementById('activityLoading').style.display = 'inline';
 		document.getElementById('activityLoading').style.visibility = 'visible';
+      QueryActivity();
+
 	}
 	else
 	{
