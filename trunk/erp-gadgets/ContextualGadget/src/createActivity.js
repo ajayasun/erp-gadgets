@@ -311,3 +311,251 @@ document.getElementById('activityLoading').style.visibility = 'invisible';
 
 debug("Inside createActivityResult method End","");
 }
+
+
+function QueryActivity()
+ {
+	debug("Inside QueryActivity method Begin","");
+	//document.getElementById('activityLoading').style.display = 'inline';
+	//document.getElementById('activityLoading').style.visibility = 'visible';
+	//document.getElementById('activityLoading').innerHTML = 'Saving activity ...';
+	//document.getElementById('content_div').innerHTML = '';
+	//gadgets.window.adjustHeight(340);
+	try
+	{
+		var data;
+		data = '<?xml version="1.0" encoding="utf-8"?>';
+    data = data + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:asi="http://siebel.com/asi/" xmlns:ans="http://www.siebel.com/xml/ANSAction3">';
+		data = data + '<soapenv:Header>';
+		data = data + '<web:PasswordText>innoveer09</web:PasswordText>';
+		data = data + '<web:UsernameToken>SOAUSER</web:UsernameToken>';
+		data=  data + '<web:SessionType>stateless</web:SessionType>';
+		data=  data + '</soapenv:Header>';
+			
+		data = data + '<soapenv:Body>';
+		data = data + '<asi:ANSActivityQueryByExampleASI>';
+			
+			
+		data = data + '<SiebelMessage>';
+		data = data + '<ans:ListOfAnsaction3>';
+		data = data + '<ans:Action operation="query">';
+		data = data + '<ans:Id>999999</ans:Id>';
+		data = data + '<ans:Class>'+document.getElementById('classval').value+'</ans:Class>';
+		data = data + '<ans:Type>'+document.getElementById('type').value+'</ans:Type>';
+	   data = data + '<ans:PrimaryOwnedBy>'+document.getElementById('owner').value+'</ans:PrimaryOwnedBy>';
+    // data = data + '<ans:PrimaryOwnedBy>VSRINIVA1</ans:PrimaryOwnedBy>';
+		data = data + '<ans:Status>'+document.getElementById('Status').value+'</ans:Status>';
+
+		if(document.getElementById('duedatepicker').value!=null&&document.getElementById('duedatepicker').value!="")
+			{
+			debug("Inside createActivity method Begin due date not null",document.getElementById('duedatepicker').value);
+		data = data + '<ans:Due>'+getUTCDateFormat(document.getElementById('duedatepicker').value)+'</ans:Due>';	
+			}
+		else
+			{
+			debug("Inside createActivity method Begin due date  null",document.getElementById('duedatepicker').value);
+		data = data + '<ans:Due>'+document.getElementById('duedatepicker').value+'</ans:Due>';	
+			}
+		//data = data + '<ans:Description>'+document.getElementById('description').value.replace(/[^a-zA-Z 0-9]+/g,'')+'</ans:Description>';
+		//data = data + '<ans:Description>'+document.getElementById('description').value.replace(/</g,'').replace(/>/g,'')+'</ans:Description>';
+		data = data + '<ans:Description><![CDATA['+document.getElementById('description').value+']]></ans:Description>';
+		data = data + '<ans:Priority>'+document.getElementById('priority').value+'</ans:Priority>';
+		if(document.getElementById('startdatepicker').value!=null&&document.getElementById('startdatepicker').value!="")
+		{
+			debug("Inside createActivity method Begin Start date not null",document.getElementById('startdatepicker').value);
+		data = data + '<ans:Planned>'+getUTCDateFormat(document.getElementById('startdatepicker').value)+'</ans:Planned>';
+		}
+		else
+		{
+			debug("Inside createActivity method Begin Start date null",document.getElementById('startdatepicker').value);
+		data = data + '<ans:Planned>'+document.getElementById('startdatepicker').value+'</ans:Planned>';
+		}
+		if(document.getElementById('enddatepicker').value!=null&&document.getElementById('enddatepicker').value!="")
+		{
+			debug("Inside createActivity method Begin endDate date not null",document.getElementById('enddatepicker').value);
+        data = data + '<ans:PlannedCompletion>'+getUTCDateFormat(document.getElementById('enddatepicker').value)+'</ans:PlannedCompletion>';
+		}
+		else
+			{
+			debug("Inside createActivity method Begin endDate date  null",document.getElementById('enddatepicker').value);
+			data = data + '<ans:PlannedCompletion>'+document.getElementById('enddatepicker').value+'</ans:PlannedCompletion>';
+			}
+        if(document.getElementById('classval').value=="Opportunity")
+        	if(On_submit())
+			{
+				
+        		data = data + '<ans:OpportunityId>'+document.getElementById('classSelected').value+'</ans:OpportunityId>';
+			}
+			else
+			{
+				
+				return true;
+			}
+        else if(document.getElementById('classval').value=="Service Request")
+        	if(On_submit())
+			{
+        		data = data + '<ans:SRNumber>'+document.getElementById('classSelected').value+'</ans:SRNumber>';
+        		if(document.getElementById('extFlag').checked)
+        			data = data + '<ans:ANSExternalFlag>Y</ans:ANSExternalFlag>';
+        		else
+        			data = data + '<ans:ANSExternalFlag>N</ans:ANSExternalFlag>';
+        		data = data + '<ans:DurationHours>'+document.getElementById('timeSpent').value+'</ans:DurationHours>';
+
+			}
+			else
+			{
+				
+				return true;
+			}
+		data = data + '<ans:ANSActivityDetails><![CDATA['+document.getElementById('details').value+']]></ans:ANSActivityDetails>';
+		data = data + '<ans:ListOfAction_Contact>';
+		var flag="false";
+		var closeTag ="false";
+		var contactList=document.getElementById('contactSelected').getElementsByTagName('input');
+		debug("Inside createActivity method contact length",contactList.length);
+		debug("Inside createActivity method Flag value",flag);
+		debug("Inside createActivity method cloase tag value",closeTag);
+		for(var i=0; i<contactList.length;i++)
+		{
+			if(contactList[i].name=="ANSContactNumber")
+			{
+				/*if(document.getElementById('contactSelected').getElementsByTagName('input')[i].checked)
+				{*/
+				//if(contactList[i].value)
+					data = data + '<ans:Action_Contact>';
+					flag ="true";
+					
+					//	alert("Selected Contact Id value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
+					debug("Inside createActivity method Ansys contact number ",document.getElementById('contactSelected').getElementsByTagName('input')[i].value);
+					data = data + '<ans:ANSContactNumber>'+document.getElementById('contactSelected').getElementsByTagName('input')[i].value+'</ans:ANSContactNumber>';
+				/*}
+				else
+				{
+					flag ="false";
+				}*/
+			}
+			else if(contactList[i].name=="contactFirstName" && flag=="true")
+			{
+				//alert("Selected First Name value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
+				debug("Inside createActivity method Ansys contact First Name ",document.getElementById('contactSelected').getElementsByTagName('input')[i].value);
+				data = data + '<ans:ContactFirstName>'+document.getElementById('contactSelected').getElementsByTagName('input')[i].value+'</ans:ContactFirstName>';
+				closeTag ="true";
+			}
+			else if(contactList[i].name=="contactLastName" && flag=="true")
+			{
+				debug("Inside createActivity method Ansys contact Last Name ",document.getElementById('contactSelected').getElementsByTagName('input')[i].value);
+				//alert("Selected Last Name value :"+document.getElementById('contactAvailable').getElementsByTagName('input')[i].value);
+				data = data + '<ans:ContactLastName>'+document.getElementById('contactSelected').getElementsByTagName('input')[i].value+'</ans:ContactLastName>';
+			}
+				
+			if(closeTag=="true")
+			{
+				debug("Inside createActivity method inside closetag ","");
+				data = data + '</ans:Action_Contact>';
+				closeTag="false";
+			}
+		}
+		data = data + '</ans:ListOfAction_Contact>';
+		data = data + '<ans:ListOfAction_Employee>';
+		var empList=document.getElementById('employeeSelected').getElementsByTagName('input');
+		debug("Inside createActivity method Employee length",empList.length);
+		for(var i=0; i<empList.length;i++)
+		{
+			if(empList[i].name=='empId')
+				{
+			/*if(document.getElementById('employeeSelected').getElementsByTagName('input')[i].checked)
+			{*/
+				debug("Inside createActivity method Ansys Employee Login ",document.getElementById('employeeSelected').getElementsByTagName('input')[i].value);
+				//alert("Selected Emp Id value :"+document.getElementById('employeeAvailable').getElementsByTagName('input')[i].value);
+				data = data + '<ans:Action_Employee>';	
+				data = data + '<ans:EmployeeLogin>'+document.getElementById('employeeSelected').getElementsByTagName('input')[i].value+'</ans:EmployeeLogin>';
+				data = data + '</ans:Action_Employee>';  
+			//}
+				}
+
+		}
+		data = data + '</ans:ListOfAction_Employee>';
+		data = data + '</ans:Action>';
+		data = data + '</ans:ListOfAnsaction3>';
+		data = data + '</SiebelMessage>';	
+		data = data + '<StatusObject/>';	
+			
+		data = data + '</asi:ANSActivityQueryByExampleASI>';
+		data = data + '</soapenv:Body>';
+		data = data + '</soapenv:Envelope>';
+		debug("Inside createActivity method Before send to siebel Activity data",data);
+		//alert("Before send to siebel data :"+data);
+		var SOAPAction='rpc/http://siebel.com/asi/:ANSActivityQueryByExampleASI';
+		invokeSiebeWebservice(data,SOAPAction,'queryResponse');
+
+		//alert('Do you want to track this activity to Siebel?');
+		debug("Do you want to track this activity to Siebel?","");
+	}
+	catch (e)
+	{
+	debug("Inside queryActivity method Exception ",e);
+	}
+	debug("Inside queryActivity method End","");
+}
+
+function queryActivityResult(obj){
+debug("Inside queryActivityResult method Begin","");
+debug("Inside queryActivityResult method Activity Response Code",obj.rc);
+debug("Inside queryActivityResult method Activity Response Error",obj.errors);
+debug("Inside queryActivityResult method Activity Response Data",obj.data);
+debug("Inside queryActivityResult method Activity Response Text",obj.text);
+debug("Inside queryActivityResult method Activity Response authErrorText",obj.oauthErrorText);
+try
+{
+	var createActivityResultObjText = obj.text;
+	if(obj.rc=="200")
+	{
+		
+		var text=createActivityResultObjText;
+		
+		if (window.DOMParser)
+		{
+			parser=new DOMParser();
+			xmlDoc=parser.parseFromString(text,"text/xml");
+		}
+		else // Internet Explorer
+		{
+			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async="false";
+			xmlDoc.loadXML(text);
+		}
+
+		debug("Inside queryActivityResult method Activity success","");
+	}
+	else
+	{
+	debug("Inside queryActivityResult method Activity Failure");
+	if(obj.text==null||obj.text=="")
+		{
+	debug("Inside queryActivityResult method Activity Failure with empty text");
+		}
+	else
+		{
+var text=obj.text;
+		
+		if (window.DOMParser)
+		{
+			parser=new DOMParser();
+			xmlDoc=parser.parseFromString(text,"text/xml");
+		}
+		else // Internet Explorer
+		{
+			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async="false";
+			xmlDoc.loadXML(text);
+		}
+  	}
+	}
+}
+catch (e)
+{
+debug("Inside queryActivityResult method Exception",e);
+}
+
+debug("Inside queryActivityResult method End","");
+}
