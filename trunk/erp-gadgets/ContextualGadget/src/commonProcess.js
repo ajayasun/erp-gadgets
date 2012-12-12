@@ -416,10 +416,10 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 function emailLoginrequest() {
-	alert("inside login request");
-	alert("inside login request Login Name :"+prefs.getString("LoginName"));
-	alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
-	alert("inside login request System Time:"+sessionTime);
+	//alert("inside login request");
+	//alert("inside login request Login Name :"+prefs.getString("LoginName"));
+	//alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
+	//alert("inside login request System Time:"+sessionTime);
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
