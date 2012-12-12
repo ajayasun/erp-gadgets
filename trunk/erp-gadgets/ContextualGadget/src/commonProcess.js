@@ -278,6 +278,10 @@ function emailLoginResponse(emailRespObj) {
             alert("emailString inside invalid:"+emailString);
 				prefs.set("LoginExpire",sessionTime);
 				prefs.set("LoginName",emailString);
+            
+              alert("sessionTime inside valid:"+prefs.getString("LoginExpire"));
+            alert("emailString inside valid:"+prefs.getString("LoginName"));
+
         if(emailString=="VSRINIVA")
         {
          // alert("Inside if :",emailString);
