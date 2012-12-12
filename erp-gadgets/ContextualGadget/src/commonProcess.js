@@ -254,10 +254,10 @@ function emailLoginResponse(emailRespObj) {
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		  alert("emailString :",emailString);
+		  //alert("emailString :",emailString);
 		  if(emailString=="INVALID")
 			  {
-			  alert("emailString inside invalid:",emailString);
+			 // alert("emailString inside invalid:",emailString);
 			  	hours = currentTime.getHours()+3;
 				if(hours>24)
 				{
@@ -269,7 +269,7 @@ function emailLoginResponse(emailRespObj) {
 			 }
 		  else
 			  {
-			  alert("emailString inside valid:",emailString);
+			 // alert("emailString inside valid:",emailString);
 				document.CRMActivity.owner.value = emailString;
 				day = currentTime.getDate()+1;
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
@@ -277,7 +277,7 @@ function emailLoginResponse(emailRespObj) {
 				prefs.set("LoginName",emailString);
         if(emailString=="VSRINIVA")
         {
-          alert("Inside if :",emailString);
+         // alert("Inside if :",emailString);
               $(".debugVal").show('fast');
         }
 				$(".msg_list").show('fast');
