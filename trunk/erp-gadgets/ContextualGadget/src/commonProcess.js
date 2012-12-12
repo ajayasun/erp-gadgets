@@ -254,10 +254,10 @@ function emailLoginResponse(emailRespObj) {
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		 // alert("emailString :"+emailString);
+		  debug("emailString :",emailString);
 		  if(emailString=="INVALID")
 			  {
-			 // alert("emailString inside invalid:"+emailString);
+			  debug("emailString inside invalid:",emailString);
 			  	hours = currentTime.getHours()+3;
 				if(hours>24)
 				{
@@ -269,7 +269,7 @@ function emailLoginResponse(emailRespObj) {
 			 }
 		  else
 			  {
-			 // alert("emailString inside valid:"+emailString);
+			  debug("emailString inside valid:",emailString);
 				document.CRMActivity.owner.value = emailString;
 				day = currentTime.getDate()+1;
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
@@ -277,18 +277,18 @@ function emailLoginResponse(emailRespObj) {
 				prefs.set("LoginName",emailString);
         if(emailString=="VSRINIVA")
         {
-         // alert("Inside if :"+emailString);
+          debug("Inside if :",emailString);
               $(".debugVal").show('fast');
         }
 				$(".msg_list").show('fast');
 				gadgets.window.adjustHeight(60);
 			  }
-		 // alert("emailString :"+emailString);
+		  debug("emailString :",emailString);
 
-		 // alert("emailString :"+emailString);
+		  debug("emailString :",emailString);
 
 		//  document.CRMActivity.owner.value = ret.text;
-	//alert("value :"+document.CRMActivity.owner.value);*/
+	debug("value :",document.CRMActivity.owner.value);*/
 
 				/*var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
