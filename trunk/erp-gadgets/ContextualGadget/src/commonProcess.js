@@ -254,10 +254,10 @@ function emailLoginResponse(emailRespObj) {
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		  debug("emailString :",emailString);
+		  alert("emailString :",emailString);
 		  if(emailString=="INVALID")
 			  {
-			  debug("emailString inside invalid:",emailString);
+			  alert("emailString inside invalid:",emailString);
 			  	hours = currentTime.getHours()+3;
 				if(hours>24)
 				{
@@ -269,7 +269,7 @@ function emailLoginResponse(emailRespObj) {
 			 }
 		  else
 			  {
-			  debug("emailString inside valid:",emailString);
+			  alert("emailString inside valid:",emailString);
 				document.CRMActivity.owner.value = emailString;
 				day = currentTime.getDate()+1;
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
@@ -277,7 +277,7 @@ function emailLoginResponse(emailRespObj) {
 				prefs.set("LoginName",emailString);
         if(emailString=="VSRINIVA")
         {
-          debug("Inside if :",emailString);
+          alert("Inside if :",emailString);
               $(".debugVal").show('fast');
         }
 				$(".msg_list").show('fast');
@@ -288,7 +288,7 @@ function emailLoginResponse(emailRespObj) {
 		  debug("emailString :",emailString);
 
 		//  document.CRMActivity.owner.value = ret.text;
-	debug("value :",document.CRMActivity.owner.value);*/
+	debug("value :",document.CRMActivity.owner.value);
 
 				/*var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
@@ -324,16 +324,16 @@ function emailLoginResponse(emailRespObj) {
 
 	      };
 	 function employeeLogin(EmployeeLoginObj){
-	/*alert("Inside employeeLogin method Begin","");
-	alert("Inside employeeLogin method Employee Response Code"+EmployeeLoginObj.rc);
-	alert("Inside employeeLogin method Employee Response Error"+EmployeeLoginObj.errors);
-	alert("Inside employeeLogin method Employee Response Data"+EmployeeLoginObj.data);
-	alert("Inside employeeLogin method Employee Response Text"+EmployeeLoginObj.text);
-	alert("Inside employeeLogin method Employee Response authErrorText"+EmployeeLoginObj.oauthErrorText);*/
+	debug("Inside employeeLogin method Begin","");
+	debug("Inside employeeLogin method Employee Response Code",EmployeeLoginObj.rc);
+	debug("Inside employeeLogin method Employee Response Error",EmployeeLoginObj.errors);
+	debug("Inside employeeLogin method Employee Response Data",EmployeeLoginObj.data);
+	debug("Inside employeeLogin method Employee Response Text",EmployeeLoginObj.text);
+	debug("Inside employeeLogin method Employee Response authErrorText",EmployeeLoginObj.oauthErrorText);
 
 	var emploginName;	
 	var text=EmployeeLoginObj.text;
-	//alert("text"+text);
+	debug("text",text);
 	if(EmployeeLoginObj.rc=="200")
 	{
 	if (window.DOMParser)
@@ -366,7 +366,7 @@ function emailLoginResponse(emailRespObj) {
 				{
 					day = currentTime.getDate()+1;
 					sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-					//alert("sessionTime"+sessionTime);
+					debug("sessionTime",sessionTime);
 					prefs.set("LoginExpire",sessionTime);
 				}
 				else
@@ -384,7 +384,7 @@ function emailLoginResponse(emailRespObj) {
 			}
 			else
 				{
-				//alert("inside else cond");
+				debug("inside else cond","");
 				hours = currentTime.getHours()+4;
 				if(hours>24)
 				{
@@ -416,10 +416,10 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 function emailLoginrequest() {
-	/*alert("inside login request");
+	alert("inside login request");
 	alert("inside login request Login Name :"+prefs.getString("LoginName"));
 	alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
-	alert("inside login request System Time:"+sessionTime);*/
+	alert("inside login request System Time:"+sessionTime);
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
@@ -443,11 +443,11 @@ function emailLoginrequest() {
 	
 	var date1 = new Date(yearval, monthval, dateval,hourval,minuteval);
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
-//alert("date1:"+date1);
-//alert("date2:"+date2);
+alert("date1:"+date1);
+alert("date2:"+date2);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		 // alert("inside login request if condition System Time:"+sessionTime);
+    		  alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
             	$(".msg_list").hide('fast');
@@ -462,12 +462,12 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-					//  alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
+					  alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
 	    		 if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    				  {}
 						  else
 						  {
-						 // alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
+						  alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
