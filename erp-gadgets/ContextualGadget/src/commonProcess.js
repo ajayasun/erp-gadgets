@@ -254,10 +254,10 @@ function emailLoginResponse(emailRespObj) {
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		  alert("emailString :"+emailString);
+		 // alert("emailString :"+emailString);
 		  if(emailString=="INVALID")
 			  {
-			  alert("emailString inside invalid:"+emailString);
+			//  alert("emailString inside invalid:"+emailString);
 			  	hours = currentTime.getHours()+3;
 				if(hours>24)
 				{
@@ -265,22 +265,22 @@ function emailLoginResponse(emailRespObj) {
 				day = currentTime.getDate()+1;
 				}
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-             alert("sessionTimeinside invalid:"+sessionTime);
+           //  alert("sessionTimeinside invalid:"+sessionTime);
 				prefs.set("LoginExpire"+sessionTime);
 			 }
 		  else
 			  {
-			  alert("emailString inside valid:"+emailString);
+			  //alert("emailString inside valid:"+emailString);
 				document.CRMActivity.owner.value = emailString;
 				day = currentTime.getDate()+1;
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
-            alert("sessionTime inside invalid:"+sessionTime);
-            alert("emailString inside invalid:"+emailString);
+           // alert("sessionTime inside invalid:"+sessionTime);
+           // alert("emailString inside invalid:"+emailString);
 				prefs.set("LoginExpire",sessionTime);
 				prefs.set("LoginName",emailString);
             
-              alert("sessionTime inside valid:"+prefs.getString("LoginExpire"));
-            alert("emailString inside valid:"+prefs.getString("LoginName"));
+            //  alert("sessionTime inside valid:"+prefs.getString("LoginExpire"));
+           // alert("emailString inside valid:"+prefs.getString("LoginName"));
 
         if(emailString=="VSRINIVA")
         {
@@ -423,10 +423,10 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 function emailLoginrequest() {
-	alert("inside login request");
-	alert("inside login request Login Name :"+prefs.getString("LoginName"));
-	alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
-	alert("inside login request System Time:"+sessionTime);
+  // alert("inside login request");
+  // alert("inside login request Login Name :"+prefs.getString("LoginName"));
+  // alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
+  // alert("inside login request System Time:"+sessionTime);
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
@@ -450,11 +450,11 @@ function emailLoginrequest() {
 	
 	var date1 = new Date(yearval, monthval, dateval,hourval,minuteval);
     var date2 = new Date(yearval1, monthval1, dateval1,hourval1,minuteval1);
-alert("date1:"+date1);
-alert("date2:"+date2);
+//alert("date1:"+date1);
+//alert("date2:"+date2);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		  alert("inside login request if condition System Time:"+sessionTime);
+    		  //alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
             	$(".msg_list").hide('fast');
@@ -469,15 +469,15 @@ alert("date2:"+date2);
 	    		  }
 	    	  else
 	    		  {
-					  alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
+					 // alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
 	    		 if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    				  {}
 						  else
 						  {
-						  alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
+						//  alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
                      if(prefs.getString("LoginName")=="VSRINIVA")
                       {
-                        alert("Inside if :",prefs.getString("LoginName"));
+                    //    alert("Inside if :",prefs.getString("LoginName"));
                             $(".debugVal").show('fast');
                       }
                       else
