@@ -468,7 +468,16 @@ alert("date2:"+date2);
 						  else
 						  {
 						  alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
-	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
+                     if(prefs.getString("LoginName")=="VSRINIVA")
+                      {
+                        alert("Inside if :",emailString);
+                            $(".debugVal").show('fast');
+                      }
+                      else
+                      {
+                       $(".debugVal").hide('fast');
+                      }
+                document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
 	    				  
