@@ -457,6 +457,7 @@ function emailLoginrequest() {
 	    		  	$(".msg_list").hide('fast');
 	    		  	gadgets.window.adjustHeight(0);
 	    		  	alert("inside request method");
+                 alert("inside request method url :"+url);
 	    		  	var params = {};
 	    		  	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
 	    		  	params['AUTHORIZATION'] = 'SIGNED';
