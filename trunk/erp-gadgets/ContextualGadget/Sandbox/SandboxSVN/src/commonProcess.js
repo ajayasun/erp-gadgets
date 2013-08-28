@@ -245,16 +245,16 @@ function emailLoginResponse(emailRespObj) {
 	 var emailString=emailRespObj.text;
  
 		  var text=emailRespObj;
-		  alert("RC code :"+emailRespObj.rc);
-         alert("RC code :"+emailRespObj.text);
+	  //   alert("RC code :"+emailRespObj.rc);
+      //   alert("RC code :"+emailRespObj.text);
 		  if(emailRespObj.rc=="200")
 		  {
 		  emailString = emailString.substring(emailString.indexOf("/>")+2,emailString.indexOf("</"));
-		  alert("emailString :"+emailString);
+		 // alert("emailString :"+emailString);
 		 // emailString="INVALID";
 		  if(emailString=="INVALID")
 			  {
-			  alert("emailString inside invalid:"+emailString);
+			//  alert("emailString inside invalid:"+emailString);
 			  	hours = currentTime.getHours()+3;
 				if(hours>24)
 				{
@@ -266,7 +266,7 @@ function emailLoginResponse(emailRespObj) {
 			 }
 		  else
 			  {
-			  alert("emailString inside valid:"+emailString);
+			//  alert("emailString inside valid:"+emailString);
 				document.CRMActivity.owner.value = emailString;
 				day = currentTime.getDate()+1;
 				sessionTime=month + "/" + day + "/" + year+":"+hours+":"+minutes;
@@ -276,12 +276,12 @@ function emailLoginResponse(emailRespObj) {
 				$(".msg_list").show('fast');
 				gadgets.window.adjustHeight(60);
 			  }
-		 alert("emailString :"+emailString);
+	  //  alert("emailString :"+emailString);
 
-		  alert("emailString :"+emailString);
+		 // alert("emailString :"+emailString);
 
 		  document.CRMActivity.owner.value = ret.text;
-	alert("value :"+document.CRMActivity.owner.value);
+	//alert("value :"+document.CRMActivity.owner.value);
 
 				/*var soapMsg;
 				soapMsg = '<?xml version="1.0" encoding="utf-8"?>';
@@ -316,7 +316,7 @@ function emailLoginResponse(emailRespObj) {
 		  }
 		  else
 			  {
-			  alert("inside if");
+			//  alert("inside if");
 			  var divTag = document.createElement("div");
 		       
 		        divTag.id = "div1";
@@ -421,10 +421,10 @@ function emailLoginResponse(emailRespObj) {
 	}
 	}
 function emailLoginrequest() {
-	alert("inside login request");
-	alert("inside login request Login Name :"+prefs.getString("LoginName"));
-	alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
-	alert("inside login request System Time:"+sessionTime);
+ //  alert("inside login request");
+  // alert("inside login request Login Name :"+prefs.getString("LoginName"));
+  // alert("inside login request Session Expire time :"+prefs.getString("LoginExpire"));
+  // alert("inside login request System Time:"+sessionTime);
 	var str1=prefs.getString("LoginExpire");
 	var str2=sessionTime;
 	var monthval=str1.substring(0,str1.indexOf("/"));
@@ -452,13 +452,13 @@ function emailLoginrequest() {
 //alert("date2:"+date2);
 	    	  if(date2>date1||prefs.getString("LoginExpire")==null||prefs.getString("LoginExpire")=="")
 	    		  {
-    		  alert("inside login request if condition System Time:"+sessionTime);
+    	  //   alert("inside login request if condition System Time:"+sessionTime);
 
 	    		  	$(".debugVal").hide('fast');
 	    		  	$(".msg_list").hide('fast');
 	    		  	gadgets.window.adjustHeight(0);
-	    		  	alert("inside request method");
-                 alert("inside request method url :"+url);
+	    		 // 	alert("inside request method");
+           //      alert("inside request method url :"+url);
 	    		  	var params = {};
 	    		  	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
 	    		  	params['AUTHORIZATION'] = 'SIGNED';
@@ -468,12 +468,12 @@ function emailLoginrequest() {
 	    		  }
 	    	  else
 	    		  {
-					alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
+				//	alert("inside login request else condition Loginname:"+prefs.getString("LoginName"));
 	    		 if(prefs.getString("LoginName")==null||prefs.getString("LoginName")=="")
 	    				  {}
 						  else
 						  {
-						  alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
+						//  alert("inside login request else if condition Loginname:"+prefs.getString("LoginName"));
 	    		 		  document.getElementById('owner').value=prefs.getString("LoginName");
 		    		  	gadgets.window.adjustHeight(60);
 	    			  }
